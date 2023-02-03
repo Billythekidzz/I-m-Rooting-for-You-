@@ -25,9 +25,9 @@
     * [Hi sweating, I'm Jakib Isherwood, captain of the Papanui High School League of Legends Team.]
     # color red
     It's the ratio titan.
+    # color white
     * [Yeah, it really is a fine Summer day today!]
     Perfect day to set up every single furnishing in Samantha's bedroom!
-# color white
 - Thanks for coming to my ted talk.
 -> END
 
