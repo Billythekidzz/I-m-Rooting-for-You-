@@ -34,7 +34,7 @@ public class DialogueManager : MonoBehaviour
         choiceSelected = null;
         //story.ChoosePathString("mysterious_fisherman");
         //       TryDialogue();
-        SetThenTryDialogue("jakib_isherwood");
+        SetThenTryDialogue("sheriff_beefroot");
     }
 
     private void TriggerDialogs(string inklePath)
@@ -185,12 +185,21 @@ public class DialogueManager : MonoBehaviour
                 case "color":
                     SetTextColor(param);
                     break;
+                case "character":
+                    SetCharacter(param);
+                    break;
             }
         }
     }
+
+    void SetCharacter(string _character)
+    {
+        nametag.text = _character;
+    }
+
     void SetAnimation(string _name)
     {
-        CharacterScript cs = GameObject.FindObjectOfType<CharacterScript>();
+        CharacterPortrait cs = GameObject.FindObjectOfType<CharacterPortrait>();
         cs.PlayAnimation(_name);
     }
     void SetTextColor(string _color)

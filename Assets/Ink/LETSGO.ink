@@ -47,3 +47,18 @@
 			* *		"It is perfectly obvious."
 		-	Mrs. Christie lowered her manuscript a moment. The rest of the writing group sat, open-mouthed.
 		-> END
+		
+		
+=== sheriff_beefroot ===
+# Sheriff Beefroot
+- Howdy Partner! Welcome to Vege Town y’all! My name’s Beefroot, and I’m the Sherriff ‘round these parts. So you best be keepin’ on your best behaviour or I’ll be the one to have to come and *beet* you up. Haha just kiddin’ sugar pie.  
+    * [H-holy smokes, it’s Sherriff Beefroot! That well-defined shape… that succulent stem… mmmmmfgffsdgff]
+    #character You
+    Howdy Sherriff, it’s a pleasure to beet you! What is there to do around here? 
+    * Where can I go to find some peas and quiet around here?
+    #character You
+        as das das dasd asd
+    * Why is that vegetable talking to me?
+    #character You
+        a sdas dasd asd asasd
+- -> END
