@@ -55,9 +55,9 @@
     * [H-holy smokes, it’s Sherriff Beefroot! That well-defined shape… that succulent stem… mmmmmfgffsdgff]
     #character You
     Howdy Sherriff, it’s a pleasure to beet you! What is there to do around here? 
-    * Where can I go to find some peas and quiet around here?
-    #character You
-        as das das dasd asd
+    * [Where can I go to find some peas and quiet around here?]
+    #audio objection
+    pease and quiet dialogue
     * Why is that vegetable talking to me?
     #character You
         a sdas dasd asd asasd

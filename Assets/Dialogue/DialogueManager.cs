@@ -182,6 +182,9 @@ public class DialogueManager : MonoBehaviour
                 case "anim":
                     SetAnimation(param);
                     break;
+                case "audio":
+                    PlayAudio(param);
+                    break;
                 case "color":
                     SetTextColor(param);
                     break;
@@ -192,9 +195,15 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    private void PlayAudio(string param)
+    {
+        AudioManager.Instance.PlaySound(param);
+    }
+
     void SetCharacter(string _character)
     {
         nametag.text = _character;
+        //Maybe set talking audio as well?
     }
 
     void SetAnimation(string _name)
