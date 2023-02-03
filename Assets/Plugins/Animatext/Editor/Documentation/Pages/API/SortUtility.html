@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>SortUtility - Animatext</title>
+		<link rel="stylesheet" type="text/css" href="../../Styles/Style.css" media="screen">
+		<link rel="shortcut icon" type="image/x-icon" href="../../Styles/Favicon.ico"/>
+	</head>
+	
+	<body>	
+		<iframe src="BaseAPI.html"></iframe>	
+		<div class="content">
+			<h1>SortUtility</h1>
+			
+			<h2>Info</h2>
+			<ul>
+				<li><p><strong>type</strong>Static Class</p></li>
+				<li><p><strong>namespace</strong>Animatext</p></li>
+			</ul>
+
+			<h2>Methods</h2>
+			<h3>Static Public</h3>
+			<ul>
+				<li class="sameName"><p><strong>Order(int length, <a href="SortType.html" target="_blank">SortType</a> type)</strong><small>int[]</small>Returns the value array ordered by the sort type.</p></li>
+				<li><p><strong>Order(int index, int length, <a href="SortType.html" target="_blank">SortType</a> type)</strong><small>int</small>Returns the value of the index ordered by the sort type.</p></li>
+				<li class="sameName"><p><strong>OrderBackToFront(int length)</strong><small>int[]</small>Returns the value array ordered from back to front.</p></li>
+				<li>
+					<p><strong>OrderBackToFront(int index, int length)</strong><small>int</small>Returns the value of the index ordered from back to front.</p>
+					<ul>
+						<li><p><strong>example</strong>0,1,2,3,4,5,6,7,8 -> 8,7,6,5,4,3,2,1,0</p></li>
+					</ul>
+				</li>
+				<li class="sameName"><p><strong>OrderBackToMiddle(int length)</strong><small>int[]</small>Returns the value array ordered from back to middle.</p></li>
+				<li>
+					<p><strong>OrderBackToMiddle(int index, int length)</strong><small>int</small>Returns the value of the index ordered from back to middle.</p>
+					<ul>
+						<li><p><strong>example</strong>0,1,2,3,4,5,6,7,8 -> 8,7,6,5,0,1,2,3,4</p></li>
+					</ul>
+				</li>
+				<li class="sameName"><p><strong>OrderFrontToBack(int length)</strong><small>int[]</small>Returns the value array ordered from front to back.</p></li>
+				<li>
+					<p><strong>OrderFrontToBack(int index, int length)</strong><small>int</small>Returns the value of the index ordered from front to back.</p>
+					<ul>
+						<li><p><strong>example</strong>0,1,2,3,4,5,6,7,8 -> 0,1,2,3,4,5,6,7,8</p></li>
+					</ul>					
+				</li>
+				<li class="sameName"><p><strong>OrderFrontToMiddle(int length)</strong><small>int[]</small>Returns the value array ordered from front to middle.</p></li>
+				<li>
+					<p><strong>OrderFrontToMiddle(int index, int length)</strong><small>int</small>Returns the value of the index ordered from front to middle.</p>
+					<ul>
+						<li><p><strong>example</strong>0,1,2,3,4,5,6,7,8 -> 0,1,2,3,8,7,6,5,4</p></li>
+					</ul>
+				</li>
+				<li class="sameName"><p><strong>OrderMiddleToBack(int length)</strong><small>int[]</small>Returns the value array ordered from middle to back.</p></li>
+				<li>
+					<p><strong>OrderMiddleToBack(int index, int length)</strong><small>int</small>Returns the value of the index ordered from middle to back.</p>
+					<ul>
+						<li><p><strong>example</strong>0,1,2,3,4,5,6,7,8 -> 4,3,2,1,0,5,6,7,8</p></li>
+					</ul>
+				</li>
+				<li class="sameName"><p><strong>OrderMiddleToFront(int length)</strong><small>int[]</small>Returns the value array ordered from middle to front.</p></li>
+				<li>
+					<p><strong>OrderMiddleToFront(int index, int length)</strong><small>int</small>Returns the value of the index ordered from middle to front.</p>
+					<ul>
+						<li><p><strong>example</strong>0,1,2,3,4,5,6,7,8 -> 4,5,6,7,8,3,2,1,0</p></li>
+					</ul>
+				</li>
+				<li class="sameName"><p><strong>OrderMiddleToSidesBack(int length)</strong><small>int[]</small>Returns the value array ordered from middle to sides.(Back ahead)</p></li>
+				<li>
+					<p><strong>OrderMiddleToSidesBack(int index, int length)</strong><small>int</small>Returns the value of the index ordered from middle to sides.(Back ahead)</p>
+					<ul>
+						<li><p><strong>example</strong>0,1,2,3,4,5,6,7,8 -> 4,5,3,6,2,7,1,8,0</p></li>
+					</ul>
+				</li>
+				<li class="sameName"><p><strong>OrderMiddleToSidesFront(int length)</strong><small>int[]</small>Returns the value array ordered from middle to sides.(Front ahead)</p></li>
+				<li>
+					<p><strong>OrderMiddleToSidesFront(int index, int length)</strong><small>int</small>Returns the value of the index ordered from middle to sides.(Front ahead)</p>
+					<ul>
+						<li><p><strong>example</strong>0,1,2,3,4,5,6,7,8 -> 4,3,5,2,6,1,7,0,8</p></li>
+					</ul>
+				</li>
+				<li class="sameName"><p><strong>OrderSidesToMiddleBack(int length)</strong><small>int[]</small>Returns the value array ordered from sides to middle.(Back ahead)</p></li>
+				<li>
+					<p><strong>OrderSidesToMiddleBack(int index, int length)</strong><small>int</small>Returns the value of the index ordered from sides to middle.(Back ahead)</p>
+					<ul>
+						<li><p><strong>example</strong>0,1,2,3,4,5,6,7,8 -> 8,0,7,1,6,2,5,3,4</p></li>
+					</ul>
+				</li>
+				<li class="sameName"><p><strong>OrderSidesToMiddleFront(int length)</strong><small>int[]</small>Returns the value array ordered from sides to middle.(Front ahead)</p></li>
+				<li>
+					<p><strong>OrderSidesToMiddleFront(int index, int length)</strong><small>int</small>Returns the value of the index ordered from sides to middle.(Front ahead)</p>
+					<ul>
+						<li><p><strong>example</strong>0,1,2,3,4,5,6,7,8 -> 0,8,1,7,2,6,3,5,4</p></li>
+					</ul>
+				</li>	
+				<li class="sameName"><p><strong>Rank(int length, <a href="SortType.html" target="_blank">SortType</a> type)</strong><small>int[]</small>Returns the value array ranked by the sort type.</p></li>
+				<li><p><strong>Rank(int index, int length, <a href="SortType.html" target="_blank">SortType</a> type)</strong><small>int</small>Returns the value of the index ranked by the sort type.</p></li>
+				<li class="sameName"><p><strong>RankBackToFront(int length)</strong><small>int[]</small>Returns the value array ranked from back to front.</p></li>
+				<li>
+					<p><strong>RankBackToFront(int index, int length)</strong><small>int</small>Returns the value of the index ranked from back to front.</p>
+					<ul>
+						<li><p><strong>example</strong>0,1,2,3,4,5,6,7,8 -> 8,7,6,5,4,3,2,1,0</p></li>
+					</ul>
+				</li>
+				<li class="sameName"><p><strong>RankBackToMiddle(int length)</strong><small>int[]</small>Returns the value array ranked from back to middle.</p></li>
+				<li>
+					<p><strong>RankBackToMiddle(int index, int length)</strong><small>int</small>Returns the value of the index ranked from back to middle.</p>
+					<ul>
+						<li><p><strong>example</strong>0,1,2,3,4,5,6,7,8 -> 4,5,6,7,8,3,2,1,0</p></li>
+					</ul>
+				</li>
+				<li class="sameName"><p><strong>RankFrontToBack(int length)</strong><small>int[]</small>Returns the value array ranked from front to back.</p></li>
+				<li>
+					<p><strong>RankFrontToBack(int index, int length)</strong><small>int</small>Returns the value of the index ranked from front to back.</p>
+					<ul>
+						<li><p><strong>example</strong>0,1,2,3,4,5,6,7,8 -> 0,1,2,3,4,5,6,7,8</p></li>
+					</ul>
+				</li>
+				<li class="sameName"><p><strong>RankFrontToMiddle(int length)</strong><small>int[]</small>Returns the value array ranked from front to middle.</p></li>
+				<li>
+					<p><strong>RankFrontToMiddle(int index, int length)</strong><small>int</small>Returns the value of the index ranked from front to middle.</p>
+					<ul>
+						<li><p><strong>example</strong>0,1,2,3,4,5,6,7,8 -> 0,1,2,3,8,7,6,5,4</p></li>
+					</ul>
+				</li>
+				<li class="sameName"><p><strong>RankMiddleToBack(int length)</strong><small>int[]</small>Returns the value array ranked from middle to back.</p></li>
+				<li>
+					<p><strong>RankMiddleToBack(int index, int length)</strong><small>int</small>Returns the value of the index ranked from middle to back.</p>
+					<ul>
+						<li><p><strong>example</strong>0,1,2,3,4,5,6,7,8 -> 4,3,2,1,0,5,6,7,8</p></li>
+					</ul>
+				</li>
+				<li class="sameName"><p><strong>RankMiddleToFront(int length)</strong><small>int[]</small>Returns the value array ranked from middle to front.</p></li>
+				<li>
+					<p><strong>RankMiddleToFront(int index, int length)</strong><small>int</small>Returns the value of the index ranked from middle to front.</p>
+					<ul>
+						<li><p><strong>example</strong>0,1,2,3,4,5,6,7,8 -> 8,7,6,5,0,1,2,3,4</p></li>
+					</ul>
+				</li>
+				<li class="sameName"><p><strong>RankMiddleToSidesBack(int length)</strong><small>int[]</small>Returns the value array ranked from middle to sides.(Back ahead)</p></li>
+				<li>
+					<p><strong>RankMiddleToSidesBack(int index, int length)</strong><small>int</small>Returns the value of the index ranked from middle to sides.(Back ahead)</p>
+					<ul>
+						<li><p><strong>example</strong>0,1,2,3,4,5,6,7,8 -> 8,6,4,2,0,1,3,5,7</p></li>
+					</ul>
+				</li>
+				<li class="sameName"><p><strong>RankMiddleToSidesFront(int length)</strong><small>int[]</small>Returns the value array ranked from middle to sides.(Front ahead)</p></li>
+				<li>
+					<p><strong>RankMiddleToSidesFront(int index, int length)</strong><small>int</small>Returns the value of the index ranked from middle to sides.(Front ahead)</p>
+					<ul>
+						<li><p><strong>example</strong>0,1,2,3,4,5,6,7,8 -> 7,5,3,1,0,2,4,6,8</p></li>
+					</ul>
+				</li>
+				<li class="sameName"><p><strong>RankSidesToMiddleBack(int length)</strong><small>int[]</small>Returns the value array ranked from sides to middle.(Back ahead)</p></li>
+				<li>
+					<p><strong>RankSidesToMiddleBack(int index, int length)</strong><small>int</small>Returns the value of the index ranked from sides to middle.(Back ahead</p>
+					<ul>
+						<li><p><strong>example</strong>0,1,2,3,4,5,6,7,8 -> 1,3,5,7,8,6,4,2,0</p></li>
+					</ul>
+				</li>
+				<li class="sameName"><p><strong>RankSidesToMiddleFront(int length)</strong><small>int[]</small>Returns the value array ranked from sides to middle.(Front ahead)</p></li>
+				<li>
+					<p><strong>RankSidesToMiddleFront(int index, int length)</strong><small>int</small>Returns the value of the index ranked from sides to middle.(Front ahead)</p>
+					<ul>
+						<li><p><strong>example</strong>0,1,2,3,4,5,6,7,8 -> 0,2,4,6,8,7,5,3,1</p></li>
+					</ul>
+				</li>	
+			</ul>
+		</div>
+	</body>
+</html>

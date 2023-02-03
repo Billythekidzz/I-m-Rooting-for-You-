@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Preset - Animatext</title>
+		<link rel="stylesheet" type="text/css" href="../../Styles/Style.css" media="screen">
+		<link rel="shortcut icon" type="image/x-icon" href="../../Styles/Favicon.ico"/>
+	</head>
+	
+	<body>	
+		<iframe src="BaseManual.html"></iframe>		
+		<div class="content">	
+			<h1>Preset</h1>
+			<img src="../../Images/Preset.png">
+			
+			<h2>Category</h2>	
+		
+			<h3>Unit</h3>	
+			<p>Based on the units used, there are five preset categories: character, word, line, group and range.</p>					
+			<ul>
+				<li><p><strong>character</strong>Preset executed in visible characters.</p></li>
+				<li><p><strong>word</strong>Preset executed in words that are divided by word breaks. Word breaks include spaces(U+0020), no-break spaces(U+00A0), line feeds(U+000A), ideographic spaces(U+3000).
+				<li><p><strong>line</strong>Preset executed in lines that are divided by line breaks. Line breaks include line feeds(U+000A).</p></li>
+				<li><p><strong>group</strong>Preset executed in groups that are defined by using group tags.</p></li>
+				<li><p><strong>range</strong>Preset executed with the tag range as one unit.</p></li>
+			</ul>
+
+			<h3>Type</h3>	
+			<p>Presets can be divided into 3 types: transition, coherence and other.</p>		
+			<ul>
+				<li><p><strong>transition</strong>Presets of text transition effects.</p></li>
+				<li><p><strong>coherence</strong>Presets of continuous and coherent text effects.</p></li>
+				<li><p><strong>other</strong>Other presets.</p></li>
+			</ul>
+
+			<h3>Effect</h3>
+			<p>Based on their effects, there are eight preset categories: basic ,elastic, bounce, back, wave, fade, step, custom.</p>
+		
+			<h2>Parameter</h2>	
+			<ul>
+				<li><p><strong>tag</strong>The tag name of the preset.</p></li>
+				<li><p><strong>start interval</strong>The waiting time before executing the preset.</p></li>				
+				<li><p><strong>reverse</strong>Preset execution in reverse.</p></li>
+				<li>
+					<p><strong>sort type</strong>The order of unit execution, taking 0,1,2,3,4,5,6,7,8 as an example.</p>
+					<ul>
+						<li><p><small>Front To Back</small>0,1,2,3,4,5,6,7,8 - <small>Back To Front</small>8,7,6,5,4,3,2,1,0</p></li>
+						<li><p><small>Front to Middle</small>0,1,2,3,8,7,6,5,4 - <small>Middle To Front</small>4,5,6,7,8,3,2,1,0</p></li>
+						<li><p><small>Back To Middle</small>8,7,6,5,0,1,2,3,4 - <small>Middle To Back</small>4,3,2,1,0,5,6,7,8</p></li>
+						<li><p><small>Middle To Sides Front</small>4,3,5,2,6,1,7,0,8 - <small>Middle To Sides Back</small>4,5,3,6,2,7,1,8,0</p></li>
+						<li><p><small>Sides To Middle Front</small>0,8,1,7,2,6,3,5,4 - <small>Sides To Middle Back</small>8,0,7,1,6,2,5,3,4</p></li>
+					</ul>	
+				</li>
+				<li><p><strong>interval</strong>The interval between every two units.</p></li>	
+				<li><p><strong>anchor type</strong>The anchor type of the unit anchor.</p></li>	
+				<li><p><strong>anchor offset</strong>The offset of the unit anchor.</p></li>
+				<li><p><strong>easing type</strong>The easing type of the preset.</p></li>
+			</ul>
+			<h3>Loop</h3>
+			<ul>
+				<li><p><strong>loop count</strong>How many times the preset loops itself. It means infinite loop when it's value is less than or equal 0.</p></li>			
+				<li><p><strong>loop interval</strong>The interval between every two consecutive loops.</p></li>	
+				<li><p><strong>loop back interval</strong>The loop interval to execute the next loop.</p></li>	
+				<li><p><strong>pingpong loop</strong>Whether to execute the loop in a back-and-forth manner.</p></li>	
+				<li><p><strong>continuous loop</strong>Whether the unit loops continuously. "Yes" means the unit will loop continuously. "No" means the unit will wait for all other units to finish before starting its next loop.</p></li>		
+			</ul>
+			<h3>Transition</h3>
+			<ul>
+				<li><p><strong>fade mode</strong>The color blend mode of fade.</p></li>
+				<li><p><strong>fade range</strong>The progress range of fade.</p></li>
+			</ul>	
+			<h3>Coherence</h3>
+			<ul>
+				<li><p><strong>continuous easing</strong>Whether the easing is continuous. "Yes" means the easing value is from 0 to 1 and then from 1 to 0. "No" means the easing value is from 0 to 1 and then from -1 to 0.</p></li>	
+			</ul>
+			<h3>Elastic</h3>
+			<ul>
+				<li><p><strong>oscillations</strong>The number of full oscillations.</p></li>
+				<li><p><strong>stiffness</strong>The oscillation stiffness. The higher stiffness means the oscillation will reduce in intensity faster.</p></li>					
+			</ul>				
+			<h3>Bounce</h3>
+			<ul>
+				<li><p><strong>bounces</strong>The number of bounces.</p></li>
+				<li><p><strong>bounciness</strong>The degree of each bounce.</p></li>
+			</ul>	
+			<h3>Back</h3>
+			<ul>
+				<li><p><strong>amplitude</strong>The amplitude of back.</p></li>
+			</ul>				
+			<h3>Wave</h3>
+			<ul>
+				<li><p><strong>waves</strong>The number of waves.</p></li>
+			</ul>
+			<h3>Step</h3>
+			<ul>
+				<li><p><strong>steps</strong><small>int</small>The number of steps.</p></li>
+				<li><p><strong>stepType</strong><small><a href="StepType.html" target="_blank" >StepType</a></small>The calculation method of the step easing.</p></li>
+			</ul>
+		</div>		
+	</body>
+</html>

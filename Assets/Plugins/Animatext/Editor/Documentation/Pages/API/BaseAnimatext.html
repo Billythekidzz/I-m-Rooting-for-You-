@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>BaseAnimatext - Animatext</title>
+		<link rel="stylesheet" type="text/css" href="../../Styles/Style.css" media="screen">
+		<link rel="shortcut icon" type="image/x-icon" href="../../Styles/Favicon.ico"/>
+	</head>
+	
+	<body>	
+		<iframe src="BaseAPI.html"></iframe>	
+		<div class="content">
+			<h1>BaseAnimatext</h1>
+			
+			<h2>Info</h2>
+			<ul>
+				<li><p><strong>type</strong>Class</p></li>			
+				<li><p><strong>namespace</strong>Animatext</p></li>	
+				<li><p><strong>inheritance</strong><a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.html" target="_blank" >UnityEngine.MonoBehaviour</a></p></li>
+				<li><p><strong>executionOrder</strong>999</a></p></li>
+			</ul>
+			
+			<h2>Properties</h2>
+			<h3>Public</h3>
+			<ul>
+				<li><p><strong>effects</strong><small>List<<a href="Effect.html" target="_blank" >Effect</a>></small>The effect list.</p></li>
+				<li><p><strong>effectText</strong><small>string</small>The text containing the effect.</p></li>
+				<li><p><strong>inputText</strong><small>string</small>The text initially entered in the text component.</p></li>
+				<li><p><strong>isLocked</strong><small>bool</small>Whether the Animatext component is locked. New text will not be parsed if the Animatext component is locked.</p></li>
+				<li><p><strong>outputText</strong><small>string</small>The parsed text of the text component.</p></li>
+				<li><p><strong>parsedText</strong><small>string</small>The parsed text of the Animatext component.</p></li>
+				<li><p><strong>retainedText</strong><small>string</small>The retained text of the text component at runtime.</p></li>
+				<li><p><strong>settings</strong><small><a href="Settings.html" target="_blank" >Settings</a></small>The settings of the Animatext component.</p></li>
+				<li><p><strong>text</strong><small>string</small>The text of the text component.</p></li>
+			</ul>
+			<h3>Static Public</h3>
+			<ul>
+				<li><p><strong>version</strong><small>string</small>The version of Animatext.</p></li>
+			</ul>
+
+			<h2>Methods</h2>
+			<h3>Protected</h3>
+			<ul>
+				<li><p><strong>Awake()</strong><a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.html" target="_blank" >UnityEngine.MonoBehaviour</a>.Awake</p></li>
+				<li><p><strong>CheckTextDirty()</strong><small>bool</small>Check whether the text in the text component has been modified.</p></li>
+				<li><p><strong>Execute()</strong>Executes the text animations.</p></li>
+				<li><p><strong>ExtraExecute()</strong>Additionally executes the text animations. This method is called when the text animations will be executed again in the same frame.</p></li>
+				<li>
+					<p><strong>GetCharColors(int outputIndex)</strong><small>Color[]</small>Gets the color array of the character vertices.</p>
+					<ul>
+						<li><p><strong>outputIndex</strong>The character index of the output text.</p></li>
+					</ul>
+				</li>				
+				<li>
+					<p><strong>GetCharPositions(int outputIndex)</strong><small>Vector3[]</small>Gets the position array of the character vertices.</p>
+					<ul>
+						<li><p><strong>outputIndex</strong>The character index of the output text.</p></li>
+					</ul>
+				</li>
+				<li>
+					<p><strong>GetOriginText(string inputText)</strong><small>string</small>Gets the origin text of the text component.</p>
+					<ul>
+						<li><p><strong>inputText</strong>The text initially entered in the text component.</p></li>
+					</ul>
+				</li>
+				<li>
+					<p><strong>GetOutputTextInfo(string parsedText)</strong><small><a href="StringInfo.html" target="_blank" >StringInfo</a></small>Gets the parsed string information of the output text.</p>
+					<ul>
+						<li><p><strong>parsedText</strong>The parsed text of the Animatext component.</p></li>
+					</ul>
+				</li>
+				<li><p><strong>LateUpdate()</strong><a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.html" target="_blank" >UnityEngine.MonoBehaviour</a>.LateUpdate</p></li>
+				<li><p><strong>OnDestroy()</strong><a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.html" target="_blank" >UnityEngine.MonoBehaviour</a>.OnDestroy</p></li>
+				<li><p><strong>OnDisable()</strong><a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.html" target="_blank" >UnityEngine.MonoBehaviour</a>.OnDisable</p></li>
+				<li><p><strong>OnEnable()</strong><a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.html" target="_blank" >UnityEngine.MonoBehaviour</a>.OnEnable</p></li>
+				<li>
+					<p><strong>SetCharColors(int outputIndex, Color[] colors, Color[] originColors)</strong>Sets color array of the character vertices.</p>
+					<ul>
+						<li><p><strong>outputIndex</strong>The index of the output text.</p></li>
+						<li><p><strong>colors</strong>The current color array of the character vertices.</p></li>
+						<li><p><strong>originColors</strong>The origin color array of the character vertices.</p></li>
+					</ul>	
+				</li>				
+				<li>
+					<p><strong>SetCharPositions(int outputIndex, Vector3[] positions, Vector3[] originPositions)</strong>Sets position array of the character vertices.</p>
+					<ul>
+						<li><p><strong>outputIndex</strong>The index of the output text.</p></li>
+						<li><p><strong>positions</strong>The current position array of the character vertices.</p></li>
+						<li><p><strong>originPositions</strong>The origin position array of the character vertices.</p></li>
+					</ul>				
+				</li>
+				<li><p><strong>SetComponentDirty()</strong>Marks the text component as dirty.</p></li>
+				<li><p><strong>Start()</strong><a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.html" target="_blank" >UnityEngine.MonoBehaviour</a>.Start</p></li>
+				<li><p><strong>Update()</strong><a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.html" target="_blank" >UnityEngine.MonoBehaviour</a>.Update</p></li>
+				<li><p><strong>UpdateComponentData();</strong>Updates the text vertex data in the text component.</p></li>
+				<li><p><strong>UpdateData()</strong>Updates the text vertex data in the text information.</p></li>
+				<li><p><strong>UpdateInfo()</strong>Updates the text infomation in the Animatext component.</p></li>
+				<li><p><strong>UpdateText()</strong>Updates all the texts in the Animatext component.</p></li>
+			</ul>
+			<h3>Public</h3>
+			<ul>
+				<li><p><strong>EndEffect(int index)</strong>Ends the effect.</p></li>
+				<li><p><strong>EndEffects()</strong>Ends all the effects.</p></li>
+				<li><p><strong>LockText(string text)</strong>Locks the text of the Animatext component. The Animatext component is locked after using this method.</p></li>
+				<li><p><strong>PauseEffect(int index)</strong>Pauses the effect.</p></li>
+				<li><p><strong>PauseEffects()</strong>Pauses all the effects.</p></li>
+				<li><p><strong>PlayEffect(int index)</strong>Plays the effect.</p></li>
+				<li><p><strong>PlayEffects()</strong>Plays all the effects.</p></li>
+				<li>
+					<p><strong>Refresh(bool refreshEffects)</strong>Refreshes the Animatext component. The Animatext component is unlocked after using this method.</p>
+					<ul>
+						<li><p><strong>refreshEffects</strong>Whether to refresh the effects.</p></li>
+					</ul>					
+				</li>
+				<li><p><strong>RefreshEffect(int index)</strong>Refreshes the effect.</p></li>
+				<li><p><strong>RefreshEffects()</strong>Refreshes all the effects.</p></li>
+				<li><p><strong>SetEffectAutoPlay(int index, bool autoPlay)</strong>Sets the effect to play automatically.</p></li>
+				<li><p><strong>SetEffectsAutoPlay(bool autoPlay)</strong>Sets all the effects to play automatically.</p></li>
+				<li><p><strong>SetEffectAutoStart(int index, bool autoStart)</strong>Sets the effect to start automatically.</p></li>
+				<li><p><strong>SetEffectsAutoStart(bool autoStart)</strong>Sets all the effects to start automatically.</p></li>
+				<li><p><strong>SetEffectRefreshMode(int index, <a href="RefreshMode.html" target="_blank">RefreshMode</a> refreshMode)</strong>Sets the refresh mode of the effect.</p></li>
+				<li><p><strong>SetEffectsRefreshMode(<a href="RefreshMode.html" target="_blank">RefreshMode</a> refreshMode)</strong>Sets the refresh mode of all the effects.</p></li>
+				<li><p><strong>SetEffectSpeed(int index, float speed)</strong>Sets the speed of the effect.</p></li>
+				<li><p><strong>SetEffectsSpeed(float speed)</strong>Sets the speed of all the effects.</p></li>
+				<li><p><strong>SetEffectTime(int index, float time)</strong>Sets the time of the effect.</p></li>
+				<li><p><strong>SetEffectsTime(float time)</strong>Sets the time of all the effects.</p></li>
+				<li><p><strong>SetText(string text)</strong>Sets the text of the Animatext component. The Animatext component is unlocked after using this method.</p></li>
+				<li><p><strong>StartEffect(int index)</strong>Starts the effect.</p></li>
+				<li><p><strong>StartEffects()</strong>Starts all the effects.</p></li>
+				<li><p><strong>StopEffect(int index)</strong>Stops the effect.</p></li>
+				<li><p><strong>StopEffects()</strong>Stops all the effects.</p></li>
+			</ul>
+		</div>
+	</body>
+</html>

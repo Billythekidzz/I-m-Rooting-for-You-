@@ -185,17 +185,25 @@ public class DialogueManager : MonoBehaviour
                 case "audio":
                     PlayAudio(param);
                     break;
+                case "background":
+                    ChangeBackground(param);
+                    break;
                 case "color":
                     SetTextColor(param);
                     break;
                 case "character":
                     SetCharacter(param);
                     break;
-                case "background":
-                    ChangeBackground(param);
+                case "text_speed":
+                    SetTextSpeed(param);
                     break;
             }
         }
+    }
+
+    private void SetTextSpeed(string param)
+    {
+        throw new NotImplementedException();
     }
 
     private void PlayAudio(string param)

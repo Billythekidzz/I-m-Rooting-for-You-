@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Integration - Animatext</title>
+		<link rel="stylesheet" type="text/css" href="../../Styles/Style.css" media="screen">
+		<link rel="shortcut icon" type="image/x-icon" href="../../Styles/Favicon.ico"/>
+	</head>
+	
+	<body>	
+		<iframe src="BaseManual.html"></iframe>	
+		<div class="content">
+			<h1>Integration</h1>
+
+			<h2>Dialogue System for Unity<small class="links"><a href="https://assetstore.unity.com/packages/tools/ai/dialogue-system-for-unity-11672" target="_blank">Unity Asset Store</a><span class="separator">/</span><a href="https://www.pixelcrushers.com/dialogue-system/" target="_blank">Website</a></small></h2>
+			<ul>
+				<li>Add the Animatext component to the GameObject of the text component.</li>
+				<li>Add the Animatext tags into the dialogue text.</li>					
+				<li>Remove the built-in typewriter effect of the dialogue system.</li>
+			</ul>
+			
+			<h2>PlayMaker<small class="links"><a href="https://assetstore.unity.com/packages/tools/visual-scripting/playmaker-368" target="_blank">Unity Asset Store</a><span class="separator">/</span><a href="http://www.hutonggames.com/" target="_blank">Website</a></small></h2>
+			<ul>
+				<li>Import the "PlayMaker" package in the "Plugins -> Animatext -> Packages" folder.</li>
+				<li>Add the actions in PlayMaker Action Browser.</li>
+			</ul>
+			<h3>Action List</h3>
+			<table>
+				<tbody>
+					<tr><th>Name</th><th>Description</th><th>Name</th><th>Description</th></tr>
+					<tr><td>SetText</td><td>Sets the text of the Animatext component.</td><td>Refresh</td><td>Refreshes the Animatext component.</td></tr>
+					<tr><td>LockText</td><td>Locks the text of the Animatext component.</td><td>SetLocked</td><td>Sets the locked state of the Animatext component.</td></tr>
+					<tr><td>GetComponentText</td><td>Gets the text of the text component.</td><td>SetComponentText</td><td>Sets the text of the text component.</td></tr>
+					<tr><td>AddEffect</td><td>Adds an effect.</td><td>RemoveEffect</td><td>Removes the effect.</td></tr>
+					<tr><td>RefreshEffect</td><td>Refreshes the effect.</td><td>RefreshEffects</td><td>Refreshes all the effects.</td></tr>
+					<tr><td>SetEffectAutoPlay</td><td>Sets the effect to play automatically.</td><td>SetEffectsAutoPlay</td><td>Sets all the effects to play automatically.</td></tr>
+					<tr><td>SetEffectAutoStart</td><td>Sets the effect to start automatically.</td><td>SetEffectsAutoStart</td><td>Sets all the effects to start automatically.</td></tr>
+					<tr><td>SetEffectRefreshMode</td><td>Sets the refresh mode of the effect.</td><td>SetEffectsRefreshMode</td><td>Sets the refresh mode of all the effects.</td></tr>
+					<tr><td>SetEffectSpeed</td><td>Sets the speed of the effect.</td><td>SetEffectsSpeed</td><td>Sets the speed of all the effects.</td></tr>
+					<tr><td>SetEffectState</td><td>Sets the state of the effect.</td><td>SetEffectsState</td><td>Sets the state of all the effects.</td></tr>
+					<tr><td>SetEffectTime</td><td>Sets the time of the effect.</td><td>SetEffectsTime</td><td>Sets the time of all the effects.</td></tr>
+				</tbody>
+			</table>
+
+			<h2>Quest Machine<small class="links"><a href="https://assetstore.unity.com/packages/tools/game-toolkits/quest-machine-39834" target="_blank">Unity Asset Store</a><span class="separator">/</span><a href="https://www.pixelcrushers.com/quest-machine/" target="_blank">Website</a></small></h2>
+			<ul>
+				<li>Add the Animatext component to the GameObject of the text template.</li>
+				<li>Add the Animatext tags into the quest text.</li>
+			</ul>
+
+			<h2>Yarn Spinner<small class="links"><a href="https://github.com/YarnSpinnerTool/YarnSpinner-Unity" target="_blank">Github</a><span class="separator">/</span><a href="https://yarnspinner.dev/" target="_blank">Website</a></small></h2>
+			<ul>
+				<li>Add the Animatext component to the GameObject of the text component.</li>
+				<li>Add the Animatext tags into the dialogue text.</li>
+				<li>Set text speed to 0 in the "DialogueUI" component.</li>
+			</ul>
+					
+			<h2>Other Integration</h2>
+			<p>Pay attention to the following before using other third-party plug-ins:</p>
+			<ul>
+				<li><p><b>Turn off the built-in text effects in other third-party plug-ins.</b></p></li>
+				<p>Animatext uses an independent effect computation method, which is not compatible with the text effects of most other third-party plug-ins.</p>
+				<p>Before using Animatext, turn off the text effects of other third-party plug-ins.</p>
+				<li><p><b>Turn off the function of modifying the text in other third-party plug-ins.</b></p></li>
+				<p>The text effects in Animatext are to be analyzed based on the text in the text component. Modifying the text in the text component may cause the text effect to be abnormal.</p>
+				<p>Prior to operation of Animatext, turn off the function of modifying the text in other third-party plug-ins.</p>
+				<p>Example: the commonly used typewriter function in the dialogue plug-in will modify the text in the component.</p>
+				<p>To use this type of plug-ins, turn off the typewriter function or write all the text at once.</p>
+				<li><p><b>Avoid tag conflicts.</b></p></li>		
+				<p>If there is any conflict between Animatext default tags and third-party plug-in functions, the tag symbols and marker symbols in Settings may be modified.</p>
+			</ul>
+			<p>If you have any questions about the use of third-party plug-ins, please contact us!</p>
+		</div>
+	</body>
+</html>
