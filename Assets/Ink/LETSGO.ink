@@ -51,9 +51,11 @@
 		
 === sheriff_beefroot ===
 # Sheriff Beefroot
+# background VEGE_FOREST
 - Howdy Partner! Welcome to Vege Town y’all! My name’s Beefroot, and I’m the Sherriff ‘round these parts. So you best be keepin’ on your best behaviour or I’ll be the one to have to come and *beet* you up. Haha just kiddin’ sugar pie.  
     * [H-holy smokes, it’s Sherriff Beefroot! That well-defined shape… that succulent stem… mmmmmfgffsdgff]
     #character You
+    #background BEEFROOT_TEST
     Howdy Sherriff, it’s a pleasure to beet you! What is there to do around here? 
     * [Where can I go to find some peas and quiet around here?]
     #audio objection

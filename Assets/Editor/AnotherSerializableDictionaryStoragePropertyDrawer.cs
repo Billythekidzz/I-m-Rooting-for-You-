@@ -5,4 +5,5 @@ using UnityEngine;
 public class AnotherSerializableDictionaryStoragePropertyDrawer : SerializableDictionaryStoragePropertyDrawer { }
 
 [CustomPropertyDrawer(typeof(StringAudioClipListDictionary))]
+[CustomPropertyDrawer(typeof(StringTexture2DDictionary))]
 public class AnotherSerializableDictionaryPropertyDrawer : SerializableDictionaryPropertyDrawer { }

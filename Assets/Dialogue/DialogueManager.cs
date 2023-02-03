@@ -191,6 +191,9 @@ public class DialogueManager : MonoBehaviour
                 case "character":
                     SetCharacter(param);
                     break;
+                case "background":
+                    ChangeBackground(param);
+                    break;
             }
         }
     }
@@ -198,6 +201,11 @@ public class DialogueManager : MonoBehaviour
     private void PlayAudio(string param)
     {
         AudioManager.Instance.PlaySound(param);
+    }
+
+    void ChangeBackground(string param)
+    {
+        BackgroundImageManager.Instance.ChangeBackground(param);
     }
 
     void SetCharacter(string _character)
