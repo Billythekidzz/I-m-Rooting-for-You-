@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Ink.Runtime;
 using System;
+using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -18,8 +19,8 @@ public class DialogueManager : MonoBehaviour
     //[Inject]
     //Story story;
 
-    Text nametag;
-    Text message;
+    TextMeshProUGUI nametag;
+    TextMeshProUGUI message;
     List<string> tags;
     static Choice choiceSelected;
 
@@ -27,8 +28,8 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         story = new Story(inkFile.text);
-        nametag = textBox.transform.GetChild(0).GetComponent<Text>();
-        message = textBox.transform.GetChild(1).GetComponent<Text>();
+        nametag = textBox.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        message = textBox.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
         tags = new List<string>();
         choiceSelected = null;
         //story.ChoosePathString("mysterious_fisherman");
