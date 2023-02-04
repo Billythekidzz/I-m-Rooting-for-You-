@@ -8,18 +8,6 @@ using System;
 public class GingerKaleMinigame : Minigame
 {
 
-    [Serializable]
-    public struct FloatRange
-    {
-        public float min;
-        public float max;
-
-        public bool Test(float value)
-        {
-            return min <= value && value <= max;
-        }
-    }
-
     [SerializeField]
     Slider slider;
 
@@ -27,19 +15,25 @@ public class GingerKaleMinigame : Minigame
     float fillSpeed = 1.0f;
 
     [SerializeField]
-    FloatRange targetRange;
-    
+    float minFill = 0.97f;
 
     private bool isFilling = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	private void OnEnable()
+	{
+        StartGame();
+	}
 
-    // Update is called once per frame
-    void Update()
+	private void OnDisable()
+	{
+        if (IsGameActive)
+		{
+            EndGame(false);
+        }
+	}
+
+	// Update is called once per frame
+	void Update()
     {
         if (isFilling)
 		{
@@ -49,6 +43,12 @@ public class GingerKaleMinigame : Minigame
 
     public void OnPushAction(InputAction.CallbackContext context)
 	{
+
+        if (!IsGameActive)
+		{
+            return;
+		}
+
         if (context.phase == InputActionPhase.Started)
 		{
             isFilling = true;
@@ -63,11 +63,17 @@ public class GingerKaleMinigame : Minigame
 
     private void StopFilling()
 	{
-        if (targetRange.Test(slider.value))
+        if (slider.value >= minFill)
 		{
             EndGame(true);
+            
+		} else if (slider.value >= 0.1f)
+		{
+            EndGame(false);
 		}
-	}
+
+        Debug.Log($"value = {slider.value}");
+    }
 
     private void FillBarOnce()
 	{
