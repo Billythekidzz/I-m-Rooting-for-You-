@@ -1,9 +1,9 @@
 using UnityEditor;
 using UnityEngine;
 
-[CustomPropertyDrawer(typeof(AudioClipListStorage))]
+[CustomPropertyDrawer(typeof(AudioElementListStorage))]
 public class AnotherSerializableDictionaryStoragePropertyDrawer : SerializableDictionaryStoragePropertyDrawer { }
 
-[CustomPropertyDrawer(typeof(StringAudioClipListDictionary))]
+[CustomPropertyDrawer(typeof(StringAudioElementListDictionary))]
 [CustomPropertyDrawer(typeof(StringTexture2DDictionary))]
 public class AnotherSerializableDictionaryPropertyDrawer : SerializableDictionaryPropertyDrawer { }

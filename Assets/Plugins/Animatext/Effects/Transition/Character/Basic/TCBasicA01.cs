@@ -2,6 +2,7 @@
 
 #pragma warning disable IDE0090
 
+using System;
 using UnityEngine;
 
 namespace Animatext.Effects
@@ -57,6 +58,10 @@ namespace Animatext.Effects
                     characters[i].Move(position * progress);
                 }
             }
+            if(GetCurrentProgress(SortUtility.Rank(characterCount - 1, characterCount, sortType)) == 1.0f)
+            {
+                effect.End();
+            } 
         }
     }
 }

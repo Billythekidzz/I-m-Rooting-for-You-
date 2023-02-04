@@ -34,6 +34,11 @@ public class DialogueManager : MonoBehaviour
 
     Coroutine typeSentenceCoroutine;
 
+    string lastSavedCharacterKey = "";
+
+    [SerializeField]
+    float speakAudioWaitDelay = 0.5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,7 +64,7 @@ public class DialogueManager : MonoBehaviour
     public void SetThenTryDialogue(string path)
     {
         story.ChoosePathString(path);
-        nametag.text = story.TagsForContentAtPath(path)[0];
+        SetCharacter(story.TagsForContentAtPath(path)[0]);
         TryDialogue();
     }
 
@@ -86,6 +91,20 @@ public class DialogueManager : MonoBehaviour
                 sentenceBeingTypedOut = message.text;
             }
         }
+
+        if(isTalking && (messageAnimaTextTMPro.effects[0].state == EffectState.End
+                || messageAnimaTextTMPro.effects[0].state == EffectState.Stop))
+        {
+            isTalking = false;
+            if(typeSentenceCoroutine != null)
+            {
+                StopCoroutine(typeSentenceCoroutine);
+            }
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            Debug.Log(messageAnimaTextTMPro.effects[0].state);
+        }
     }
 
     void TryDialogue()
@@ -94,16 +113,8 @@ public class DialogueManager : MonoBehaviour
         if (story.canContinue)
         {
             //nametag.text = story.TagsForContentAtPath("mysterious_fisherman")[0];
-
             textBox.SetActive(true);
             AdvanceDialogue();
-            /*
-            //Are there any choices?
-            if (story.currentChoices.Count != 0)
-            {
-                StartCoroutine(ShowChoices());
-            }
-            */
         }
         else
         {
@@ -124,31 +135,21 @@ public class DialogueManager : MonoBehaviour
         string currentSentence = story.Continue();
         ParseTags();
         StopAllCoroutines();
-        typeSentenceCoroutine = StartCoroutine(TypeSentence(currentSentence));
+        sentenceBeingTypedOut = currentSentence;
+        typeSentenceCoroutine = StartCoroutine(TypeSentence());
+        message.text = currentSentence;
         if (story.currentChoices.Count != 0)
         {
             StartCoroutine(ShowChoices());
         }
     }
 
-    // Type out the sentence letter by letter and make character idle if they were talking
-    IEnumerator TypeSentence(string sentence)
+    IEnumerator TypeSentence()
     {
-        sentenceBeingTypedOut = sentence;
-        message.text = "";
-        foreach (char letter in sentence.ToCharArray())
-        {
-            message.text += letter;
-            yield return null;
-        }
-        /*
-        CharacterScript tempSpeaker = GameObject.FindObjectOfType<CharacterScript>();
-        if (tempSpeaker.isTalking)
-        {
-            SetAnimation("idle");
-        }
-        */
-        yield return null;
+        AudioElement audioElement = AudioManager.Instance.PlaySound(lastSavedCharacterKey);
+        yield return new WaitForSeconds(audioElement == null ? speakAudioWaitDelay : audioElement.delay);
+        isTalking = true;
+        typeSentenceCoroutine = StartCoroutine(TypeSentence());
     }
 
     // Create then show the choices on the screen until one got selected
@@ -216,11 +217,11 @@ public class DialogueManager : MonoBehaviour
                 case "background":
                     ChangeBackground(param);
                     break;
-                case "color":
-                    SetTextColor(param);
-                    break;
                 case "character":
                     SetCharacter(param);
+                    break;
+                case "color":
+                    SetTextColor(param);
                     break;
                 case "text_speed":
                     SetTextSpeed(param);
@@ -249,6 +250,7 @@ public class DialogueManager : MonoBehaviour
 
     void SetCharacter(string _character)
     {
+        lastSavedCharacterKey = _character;
         nametag.text = _character;
         //Maybe set talking audio as well?
     }

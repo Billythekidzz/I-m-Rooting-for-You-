@@ -14,7 +14,7 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance;
 
     [SerializeField]
-    StringAudioClipListDictionary stringAudioClipDictionary;
+    StringAudioElementListDictionary stringAudioClipDictionary;
 
     void Awake()
     {
@@ -29,21 +29,33 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlaySound(string audioKey)
+    public AudioElement PlaySound(string audioKey)
     {
-        if(stringAudioClipDictionary.TryGetValue(audioKey, out List<AudioClip> value))
+        if(stringAudioClipDictionary.TryGetValue(audioKey, out List<AudioElement> value))
         {
-            //Just play the first for now
-            sfxSource.PlayOneShot(value[0]);
+            int indexToUse = UnityEngine.Random.Range(0, value.Count);
+            sfxSource.PlayOneShot(value[indexToUse].audioClip, value[indexToUse].volume);
+            return value[indexToUse];
         }
+        return null;
     }
 }
 
 [Serializable]
-public class AudioClipListStorage : SerializableDictionary.Storage<List<AudioClip>>
+public class AudioElement
+{
+    public AudioClip audioClip;
+    public float volume = 1.0f;
+    public float delay = 0.5f;
+}
+
+
+[Serializable]
+public class AudioElementListStorage : SerializableDictionary.Storage<List<AudioElement>>
 { }
 
 [Serializable]
-public class StringAudioClipListDictionary : SerializableDictionary<string,
-List<AudioClip>, AudioClipListStorage>
+public class StringAudioElementListDictionary : SerializableDictionary<string,
+List<AudioElement>, AudioElementListStorage>
 { }
+
