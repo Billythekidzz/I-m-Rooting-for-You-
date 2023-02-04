@@ -49,6 +49,23 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     string startingPath = "Preamble";
 
+
+    public static DialogueManager Instance;
+
+    void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(this);
+
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,13 +80,25 @@ public class DialogueManager : MonoBehaviour
         choiceSelected = null;
         //story.ChoosePathString("mysterious_fisherman");
         //       TryDialogue();
-        StartCoroutine(WaitThenSetThenTryDialogue(startingPath));
     }
 
-    IEnumerator WaitThenSetThenTryDialogue(string dialogue)
+    public void StartNewGame()
     {
-        yield return new WaitForSeconds(0.0f);
-        SetThenTryDialogue(dialogue);
+        SetThenTryDialogue(startingPath);
+    }
+
+    public void RestartAndLoadPath(string path)
+    {
+        story = new Story(inkFile.text);
+        messageAnimaTextTMPro.SetEffectSpeed(0, defaultTextSpeed);
+        messageAnimaTextTMPro.SetEffectSpeed(1, defaultTextSpeed);
+        choiceSelected = null;
+        if (typeSentenceCoroutine != null)
+        {
+            StopCoroutine(typeSentenceCoroutine);
+        }
+        messageAnimaTextTMPro.StopEffect(0);
+        SetThenTryDialogue(path);
     }
 
     private void TriggerDialogs(string inklePath)
@@ -84,7 +113,6 @@ public class DialogueManager : MonoBehaviour
         {
             SetCharacter(story.TagsForContentAtPath(path)[0]);
         }
-        GameStateManager.Instance.currentPath = path;
         TryDialogue();
     }
 
@@ -278,8 +306,16 @@ public class DialogueManager : MonoBehaviour
                 case "add_affinity":
                     AddAffinity(param);
                     break;
+                case "savepoint":
+                    SetSavePoint(param);
+                    break;
             }
         }
+    }
+
+    private void SetSavePoint(string param)
+    {
+        GameStateManager.Instance.SetSavePoint(param);
     }
 
     private void SetEmotion(string param)

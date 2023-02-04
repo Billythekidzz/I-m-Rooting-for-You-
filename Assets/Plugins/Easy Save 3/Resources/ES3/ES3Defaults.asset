@@ -30,22 +30,10 @@ MonoBehaviour:
     serializationDepthLimit: 64
     assemblyNames:
     - Assembly-CSharp-firstpass
-    - Zenject
+    - Ink-Libraries
     - Assembly-CSharp
-    - LeTai.TranslucentImage.Demo
-    - Zenject-IntegrationTests
-    - Cinemachine
-    - CFXRDemo
-    - LeTai.TranslucentImage
-    - CFXRRuntime
-    - LeTai.TranslucentImage.UniversalRP
-    - LoadingScreen.Misc
-    - KinoBloom.Runtime
     - PsdPlugin
-    - CFXREditor
-    - LeTai.TranslucentImage.Editor
-    - Zenject-TestFramework
-    - ToonyColorsPro.Demo.Editor
+    - InkEditor
     showAdvancedSettings: 1
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1

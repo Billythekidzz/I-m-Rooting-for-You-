@@ -1,16 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using DG.Tweening;
+using TMPro;
 
 public class GameStateManager : MonoBehaviour
 {
 
     [HideInInspector]
     public string lastSavedCharacterKey = "";
-
-    [HideInInspector]
-    public string currentPath = "";
 
     [HideInInspector]
     public bool isDialogueSkippable = true;
@@ -25,8 +25,17 @@ public class GameStateManager : MonoBehaviour
 
     public List<SaveState> saveStates;
 
+    public SaveState saveStateToSave = new SaveState();
+
     [SerializeField]
     GameObject optionsPanel;
+
+    [SerializeField]
+    RectTransform optionsPanelTooltip;
+
+    Tween tween;
+    Tween tween2;
+    Tween tween3;
 
     void Awake()
     {
@@ -39,7 +48,7 @@ public class GameStateManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(this);
             var es3File = new ES3File("SaveStates.es3");
-            saveStates = es3File.Load<List<SaveState>>("saveStates", new List<SaveState>() 
+            saveStates = es3File.Load<List<SaveState>>("saveStates", new List<SaveState>()
             {
                 new SaveState(),
                 new SaveState(),
@@ -58,7 +67,31 @@ public class GameStateManager : MonoBehaviour
 
     public void ToggleOptionsPanel()
     {
-        optionsPanel.SetActive(!optionsPanel.activeSelf);
+        if (optionsPanel.activeSelf)
+        {
+            tween?.Kill();
+            tween2?.Kill();
+            tween3?.Kill();
+            tween = optionsPanel.GetComponent<RectTransform>().DOAnchorPos(new Vector3(0, -1358, 0), 0.5f).SetEase(Ease.InBack)
+                .OnComplete(() =>
+                {
+                    optionsPanel.SetActive(false);
+                });
+            Color color = optionsPanelTooltip.GetComponent<TextMeshProUGUI>().color;
+            color.a = 1.0f;
+            optionsPanelTooltip.GetComponent<TextMeshProUGUI>().color = color;
+            tween3 = optionsPanelTooltip.GetComponent<TextMeshProUGUI>().DOFade(0.3f, 0.5f).SetDelay(1.0f);
+            tween2 = optionsPanelTooltip.GetComponent<RectTransform>().DOAnchorPos(new Vector3(0, -125, 0), 1.0f).SetEase(Ease.OutBack);
+        }
+        else
+        {
+            optionsPanel.SetActive(true);
+            tween?.Kill();
+            tween2?.Kill();
+            tween = optionsPanel.GetComponent<RectTransform>().DOAnchorPos(new Vector3(0, -258, 0), 0.5f).SetEase(Ease.OutBack);
+            tween2 = optionsPanelTooltip.GetComponent<RectTransform>().DOAnchorPos(new Vector3(0, -14, 0), 0.5f).SetEase(Ease.OutBack);
+        }
+        AudioManager.Instance.PlaySound("OPTIONS_PANEL");
     }
 
     public void SetCharacter(string characterKeyToSet)
@@ -100,27 +133,43 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
+    public void SetSavePoint(string savePointPath)
+    {
+        saveStateToSave = new SaveState()
+        {
+            lastSavedPath = savePointPath,
+            characterAffections = new Dictionary<string, int>(characterAffections)
+        };
+    }
+
+
     public void SaveGameState(int index)
     {
-        //tbd, for saving to local file with easysave
-        SaveState saveState = new SaveState()
-        {
-            lastSavedPath = currentPath,
-            lastSavedCharacterKey = lastSavedCharacterKey,
-            isDialogueSkippable = isDialogueSkippable,
-            wasLastSpeakerMC = wasLastSpeakerMC,
-            characterAffections = characterAffections
-        };
-
-        saveStates[index] = saveState;
+        saveStates[index] = saveStateToSave;
         var es3File = new ES3File("SaveStates.es3");
         es3File.Save<List<SaveState>>("saveStates", saveStates);
         es3File.Sync();
     }
 
+    public void LoadGameState(int saveIndex)
+    {
+        isDialogueSkippable = true;
+        lastSavedCharacterKey = "";
+        SaveState saveStateToLoad = saveStates[saveIndex];
+        characterAffections = new Dictionary<string, int>(saveStateToLoad.characterAffections);
+        DialogueManager.Instance.RestartAndLoadPath(saveStateToLoad.lastSavedPath);
+        ToggleOptionsPanel();
+    }
+
     public bool IsOptionsOpen()
     {
         return optionsPanel.activeSelf;
+    }
+
+    public void StartNewGame()
+    {
+        DialogueManager.Instance.StartNewGame();
+        ToggleOptionsPanel();
     }
 
     public class SaveState

@@ -51,6 +51,7 @@
 === Preamble ===
 # Character MC_THOUGHTS
 # Background BLACK
+# savepoint Preamble
 “There cannot be enduring peace, prosperity, equality and brotherhood in this world if our aims are so separate and divergent, if we do not accept that in the end we are people, all alike, sharing the Earth among ourselves and also with other sentient beings, all of whom have an equal role and stake in the state of this planet and its players.” - Jigme Khesar Namgyel Wangchuck
 # music CAR_DRIVING
 Life is full of unexpected twists and surprises, things that might seem impossible now might be completely normal in the future.
@@ -94,6 +95,7 @@ I took a deep breath and thought to myself that it will be fine, the industrial 
 # Background INDOORS_DAY
 # audio DOOR_OPEN_1
 # music AMBIENT_INDOORS_1
+# savepoint meeting_the_vegetables
 I entered the house and chucked my luggage in my new room, and took a walk around the house.
 Surprisingly, for a house that had been abandoned for over a month it was in pristine condition, all of the surfaces were dustless, the bathroom and toilet were cleaned and the floor had been mopped.
 Perhaps cleaners had been in recently to prepare the home for me, but I wasn’t aware of any cleaners that my parents had booked.
@@ -147,6 +149,7 @@ I had taken a long drive, and it was late at night, so I turned around, shut the
 
 === day_1 ===
 # music DAY_START
+# savepoint day_1
 DAY 1
 #text_speed 1.0
 # Background INDOORS_DAY
@@ -223,6 +226,7 @@ Sound good partner? Righto then, let’s go check out Alonion’s Jewelry Store!
 # audio DOOR_OPEN_2
 # music TAVERN_1
 # Character BEEFROOT
+# savepoint vegetown_tavern
 This here partner is Ginger, she runs the tavern. She sells the best ginger kale in all the land. 
 # emote neutral2
 I’d suggest being very...
@@ -257,6 +261,7 @@ Rabbit got your stem?
     # Character MC
     O_O
     * * [B-but, where would I even take a talking vegetable??]
+    # Character MC
     B-but, where would I even take a talking vegetable??
     # Character GINGER
     #emote happy
@@ -307,6 +312,7 @@ Rabbit got your stem?
 # audio DOOR_OPEN_1
 # music JEWELLERY_1
 # Character BEEFROOT
+# savepoint jewellery_store
 This here is Alonion. Be careful talking to her. She is, how do I say this… Very easy to startle. 
 - -> vegetown_tavern
 
