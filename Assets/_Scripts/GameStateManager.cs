@@ -20,6 +20,9 @@ public class GameStateManager : MonoBehaviour
 
     public Dictionary<string, int> characterAffections = new Dictionary<string, int>();
 
+    [SerializeField]
+    GameObject optionsPanel;
+
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -32,6 +35,19 @@ public class GameStateManager : MonoBehaviour
             DontDestroyOnLoad(this);
 
         }
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            ToggleOptionsPanel();
+        }
+    }
+
+    public void ToggleOptionsPanel()
+    {
+        optionsPanel.SetActive(!optionsPanel.activeSelf);
     }
 
     public void SetCharacter(string characterKeyToSet)
@@ -76,5 +92,10 @@ public class GameStateManager : MonoBehaviour
     public void SaveGameState()
     {
         //tbd, for saving to local file with easysave
+    }
+
+    public bool IsOptionsOpen()
+    {
+        return optionsPanel.activeSelf;
     }
 }

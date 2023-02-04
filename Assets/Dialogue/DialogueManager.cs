@@ -90,7 +90,7 @@ public class DialogueManager : MonoBehaviour
     public void OnNextAction(InputAction.CallbackContext context)
 	{
 
-        if (!textBox.activeSelf || context.phase != InputActionPhase.Started)
+        if (!textBox.activeSelf || context.phase != InputActionPhase.Started || GameStateManager.Instance.IsOptionsOpen())
 		{
             return;
 		}

@@ -19,6 +19,15 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     StringAudioElementListDictionary stringAudioClipDictionary;
 
+    [HideInInspector]
+    public float sfxVolume = 0.2f;
+
+    [HideInInspector]
+    public float musicVolume = 0.5f;
+
+    [HideInInspector]
+    public float masterVolume = 0.5f;
+
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -30,6 +39,30 @@ public class AudioManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(this);
         }
+    }
+
+    public void SetSFXVolume(float arg0)
+    {
+        sfxVolume = arg0;
+        RefreshAudioVolume();
+    }
+
+    public void SetMusicVolume(float arg0)
+    {
+        musicVolume = arg0;
+        RefreshAudioVolume();
+    }
+
+    public void SetMasterVolume(float arg0)
+    {
+        masterVolume = arg0;
+        RefreshAudioVolume();
+    }
+
+    public void RefreshAudioVolume()
+    {
+        sfxSource.volume = sfxVolume * (masterVolume * 2);
+        musicSource.volume = musicVolume * (masterVolume * 2);
     }
 
     public AudioElement PlaySound(string audioKey)
