@@ -168,7 +168,7 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator TypeSentence()
     {
-        AudioElement audioElement = AudioManager.Instance.PlaySound(GameStateManager.Instance.lastSavedCharacterKey);
+        AudioElement audioElement = AudioManager.Instance.PlaySound(GameStateManager.Instance.wasLastSpeakerMC ? "MC_THOUGHTS" : GameStateManager.Instance.lastSavedCharacterKey);
         yield return new WaitForSeconds(audioElement == null ? speakAudioWaitDelay : audioElement.delay);
         isTalking = true;
         typeSentenceCoroutine = StartCoroutine(TypeSentence());
@@ -197,7 +197,10 @@ public class DialogueManager : MonoBehaviour
         });
         _isSelectingChoice = false;
 
-        currentlyPlaying.gameObject.SetActive(false);
+        if (currentlyPlaying && currentlyPlaying.gameObject)
+        {
+            currentlyPlaying.gameObject.SetActive(false);
+        }
         currentlyPlaying = null;
 
         AdvanceFromDecision();
