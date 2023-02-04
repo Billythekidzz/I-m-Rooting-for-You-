@@ -624,12 +624,56 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3553313570170523486, guid: a7705b3a37552344ca010b247e8d5d93, type: 3}
+      propertyPath: m_DefaultActionMap
+      value: Input
+      objectReference: {fileID: 0}
+    - target: {fileID: 3553313570170523486, guid: a7705b3a37552344ca010b247e8d5d93, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3553313570170523486, guid: a7705b3a37552344ca010b247e8d5d93, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionId
+      value: c451a4bd-14b5-408e-92a1-aa3ae743c467
+      objectReference: {fileID: 0}
+    - target: {fileID: 3553313570170523486, guid: a7705b3a37552344ca010b247e8d5d93, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionName
+      value: Input/nextDialogue[/Mouse/leftButton,/Keyboard/f,/Keyboard/space,/XInputControllerWindows/buttonEast]
+      objectReference: {fileID: 0}
+    - target: {fileID: 3553313570170523486, guid: a7705b3a37552344ca010b247e8d5d93, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3553313570170523486, guid: a7705b3a37552344ca010b247e8d5d93, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3553313570170523486, guid: a7705b3a37552344ca010b247e8d5d93, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1008550481}
     - target: {fileID: 3553313570170523486, guid: a7705b3a37552344ca010b247e8d5d93, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1602929381}
+    - target: {fileID: 3553313570170523486, guid: a7705b3a37552344ca010b247e8d5d93, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3553313570170523486, guid: a7705b3a37552344ca010b247e8d5d93, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnPushAction
+      objectReference: {fileID: 0}
+    - target: {fileID: 3553313570170523486, guid: a7705b3a37552344ca010b247e8d5d93, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnNextAction
+      objectReference: {fileID: 0}
+    - target: {fileID: 3553313570170523486, guid: a7705b3a37552344ca010b247e8d5d93, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DialogueManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3553313570170523486, guid: a7705b3a37552344ca010b247e8d5d93, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3553313570170523487, guid: a7705b3a37552344ca010b247e8d5d93, type: 3}
       propertyPath: m_Name
@@ -1115,6 +1159,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1602929381 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5885689506753852345, guid: 735299e6bc477394ea679dd35b7c2b5e, type: 3}
+  m_PrefabInstance: {fileID: 572361037}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 301d0369b6344c44c95eb61eb786dbb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1849647103 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8875223777734266867, guid: 18cabfce10608704498edc8818cf716c, type: 3}
