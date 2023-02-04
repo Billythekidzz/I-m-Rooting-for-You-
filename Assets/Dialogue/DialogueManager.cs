@@ -46,6 +46,9 @@ public class DialogueManager : MonoBehaviour
 
     private Minigame currentlyPlaying = null;
 
+    [SerializeField]
+    string startingPath = "Preamble";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,7 +63,7 @@ public class DialogueManager : MonoBehaviour
         choiceSelected = null;
         //story.ChoosePathString("mysterious_fisherman");
         //       TryDialogue();
-        StartCoroutine(WaitThenSetThenTryDialogue("Preamble"));
+        StartCoroutine(WaitThenSetThenTryDialogue(startingPath));
     }
 
     IEnumerator WaitThenSetThenTryDialogue(string dialogue)
