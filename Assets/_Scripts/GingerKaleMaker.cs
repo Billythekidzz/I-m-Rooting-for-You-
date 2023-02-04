@@ -6,43 +6,92 @@ using UnityEngine.InputSystem;
 public class GingerKaleMaker : MonoBehaviour
 {
 
-    [SerializeField]
-    GameObject sliderPrefab;
+	[SerializeField]
+	GameObject sliderPrefab;
 
-    [SerializeField]
-    Vector2 sliderPushForce;
+	[SerializeField]
+	GameObject targetPrefab;
 
-    [SerializeField]
-    Canvas gameCanvas;
+	[SerializeField]
+	Vector2 targetStartPos;
+
+	[SerializeField]
+	Vector2 sliderPushForce;
+
+	public float targetStayTime;
+
+	public bool IsMiniGameActive { get; private set; }
 
 #nullable enable
-	private GameObject? sliderInstance;
+	private Rigidbody2D? sliderRb;
+	public GingerKaleTarget? targetInstance;
 
-    public void StartGame()
+	private void Start()
 	{
-        if (sliderInstance != null)
-		{
-            Destroy(sliderInstance);
-		}
-
-        sliderInstance = Instantiate(sliderPrefab);
-        sliderInstance.transform.SetParent(this.transform);
-
-        // setting canvas to screenspace: camera makes mini game draw on top of canvas
+		StartGame();
 	}
 
-    public void EndGame()
+	private void OnTriggerEnter2D(Collider2D collision)
 	{
-        if (sliderInstance != null)
-        {
-            Destroy(sliderInstance);
-        }
-    }
+		if (targetInstance != null && collision.gameObject.tag == "GingerKaleTarget")
+		{
+			targetInstance.StopMovement();
+		}
+	}
+
+	public void StartGame()
+	{
+		if (sliderRb != null)
+		{
+			Destroy(sliderRb.gameObject);
+		}
+
+		// create target
+
+		if (targetInstance != null)
+		{
+			Destroy(targetInstance.gameObject);
+		}
+
+		targetInstance = Instantiate(targetPrefab).GetComponent<GingerKaleTarget>();
+		targetInstance.Owner = this;
+		targetInstance.transform.SetParent(this.transform);
+		targetInstance.transform.position = this.targetStartPos;
+
+
+		// create slider 
+		var slider = Instantiate(sliderPrefab);
+		slider.GetComponent<GingerKaleSlider>().Owner = this;
+		slider.transform.SetParent(this.transform);
+
+		sliderRb = slider.GetComponent<Rigidbody2D>();
+
+		IsMiniGameActive = true;
+		// setting canvas to screenspace: camera makes mini game draw on top of canvas
+	}
+
+	public void EndGame()
+	{
+		if (sliderRb != null)
+		{
+			Destroy(sliderRb.gameObject);
+		}
+		
+		if (targetInstance != null)
+		{
+			Destroy(targetInstance.gameObject);
+		}
+
+		IsMiniGameActive = false;
+	}
+
+	public void PushSliderUp()
+	{
+		if (sliderRb != null)
+		{
+			sliderRb.AddForce(sliderPushForce);
+		}
+	}
 
 #nullable disable
-
-    public void PushSliderUp()
-	{
-        sliderInstance.GetComponent<Rigidbody2D>().AddForce(sliderPushForce);
-    }
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1033528468779603854}
   - component: {fileID: 4306944999178266369}
   - component: {fileID: -6493698511815406850}
+  - component: {fileID: 1264590563583920587}
   m_Layer: 0
   m_Name: GingerKaleSlider
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 290803306051112652}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.3875, z: 1}
   m_Children:
   - {fileID: 2594865423552793895}
   m_Father: {fileID: 0}
@@ -80,6 +81,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1264590563583920587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290803306051112652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8870ac8baf226b4f962a5731cfe4bf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1328873397201700608
 GameObject:
   m_ObjectHideFlags: 0
