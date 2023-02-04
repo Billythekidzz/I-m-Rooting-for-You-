@@ -1,0 +1,34 @@
+{
+    "name": "MinigameInputs",
+    "maps": [
+        {
+            "name": "GingerKale",
+            "id": "9618bf74-a072-4b2c-8bfa-6ca6596d0356",
+            "actions": [
+                {
+                    "name": "move",
+                    "type": "Button",
+                    "id": "e2d994ab-157b-42ce-903e-ea307057ea78",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "66a499a8-7cf9-47bd-a228-e441079018f2",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
