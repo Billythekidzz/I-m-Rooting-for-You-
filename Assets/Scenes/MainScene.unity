@@ -186,6 +186,14 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6685833178298221328, guid: 18cabfce10608704498edc8818cf716c, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685833178298221328, guid: 18cabfce10608704498edc8818cf716c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -600
+      objectReference: {fileID: 0}
     - target: {fileID: 8082365617913931506, guid: 18cabfce10608704498edc8818cf716c, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -465,6 +473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lastSavedCharacterKey: 
   isDialogueSkippable: 1
+  wasLastSpeakerMC: 1
   characterChangedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -549,6 +558,10 @@ PrefabInstance:
       propertyPath: customButton
       value: 
       objectReference: {fileID: 7208729224398683248, guid: efe7784ab2b697149ad3d2a9788db340, type: 3}
+    - target: {fileID: 5885689506753852345, guid: 735299e6bc477394ea679dd35b7c2b5e, type: 3}
+      propertyPath: startingPath
+      value: meeting_the_vegetables
+      objectReference: {fileID: 0}
     - target: {fileID: 5885689506753852345, guid: 735299e6bc477394ea679dd35b7c2b5e, type: 3}
       propertyPath: nameTagObject
       value: 
@@ -827,6 +840,10 @@ MonoBehaviour:
     - VEGE_TOWN_OUTDOORS_SHORT_1
     - DRUM_ROLL_1
     - BEEFROOT
+    - SAD_EMOTE
+    - DAY_START
+    - HAPPY_EMOTE
+    - BLUSH_EMOTE
     m_values:
     - data:
       - audioClip: {fileID: 8300000, guid: 32a78675f452061459c979d77e746f05, type: 3}
@@ -893,6 +910,22 @@ MonoBehaviour:
       - audioClip: {fileID: 8300000, guid: 5de689aa16384b14ebcd033d67a94da1, type: 3}
         volume: 1
         delay: 0.5
+    - data:
+      - audioClip: {fileID: 8300000, guid: 22d870e82e8086b49a2bbaa29971d14f, type: 3}
+        volume: 1.5
+        delay: 0
+    - data:
+      - audioClip: {fileID: 8300000, guid: 42a9d0aa85d7f224b8464d519af4dd9e, type: 3}
+        volume: 0.3
+        delay: 0
+    - data:
+      - audioClip: {fileID: 8300000, guid: c7a670d21e2665d43818bc500f7a1c4b, type: 3}
+        volume: 1
+        delay: 0
+    - data:
+      - audioClip: {fileID: 8300000, guid: 8e71b6fffca968344a0a19c109798d4c, type: 3}
+        volume: 1
+        delay: 0
 --- !u!4 &883355095
 Transform:
   m_ObjectHideFlags: 0
@@ -1309,11 +1342,40 @@ MonoBehaviour:
     m_keys:
     - MC_THOUGHTS
     - BEEFROOT
+    - GINGER
+    - ONION
+    - CARROT
     m_values:
     - sprites:
       - {fileID: 21300000, guid: 1190562ebd6305942accd06369b76c0b, type: 3}
     - sprites:
       - {fileID: 21300000, guid: f053bca1ad8a00043b3f3cab43cf7527, type: 3}
+      - {fileID: 21300000, guid: 6a8c4122395f0924580fec6643da4408, type: 3}
+      - {fileID: 21300000, guid: b589cf1e97a251d41aa038af36c48305, type: 3}
+      - {fileID: 21300000, guid: 4e97a484686e74749afd2199bceec05f, type: 3}
+      - {fileID: 21300000, guid: 80905d0559a4589479c5ea379c0f2b16, type: 3}
+      - {fileID: 21300000, guid: cf8551094aa4a3e43b234530d641ef9c, type: 3}
+    - sprites:
+      - {fileID: 21300000, guid: e2fbdc0522969c84da190be4f0d7e3db, type: 3}
+      - {fileID: 21300000, guid: 0b756f1a57c34bd4595bb59fd60d9f69, type: 3}
+      - {fileID: 21300000, guid: c63b6e538f5a94c418c93ca0623f3e3f, type: 3}
+      - {fileID: 21300000, guid: 4c7c6d37cbbb820438db332d05392171, type: 3}
+      - {fileID: 21300000, guid: 0b756f1a57c34bd4595bb59fd60d9f69, type: 3}
+      - {fileID: 21300000, guid: e2fbdc0522969c84da190be4f0d7e3db, type: 3}
+    - sprites:
+      - {fileID: 21300000, guid: 80fb8d2791a4bc145827a8ad58279d3c, type: 3}
+      - {fileID: 21300000, guid: 5aadf4fa92332ba49a7ec675e573e53f, type: 3}
+      - {fileID: 21300000, guid: 371d403b09f0d4c4ea7414657ce9ef34, type: 3}
+      - {fileID: 21300000, guid: 3dc93b23395c3a942b4603f4ff5d6687, type: 3}
+      - {fileID: 21300000, guid: 5aadf4fa92332ba49a7ec675e573e53f, type: 3}
+      - {fileID: 21300000, guid: 4b4c8995427396747aa069fa9fe046ac, type: 3}
+    - sprites:
+      - {fileID: 21300000, guid: bfe30eb6f6cd66440be7ee78a21b65e3, type: 3}
+      - {fileID: 21300000, guid: 764d9377821be10428d7f5ec5a12d8e5, type: 3}
+      - {fileID: 21300000, guid: 62ab5833edcb5cc4eb3af98704926c2e, type: 3}
+      - {fileID: 21300000, guid: 896adc65e1976344bace2cd18b6b62c9, type: 3}
+      - {fileID: 21300000, guid: 764d9377821be10428d7f5ec5a12d8e5, type: 3}
+      - {fileID: 21300000, guid: ffa977e1a3b79754c97095d3f1967ff7, type: 3}
   backgroundImage: {fileID: 317764778}
   characterImage: {fileID: 379026672}
 --- !u!224 &1895084265 stripped

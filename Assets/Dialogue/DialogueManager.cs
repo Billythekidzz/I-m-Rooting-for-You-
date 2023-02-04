@@ -259,6 +259,9 @@ public class DialogueManager : MonoBehaviour
                 case "character":
                     SetCharacter(param);
                     break;
+                case "emote":
+                    SetEmotion(param);
+                    break;
                 case "color":
                     SetTextColor(param);
                     break;
@@ -271,8 +274,21 @@ public class DialogueManager : MonoBehaviour
                 case "minigame":
                     SetMinigame(param);
                     break;
+                case "add_affinity":
+                    AddAffinity(param);
+                    break;
             }
         }
+    }
+
+    private void SetEmotion(string param)
+    {
+        StoryboardManager.Instance.SetEmotion(param);
+    }
+
+    private void AddAffinity(string param)
+    {
+        throw new NotImplementedException();
     }
 
     private void SetMinigame(string param)

@@ -42,8 +42,14 @@ public class GameStateManager : MonoBehaviour
         }
         else
         {
-            //TBD FIX
-            wasLastSpeakerMC = true;
+            if (characterKeyToSet == Globals.MC_KEY)
+            {
+                wasLastSpeakerMC = true;
+            }
+            else
+            {
+                wasLastSpeakerMC = false;
+            }
         }
     }
 }

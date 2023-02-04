@@ -89,7 +89,7 @@ I took a deep breath and thought to myself that it will be fine, the industrial 
 
 - -> meeting_the_vegetables
 
-=== meeting_the_vegetables
+=== meeting_the_vegetables ===
 # Character MC_THOUGHTS
 # Background INDOORS_DAY
 # audio DOOR_OPEN_1
@@ -112,13 +112,16 @@ When I went outside, however, there was something...
 # Character BEEFROOT
 #text_speed 1.0
 # set_skippable_dialogue true
+# emote neutral
 Howdy Partner! Welcome to Vege Town y’all! My name’s <b>Beefroot</b>, and I’m the Sherriff ‘round these parts. 
-
+# emote neutral2
 So you best be keepin’ on your best behaviour or I’ll be the one to have to come and...
 #text_speed 0.5
 # audio DRUM_ROLL_1
+# emote blush
 <b><i>*beet*</i></b> you up. 
 #text_speed 1.0
+# emote neutral
 Haha just kiddin’ sugar pie.  
 # Character MC
 There, standing out in the garden, were tiny little creatures with arms and legs, walking around.
@@ -143,6 +146,7 @@ I had taken a long drive, and it was late at night, so I turned around, shut the
 - -> day_1
 
 === day_1 ===
+# music DAY_START
 DAY 1
 #text_speed 1.0
 # Background INDOORS_DAY
@@ -165,7 +169,7 @@ Confident that everything would be normal now, I stepped outside again into the 
 #text_speed 1.0
 The walking vegetables haven’t disappeared.
 
-This is it, I’ve gone <OHOHOHO>INSANE</OHOHOHO>
+This is it, I’ve gone <OHOHOHO>INSANE!!!!!!!!!</OHOHOHO>
 
 I’m going to check myself into a mental hospital for the good of society!
 
@@ -184,11 +188,17 @@ I must admit that I had never seen such a bulky vegetable before - this beefy be
     * [H-holy smokes, it is just a vegetable but… That well-defined shape! That succulent stem… mmmmmfgffsdgff]
     # Character MC
     H-hey~
-    * Hello creature of my imagination
-    
-    * What the hell is this! A walking talking vegetable? This is an affront to nature!
+    * [Hello creature of my imagination]
+    # Character MC
+    Hello creature of my imagination
+    * [What the hell is this! A walking talking vegetable? This is an affront to nature!]
+    # Character MC
+    What the hell is this! A walking talking vegetable? This is an affront to nature!
+    # Character BEEFROOT
+    # emote sad
     Well now, that’s not very nice of you to say partner. I hope that once you get to know me, that opinion of yours will do some good ol’ changin.
 - # Character BEEFROOT
+- # emote neutral
 - Anyways, like I said, welcome to <b>Vege Town</b>! We’re a small bunch but we’re close as peas in a pod. 
 Now, lemme take you on a tour -round the town, whaddaya say?
 # Character MC
@@ -199,7 +209,7 @@ U-uh yeah sure I guess?
 
 First, we’ll head to Alonion’s Jewelery Store - her rings make the sweetest gift this side of the Veggie River. Though they’re always pretty sad.
 
-Then after that I think we’ll end up the day by heading to Ginger’s VegeTavern - word has it that they make the six-hundred and ninety-fourth best Ginger Kale in town, ain’t nothing better ‘round these parts than a fiiiiiiiiiiiiiiiiiiine bottle o’ Ginger Kale!
+Then after that I think we’ll end the day by heading to Ginger’s VegeTavern - word has it that they make the six-hundred and ninety-fourth best Ginger Kale in town, ain’t nothing better ‘round these parts than a fiiiiiiiiiiiiiiiiiiine bottle o’ Ginger Kale!
 
 Sound good partner? Righto then, let’s go check out Alonion’s Jewelry Store!
 
