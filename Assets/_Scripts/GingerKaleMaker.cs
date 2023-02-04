@@ -26,11 +26,6 @@ public class GingerKaleMaker : MonoBehaviour
 	private Rigidbody2D? sliderRb;
 	public GingerKaleTarget? targetInstance;
 
-	private void Start()
-	{
-		StartGame();
-	}
-
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (targetInstance != null && collision.gameObject.tag == "GingerKaleTarget")
