@@ -64,7 +64,13 @@ public class StoryboardManager : MonoBehaviour
     {
         if (stringCharacterImageElementDictionary.TryGetValue(characterImageKey, out ImageElement value))
         {
-            backgroundImage.sprite = value.sprites[0];
+            Sequence sequence = DOTween.Sequence();
+            sequence.Append(characterImage.DOFade(0, 1.0f))
+                .AppendCallback(() =>
+                {
+                    characterImage.sprite = value.sprites[0];
+                }).Append(characterImage.DOFade(1, 1.0f)
+            );
         }
         else
         {

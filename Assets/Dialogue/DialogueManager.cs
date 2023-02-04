@@ -20,6 +20,9 @@ public class DialogueManager : MonoBehaviour
     //[Inject]
     //Story story;
 
+    [SerializeField]
+    GameObject nameTagObject;
+
     TextMeshProUGUI nametag;
     TextMeshProUGUI message;
     AnimatextTMPro messageAnimaTextTMPro;
@@ -51,7 +54,13 @@ public class DialogueManager : MonoBehaviour
         choiceSelected = null;
         //story.ChoosePathString("mysterious_fisherman");
         //       TryDialogue();
-        SetThenTryDialogue("sheriff_beefroot");
+        StartCoroutine(WaitThenSetThenTryDialogue("Preamble"));
+    }
+
+    IEnumerator WaitThenSetThenTryDialogue(string dialogue)
+    {
+        yield return new WaitForSeconds(0.0f);
+        SetThenTryDialogue(dialogue);
     }
 
     private void TriggerDialogs(string inklePath)
@@ -81,12 +90,15 @@ public class DialogueManager : MonoBehaviour
             }
             else
             {
-                if(typeSentenceCoroutine != null)
+                if (GameStateManager.Instance.isDialogueSkippable)
                 {
-                    StopCoroutine(typeSentenceCoroutine);
+                    if (typeSentenceCoroutine != null)
+                    {
+                        StopCoroutine(typeSentenceCoroutine);
+                    }
+                    messageAnimaTextTMPro.StopEffect(0);
+                    sentenceBeingTypedOut = message.text;
                 }
-                messageAnimaTextTMPro.StopEffect(0);
-                sentenceBeingTypedOut = message.text;
             }
         }
 
@@ -212,6 +224,9 @@ public class DialogueManager : MonoBehaviour
                 case "audio":
                     PlayAudio(param);
                     break;
+                case "music":
+                    PlayMusic(param);
+                    break;
                 case "background":
                     ChangeBackground(param);
                     break;
@@ -223,6 +238,9 @@ public class DialogueManager : MonoBehaviour
                     break;
                 case "text_speed":
                     SetTextSpeed(param);
+                    break;
+                case "set_skippable_dialogue":
+                    SetDialogSkipping(param);
                     break;
             }
         }
@@ -236,9 +254,22 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    private void SetDialogSkipping(string param)
+    {
+        if (bool.TryParse(param, out bool value))
+        {
+            GameStateManager.Instance.isDialogueSkippable = value;
+        }
+    }
+
     private void PlayAudio(string param)
     {
         AudioManager.Instance.PlaySound(param);
+    }
+
+    private void PlayMusic(string param)
+    {
+        AudioManager.Instance.PlayMusic(param);
     }
 
     void ChangeBackground(string param)
@@ -248,8 +279,16 @@ public class DialogueManager : MonoBehaviour
 
     void SetCharacter(string _character)
     {
-        GameStateManager.Instance.lastSavedCharacterKey = _character;
-        nametag.text = _character;
+        GameStateManager.Instance.SetCharacter(_character);
+        if (_character == Globals.MC_KEY || _character == Globals.MC_THOUGHTS_KEY)
+        {
+            nameTagObject.SetActive(false);
+        }
+        else
+        {
+            nameTagObject.SetActive(true);
+            nametag.text = _character;
+        }
     }
 
     void SetAnimation(string _name)
