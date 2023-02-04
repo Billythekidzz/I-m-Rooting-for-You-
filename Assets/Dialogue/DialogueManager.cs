@@ -80,7 +80,10 @@ public class DialogueManager : MonoBehaviour
     public void SetThenTryDialogue(string path)
     {
         story.ChoosePathString(path);
-        SetCharacter(story.TagsForContentAtPath(path)[0]);
+        if (story.TagsForContentAtPath(path) != null)
+        {
+            SetCharacter(story.TagsForContentAtPath(path)[0]);
+        }
         TryDialogue();
     }
 
