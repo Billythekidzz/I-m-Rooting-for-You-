@@ -32,6 +32,9 @@ public class OnionRingGame : Minigame
 	List<OnionRingSpawner> rings;
 
 	[SerializeField]
+	Transform spawnPoint;
+
+	[SerializeField]
 	float ringSpawnDelay = 5f;
 
 	[SerializeField]
@@ -124,7 +127,7 @@ public class OnionRingGame : Minigame
 			{
 				var ringType = rings[lastSpawnedRing];
 
-				var ring = ringType.Spawn(this.transform);
+				var ring = ringType.Spawn(this.spawnPoint);
 				lastRingSpawnedRb = ring.GetComponent<Rigidbody2D>();
 
 				var ringScript = ring.GetComponent<OnionRing>();

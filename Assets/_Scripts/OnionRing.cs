@@ -13,7 +13,7 @@ public class OnionRing : MonoBehaviour
 		if (collision.gameObject.tag == "OnionRingBoundary")
 		{
 			Owner.OnRingDestroyed(false);
-			Destroy(gameObject);
+			Destroy(this.gameObject);
 		}
 	}
 
