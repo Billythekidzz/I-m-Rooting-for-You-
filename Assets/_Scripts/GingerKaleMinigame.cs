@@ -71,8 +71,6 @@ public class GingerKaleMinigame : Minigame
 		{
             EndGame(false);
 		}
-
-        Debug.Log($"value = {slider.value}");
     }
 
     private void FillBarOnce()
