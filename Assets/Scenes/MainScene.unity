@@ -1501,7 +1501,7 @@ PrefabInstance:
       objectReference: {fileID: 7208729224398683248, guid: efe7784ab2b697149ad3d2a9788db340, type: 3}
     - target: {fileID: 5885689506753852345, guid: 735299e6bc477394ea679dd35b7c2b5e, type: 3}
       propertyPath: startingPath
-      value: meeting_the_vegetables
+      value: vegetown_tavern
       objectReference: {fileID: 0}
     - target: {fileID: 5885689506753852345, guid: 735299e6bc477394ea679dd35b7c2b5e, type: 3}
       propertyPath: nameTagObject
@@ -2067,6 +2067,9 @@ MonoBehaviour:
     - DAY_START
     - HAPPY_EMOTE
     - BLUSH_EMOTE
+    - TAVERN_1
+    - DOOR_OPEN_2
+    - GINGER
     m_values:
     - data:
       - audioClip: {fileID: 8300000, guid: 32a78675f452061459c979d77e746f05, type: 3}
@@ -2149,6 +2152,33 @@ MonoBehaviour:
       - audioClip: {fileID: 8300000, guid: 8e71b6fffca968344a0a19c109798d4c, type: 3}
         volume: 1
         delay: 0
+    - data:
+      - audioClip: {fileID: 8300000, guid: e8f744039df3ad8469bb6d435da8c46e, type: 3}
+        volume: 0.1
+        delay: 0
+    - data:
+      - audioClip: {fileID: 8300000, guid: 35cc504b78fb48749a8f81e85bdffc35, type: 3}
+        volume: 0.5
+        delay: 0
+    - data:
+      - audioClip: {fileID: 8300000, guid: 29c9ec78d70faef4a864c1e921af4d4b, type: 3}
+        volume: 1
+        delay: 0.15
+      - audioClip: {fileID: 8300000, guid: 5da78a56a5b06544d8aaedae1a2a276e, type: 3}
+        volume: 1
+        delay: 0.1
+      - audioClip: {fileID: 8300000, guid: ca5b4cc924619e64a8459febe21d1c38, type: 3}
+        volume: 1
+        delay: 0.15
+      - audioClip: {fileID: 8300000, guid: 67a933d3b4f4dda42a0b5110430be6da, type: 3}
+        volume: 1
+        delay: 0.1
+      - audioClip: {fileID: 8300000, guid: 8339ee7b93289bf4d86741dcee6d92ad, type: 3}
+        volume: 1
+        delay: 0.25
+      - audioClip: {fileID: 8300000, guid: ea155c51ee4192c45b01403643e8beb7, type: 3}
+        volume: 1
+        delay: 0.25
   sfxVolume: 0.2
   musicVolume: 0.5
   masterVolume: 0.5
@@ -3707,6 +3737,7 @@ MonoBehaviour:
     - INDOORS_DAY
     - INDOORS_NIGHT
     - VEGE_TOWN_DAY
+    - TAVERN
     - VEGE_TOWN_NIGHT
     m_values:
     - sprites:
@@ -3725,6 +3756,8 @@ MonoBehaviour:
       - {fileID: 21300000, guid: 022c3b9d7191b5546949def80a51d947, type: 3}
     - sprites:
       - {fileID: 21300000, guid: bc6a238fdd9e9c04e9d9ebb89fc52cad, type: 3}
+    - sprites:
+      - {fileID: 21300000, guid: 4908efd4030959b4a88bfcf6fa2b5e81, type: 3}
     - sprites:
       - {fileID: 21300000, guid: a5e2d1956e7d8d54f98e4f100392ba9c, type: 3}
   stringCharacterImageElementDictionary:

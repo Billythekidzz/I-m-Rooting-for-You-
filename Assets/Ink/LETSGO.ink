@@ -66,7 +66,7 @@ the day I moved into my new house...
 #text_speed 0.15
 # music MUSIC_STOP
 # set_skippable_dialogue false
-would be the <OHOHOHO>CRAZIEST DAY OF MY LIFE</OHOHOHO>
+would be the <OHOHOHO><b>CRAZIEST DAY OF MY LIFE</b></OHOHOHO>
 #text_speed 1.0
 # set_skippable_dialogue true
 # Background OUTSIDE_HOUSE_DAY
@@ -77,8 +77,8 @@ I parked on the road, grabbed my luggage out of my car. There was the house - ju
 The residential area my grandfather used to live in was fairly sparse the last time I visited, the street was almost empty of other houses apart from his. He purchased the land for a very cheap price, then built his own house.
 
 However, something new had been built since I had last visited. Right next door to my Grandfather's house was...
-
-...was a NUCLEAR POWER PLANT!?
+#audio SURPRISE_1
+...was a <b>NUCLEAR POWER PLANT!?</b>
 
 It was also such a weird place to put a power plant, usually they would be built in industrial areas, but this plant was right in the middle of a residential area.
 
@@ -216,7 +216,90 @@ Then after that I think we’ll end the day by heading to Ginger’s VegeTavern 
 Sound good partner? Righto then, let’s go check out Alonion’s Jewelry Store!
 
 
-- -> sheriff_beefroot
+- -> vegetown_tavern
+
+=== vegetown_tavern ===
+# Background TAVERN
+# audio DOOR_OPEN_2
+# music TAVERN_1
+This here partner is Ginger, she runs the tavern. She sells the best ginger kale in all the land. 
+# emote neutral2
+I’d suggest being very...
+#text_speed 0.5
+# audio DRUM_ROLL_1
+# emote blush
+<b><i>*gingerly*</b></i> with her
+# Character GINGER
+#text_speed 1.0
+Hey there cutie, this is the first time I’ve seen a human around here, lookin’ for anything? ;)
+# Character MC_THOUGHTS
+Holy <i>REDACTED</i>…
+...
+...
+Oh god, why am I attracted to a vegetable?
+I never thought ginger could look so… 
+<OHOHOHO><b>JUICY</b></OHOHOHO>
+# Character GINGER
+Rabbit got your stem?
+* [I’ve never seen such a… delectable ginger before…]
+    # Character MC
+    # add_affinity ginger|2
+    I’ve never seen such a… delectable ginger before…
+    # Character GINGER
+    # emote blush
+    Well... you will have to take me out first if you want a <i>taste</i>
+    * * [YES MAM!!!!!!]
+    # Character MC
+    # add_affinity ginger|2
+    YES MAM!!!!!!
+    * * [O_O]
+    # Character MC
+    O_O
+    * * [B-but, where would I even take a talking vegetable??]
+    B-but, where would I even take a talking vegetable??
+    # Character GINGER
+    #emote happy
+    You’ll just have to figure that one out yourself honey ;)
+    * [uhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh]
+    # Character MC
+    #text_speed 0.2
+    uhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh...
+    # Character GINGER
+    #text_speed 1.0
+    Don’t stare too much, cutie.
+    # emote happy
+    I guess I will be seeing you later then ;)
+
+    * [Why do you look like that, you… you’re supposed to be a vegetable!?]
+    # add_affinity ginger|-2
+    # Character MC
+    Why do you look like that, you… you’re supposed to be a vegetable!?
+    # Character GINGER
+    # emote sad
+    Do you not like what you see? ;(
+    * * [Maybe… maybe I can get used to this…]
+    # Character MC
+    # add_affinity ginger|2
+    Maybe… maybe I can get used to this…
+    # Character GINGER
+    #emote happy
+    Only if you take me out and give me a time to remember ;) 
+    Come and see me again tomorrow honey
+
+    * * [It’s not that… it’s just you’re a vegetable, and I am a somewhat sane person.]
+    # Character MC
+    It’s not that… it’s just you’re a vegetable, and I am a somewhat sane person.
+    # Character GINGER
+    #emote neutral
+    Honestly that’s fair enough, why would an anthropomorphic ginger be arousing to a normal human… Dating simulators are weird.
+    * * [There aren’t supposed to be vegetables that can make me feel this way… This can’t be right!! Ahhh!!!!]
+    # add_affinity ginger|-2
+    # Character MC
+    There aren’t supposed to be vegetables that can make me feel this way… This can’t be right!! Ahhh!!!!
+    # Character GINGER
+    #emote sad
+    I guess it was never meant to be… I guess I will just have to settle for Sheriff Beefroot.
+- -> END
 		
 === sheriff_beefroot ===
 # Sheriff Beefroot
