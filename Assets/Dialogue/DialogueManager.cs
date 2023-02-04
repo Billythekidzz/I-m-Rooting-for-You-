@@ -267,6 +267,7 @@ public class DialogueManager : MonoBehaviour
     private void SetMinigame(string param)
 	{
         currentlyPlaying = minigameRegistry[param];
+        currentlyPlaying.StartGame();
     }
 
     private void SetTextSpeed(string param)
