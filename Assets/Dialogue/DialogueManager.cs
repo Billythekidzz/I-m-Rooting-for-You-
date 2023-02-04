@@ -196,6 +196,8 @@ public class DialogueManager : MonoBehaviour
             return choiceSelected != null || (currentlyPlaying != null && !currentlyPlaying.IsGameActive); 
         });
         _isSelectingChoice = false;
+
+        currentlyPlaying.gameObject.SetActive(false);
         currentlyPlaying = null;
 
         AdvanceFromDecision();
@@ -267,6 +269,7 @@ public class DialogueManager : MonoBehaviour
     private void SetMinigame(string param)
 	{
         currentlyPlaying = minigameRegistry[param];
+        currentlyPlaying.gameObject.SetActive(true);
         currentlyPlaying.StartGame();
     }
 
