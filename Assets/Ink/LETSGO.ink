@@ -24,7 +24,7 @@
 - Christchurch really is hot today, I'm sweating!
     * [Hi sweating, I'm Jakib Isherwood, captain of the Papanui High School League of Legends Team.]
     # color red
-    It's the ratio titan.
+    It's the <OHOHOHO>ratio titan</<OHOHOHO>.
     # color white
     * [Yeah, it really is a fine Summer day today!]
     Perfect day to set up every single furnishing in Samantha's bedroom!
@@ -59,8 +59,15 @@
     Howdy Sherriff, it’s a pleasure to beet you! What is there to do around here? 
     * [Where can I go to find some peas and quiet around here?]
     #audio objection
-    pease and quiet dialogue
+    pease and quiet <OHOHOHO>dialogue</OHOHOHO>
     * Why is that vegetable talking to me?
     #character You
-        a sdas dasd asd asasd
+    #text_speed 0.4
+    ...........
+    #text_speed 0.1
+    ......
+    #text_speed 0.01
+    ...
+    #text_speed 1.0
+    <OHOHOHO>OHOHOHOHOHOHOHOHOHOHOHOHOHOHOHO</OHOHOHO>
 - -> END

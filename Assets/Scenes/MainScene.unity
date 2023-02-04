@@ -146,6 +146,54 @@ PrefabInstance:
       propertyPath: m_Texture
       value: 
       objectReference: {fileID: 2800000, guid: 7835bec40f86c2c4fb3f91a6eb3b7034, type: 3}
+    - target: {fileID: 4345290771743946370, guid: 18cabfce10608704498edc8818cf716c, type: 3}
+      propertyPath: m_text
+      value: asdaasd
+      objectReference: {fileID: 0}
+    - target: {fileID: 4345290771743946370, guid: 18cabfce10608704498edc8818cf716c, type: 3}
+      propertyPath: m_fontSize
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 4345290771743946370, guid: 18cabfce10608704498edc8818cf716c, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 4345290771743946370, guid: 18cabfce10608704498edc8818cf716c, type: 3}
+      propertyPath: m_fontSizeMin
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4345290771743946370, guid: 18cabfce10608704498edc8818cf716c, type: 3}
+      propertyPath: m_enableKerning
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4345290771743946370, guid: 18cabfce10608704498edc8818cf716c, type: 3}
+      propertyPath: m_isOrthographic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4345290771743946370, guid: 18cabfce10608704498edc8818cf716c, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 4345290771743946370, guid: 18cabfce10608704498edc8818cf716c, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
+    - target: {fileID: 4345290771743946370, guid: 18cabfce10608704498edc8818cf716c, type: 3}
+      propertyPath: m_enableWordWrapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4345290771743946370, guid: 18cabfce10608704498edc8818cf716c, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044568650045399354, guid: 18cabfce10608704498edc8818cf716c, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 5044568650045399354, guid: 18cabfce10608704498edc8818cf716c, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8141066398591643105, guid: 18cabfce10608704498edc8818cf716c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -258,6 +306,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 4db5f43bbc282e142a33e362363fc846, type: 3}
+    - target: {fileID: 8141066398987115548, guid: 18cabfce10608704498edc8818cf716c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8141066398987115550, guid: 18cabfce10608704498edc8818cf716c, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -326,6 +378,52 @@ MonoBehaviour:
     - {fileID: 2800000, guid: 3f9ea0655b1f9054783dda4744b8a26d, type: 3}
     - {fileID: 2800000, guid: 6c3915c69137cfd448d37ee5cd092212, type: 3}
   backgroundImage: {fileID: 317764778}
+--- !u!1 &480030455 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8141066399692162355, guid: 18cabfce10608704498edc8818cf716c, type: 3}
+  m_PrefabInstance: {fileID: 197629666}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &480030459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480030455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f81939ad99b948b479be9e2979816bb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputText: 
+  _parsedText: 
+  _outputText: 
+  _effectText: 
+  _retainedText: 
+  _settings:
+    retainedText: 0
+    disabledText: 0
+    disabledEffects: 0
+    tagSymbols: 0
+    markerSymbols: 0
+  _effects:
+  - _presets:
+    - {fileID: 11400000, guid: a24661ba5fcb954418b9135a05baca6c, type: 2}
+    _autoPlay: 1
+    _autoStart: 1
+    _refreshMode: 0
+    _state: 0
+    _speed: 1
+    _time: 0
+  - _presets:
+    - {fileID: 11400000, guid: ce55a8681e129444e825f662fd71902d, type: 2}
+    _autoPlay: 1
+    _autoStart: 1
+    _refreshMode: 0
+    _state: 0
+    _speed: 1
+    _time: 0
+  _scaleSDF: 1
 --- !u!1001 &572361037
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -382,6 +480,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 197629668}
     - target: {fileID: 5885689506753852345, guid: 735299e6bc477394ea679dd35b7c2b5e, type: 3}
+      propertyPath: textSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885689506753852345, guid: 735299e6bc477394ea679dd35b7c2b5e, type: 3}
       propertyPath: optionPanel
       value: 
       objectReference: {fileID: 197629667}
@@ -389,6 +491,10 @@ PrefabInstance:
       propertyPath: customButton
       value: 
       objectReference: {fileID: 7208729224398683248, guid: efe7784ab2b697149ad3d2a9788db340, type: 3}
+    - target: {fileID: 5885689506753852345, guid: 735299e6bc477394ea679dd35b7c2b5e, type: 3}
+      propertyPath: defaultTextSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5885689506753852350, guid: 735299e6bc477394ea679dd35b7c2b5e, type: 3}
       propertyPath: m_Name
       value: DialogueManager

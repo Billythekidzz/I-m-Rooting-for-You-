@@ -9,23 +9,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65ac190d61910e04eb2d8927eabd3321, type: 3}
-  m_Name: QuickStartPresetA
+  m_Script: {fileID: 11500000, guid: a4744980b612b2945a399c1aef796f4c, type: 3}
+  m_Name: OHOHOHOHO Test
   m_EditorClassIdentifier: 
   _startInterval: 0
-  _tag: 
+  _tag: OHOHOHO
   reverse: 0
-  loopCount: 1
-  loopInterval: 0.1
+  loopCount: 0
+  loopInterval: 0
   loopBackInterval: 0
   pingpongLoop: 0
-  continuousLoop: 0
-  interval: 0.1
-  singleTime: 0.1
-  sortType: 0
+  continuousLoop: 1
+  interval: 0.25
+  singleTime: 40
+  sortType: 8
+  startPosition: {x: 0, y: 0}
   position: {x: 0, y: 10}
+  waves: 10
   easingType: 0
-  fadeMode: 1
-  fadeRange:
-    start: 0
-    end: 0.1

@@ -48,3 +48,4 @@ MonoBehaviour:
   customButton: {fileID: 7208729224398683248, guid: c598d52febe072941889bda254569249, type: 3}
   optionPanel: {fileID: 0}
   isTalking: 0
+  defaultTextSpeed: 10

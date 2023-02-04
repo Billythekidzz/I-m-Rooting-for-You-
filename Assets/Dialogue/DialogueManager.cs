@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using Ink.Runtime;
 using System;
 using TMPro;
+using Animatext;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -21,8 +22,17 @@ public class DialogueManager : MonoBehaviour
 
     TextMeshProUGUI nametag;
     TextMeshProUGUI message;
+    AnimatextTMPro messageAnimaTextTMPro;
+
     List<string> tags;
     static Choice choiceSelected;
+
+    [SerializeField]
+    float defaultTextSpeed = 1.0f;
+
+    string sentenceBeingTypedOut = "";
+
+    Coroutine typeSentenceCoroutine;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +40,10 @@ public class DialogueManager : MonoBehaviour
         story = new Story(inkFile.text);
         nametag = textBox.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         message = textBox.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+        messageAnimaTextTMPro = textBox.transform.GetChild(1).GetComponent<AnimatextTMPro>();
+        messageAnimaTextTMPro = textBox.transform.GetChild(1).GetComponent<AnimatextTMPro>();
+        messageAnimaTextTMPro.SetEffectSpeed(0, defaultTextSpeed);
+        messageAnimaTextTMPro.SetEffectSpeed(1, defaultTextSpeed);
         tags = new List<string>();
         choiceSelected = null;
         //story.ChoosePathString("mysterious_fisherman");
@@ -53,11 +67,23 @@ public class DialogueManager : MonoBehaviour
     {
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.F) || Input.GetMouseButtonDown(0)) && textBox.activeSelf)
         {
+            if (messageAnimaTextTMPro.effects[0].state == EffectState.End 
+                || messageAnimaTextTMPro.effects[0].state == EffectState.Stop 
+                || sentenceBeingTypedOut == "")
             {
                 if (!_isSelectingChoice)
                 {
                     TryDialogue();
                 }
+            }
+            else
+            {
+                if(typeSentenceCoroutine != null)
+                {
+                    StopCoroutine(typeSentenceCoroutine);
+                }
+                messageAnimaTextTMPro.StopEffect(0);
+                sentenceBeingTypedOut = message.text;
             }
         }
     }
@@ -68,6 +94,7 @@ public class DialogueManager : MonoBehaviour
         if (story.canContinue)
         {
             //nametag.text = story.TagsForContentAtPath("mysterious_fisherman")[0];
+
             textBox.SetActive(true);
             AdvanceDialogue();
             /*
@@ -97,7 +124,7 @@ public class DialogueManager : MonoBehaviour
         string currentSentence = story.Continue();
         ParseTags();
         StopAllCoroutines();
-        StartCoroutine(TypeSentence(currentSentence));
+        typeSentenceCoroutine = StartCoroutine(TypeSentence(currentSentence));
         if (story.currentChoices.Count != 0)
         {
             StartCoroutine(ShowChoices());
@@ -107,6 +134,7 @@ public class DialogueManager : MonoBehaviour
     // Type out the sentence letter by letter and make character idle if they were talking
     IEnumerator TypeSentence(string sentence)
     {
+        sentenceBeingTypedOut = sentence;
         message.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
@@ -148,7 +176,7 @@ public class DialogueManager : MonoBehaviour
     }
 
     // Tells the story which branch to go to
-    public  static void SetDecision(object element)
+    public static void SetDecision(object element)
     {
         choiceSelected = (Choice)element;
         story.ChooseChoiceIndex(choiceSelected.index);
@@ -203,7 +231,10 @@ public class DialogueManager : MonoBehaviour
 
     private void SetTextSpeed(string param)
     {
-        throw new NotImplementedException();
+        if (float.TryParse(param, out float value))
+        {
+            messageAnimaTextTMPro.SetEffectSpeed(0, defaultTextSpeed * value);
+        }
     }
 
     private void PlayAudio(string param)
