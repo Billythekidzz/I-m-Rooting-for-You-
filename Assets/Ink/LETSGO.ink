@@ -76,7 +76,9 @@ I parked on the road, grabbed my luggage out of my car. There was the house - ju
 
 The residential area my grandfather used to live in was fairly sparse the last time I visited, the street was almost empty of other houses apart from his. He purchased the land for a very cheap price, then built his own house.
 
-However, something new had been built since I had last visited. Right next door to my Grandfather's house was a NUCLEAR POWER PLANT!?
+However, something new had been built since I had last visited. Right next door to my Grandfather's house was...
+
+...was a NUCLEAR POWER PLANT!?
 
 It was also such a weird place to put a power plant, usually they would be built in industrial areas, but this plant was right in the middle of a residential area.
 
@@ -95,7 +97,7 @@ I took a deep breath and thought to myself that it will be fine, the industrial 
 I entered the house and chucked my luggage in my new room, and took a walk around the house.
 Surprisingly, for a house that had been abandoned for over a month it was in pristine condition, all of the surfaces were dustless, the bathroom and toilet were cleaned and the floor had been mopped.
 Perhaps cleaners had been in recently to prepare the home for me, but I wasn’t aware of any cleaners that my parents had booked.
-Finally on the list of areas to inspect was the garden - my grandfather loved his garden a lot, he grew a lot of root vegetables and had a deep passion to ensure that the garden he had flourished.
+Finally on the list of areas to inspect was the garden - my grandfather loved his garden a lot, he grew a lot of root vegetables and had a deep passion to ensure that the garden flourished.
 #text_speed 0.5
 # music MUSIC_STOP
 # set_skippable_dialogue false
@@ -119,7 +121,7 @@ So you best be keepin’ on your best behaviour or I’ll be the one to have to 
 #text_speed 1.0
 Haha just kiddin’ sugar pie.  
 # Character MC
-There, standing out in the garden, were tiny little creatures with arms and legs, walking around the garden.
+There, standing out in the garden, were tiny little creatures with arms and legs, walking around.
 
 # Background VEGE_TOWN_DAY
 I took a second for myself, wiped my eyes and took a look again. Yep, they’re still there…
@@ -135,7 +137,72 @@ Vegetables don’t move! Especially root vegetables - they’re supposed to be <
 # music MUSIC_STOP
 I had taken a long drive, and it was late at night, so I turned around, shut the door and went to bed - hoping that in the morning these hallucinations would go away…
 
-TBD :D
+# Background BLACK
+#text_speed 0.1
+...
+- -> day_1
+
+=== day_1 ===
+DAY 1
+#text_speed 1.0
+# Background INDOORS_DAY
+First day at my new house, wow…
+
+When I went to bed, I immediately fell asleep and slept like a rock. Hopefully I wouldn’t be hallucinating now.
+
+Confident that everything would be normal now, I stepped outside again into the garden.
+
+# Background VEGE_TOWN_DAY
+# audio DOOR_OPEN_1
+# music VEGE_TOWN_OUTDOORS_SHORT_1
+# set_skippable_dialogue true
+#text_speed 0.4
+    ...........
+    #text_speed 0.2
+    ......
+    #text_speed 0.1
+    ...
+#text_speed 1.0
+The walking vegetables haven’t disappeared.
+
+This is it, I’ve gone <OHOHOHO>INSANE</OHOHOHO>
+
+I’m going to check myself into a mental hospital for the good of society!
+
+Now look what, there’s that damned <b>beetroot</b> walking up to me! What is my schizophrenic creation going to do to me?!
+
+# Character BEEFROOT
+Good mornin’ sugar pie. Sleep well last night?
+
+# Character MC
+The. Beetroot. Talks.
+
+I looked at the beetroot, while still clearly looking like a vegetable, they had humanoid arms, legs, a mouth and what appeared to be eyes and ears. On their chest was a star that read sheriff, and covering their eyes were some radical sunglasses.
+
+# Character BEEFROOT
+I must admit that I had never seen such a bulky vegetable before - this beefy being had clearly been working out.
+    * [H-holy smokes, it is just a vegetable but… That well-defined shape! That succulent stem… mmmmmfgffsdgff]
+    # Character MC
+    H-hey~
+    * Hello creature of my imagination
+    
+    * What the hell is this! A walking talking vegetable? This is an affront to nature!
+    Well now, that’s not very nice of you to say partner. I hope that once you get to know me, that opinion of yours will do some good ol’ changin.
+- # Character BEEFROOT
+- Anyways, like I said, welcome to <b>Vege Town</b>! We’re a small bunch but we’re close as peas in a pod. 
+Now, lemme take you on a tour -round the town, whaddaya say?
+# Character MC
+U-uh yeah sure I guess?
+
+# Character BEEFROOT
+<b>Fan-diddly-dastic!</b>
+
+First, we’ll head to Alonion’s Jewelery Store - her rings make the sweetest gift this side of the Veggie River. Though they’re always pretty sad.
+
+Then after that I think we’ll end up the day by heading to Ginger’s VegeTavern - word has it that they make the six-hundred and ninety-fourth best Ginger Kale in town, ain’t nothing better ‘round these parts than a fiiiiiiiiiiiiiiiiiiine bottle o’ Ginger Kale!
+
+Sound good partner? Righto then, let’s go check out Alonion’s Jewelry Store!
+
 
 - -> sheriff_beefroot
 		

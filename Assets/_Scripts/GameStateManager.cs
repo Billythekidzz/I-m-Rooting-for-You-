@@ -12,6 +12,8 @@ public class GameStateManager : MonoBehaviour
     [HideInInspector]
     public bool isDialogueSkippable = true;
 
+    public bool wasLastSpeakerMC = true;
+
     public static GameStateManager Instance;
 
     public UnityEvent characterChangedEvent = new UnityEvent();
@@ -34,13 +36,14 @@ public class GameStateManager : MonoBehaviour
     {
         if (lastSavedCharacterKey != characterKeyToSet && characterKeyToSet != Globals.MC_KEY)
         {
+            wasLastSpeakerMC = false;
             lastSavedCharacterKey = characterKeyToSet;
             characterChangedEvent.Invoke();
         }
         else
         {
             //TBD FIX
-            lastSavedCharacterKey = characterKeyToSet;
+            wasLastSpeakerMC = true;
         }
     }
 }
