@@ -41,6 +41,11 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     float speakAudioWaitDelay = 0.5f;
 
+    [SerializeField]
+    Minigames minigameRegistry;
+
+    private Minigame currentlyPlaying = null;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -187,8 +192,13 @@ public class DialogueManager : MonoBehaviour
 
         optionPanel.SetActive(true);
 
-        yield return new WaitUntil(() => { return choiceSelected != null; });
+        yield return new WaitUntil(() => {
+            return choiceSelected != null || (currentlyPlaying != null && !currentlyPlaying.IsGameActive); 
+        });
         _isSelectingChoice = false;
+
+        currentlyPlaying.gameObject.SetActive(false);
+        currentlyPlaying = null;
 
         AdvanceFromDecision();
     }
@@ -249,8 +259,18 @@ public class DialogueManager : MonoBehaviour
                 case "set_skippable_dialogue":
                     SetDialogSkipping(param);
                     break;
+                case "minigame":
+                    SetMinigame(param);
+                    break;
             }
         }
+    }
+
+    private void SetMinigame(string param)
+	{
+        currentlyPlaying = minigameRegistry[param];
+        currentlyPlaying.gameObject.SetActive(true);
+        currentlyPlaying.StartGame();
     }
 
     private void SetTextSpeed(string param)

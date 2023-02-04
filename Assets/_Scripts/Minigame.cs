@@ -5,12 +5,12 @@ using UnityEngine.Events;
 
 public class Minigame : MonoBehaviour
 {
-    public bool IsGameActive { get; private set; }
+	public bool IsGameActive { get; private set; }
 
 	[SerializeField]
-	UnityEvent<bool> onGameOver;
+	UnityEvent<GameOverContext> onGameOver;
 
-    public virtual void StartGame()
+	public virtual void StartGame()
 	{
 		IsGameActive = true;
 	}
@@ -18,8 +18,21 @@ public class Minigame : MonoBehaviour
 	public virtual void EndGame(bool isVictory)
 	{
 		IsGameActive = false;
-		onGameOver.Invoke(isVictory);
+
+		GameOverContext context = new GameOverContext(isVictory);
+
+		onGameOver.Invoke(context);
 	}
 
+
+	public class GameOverContext
+	{
+		public bool IsVictory { get; }
+
+		public GameOverContext(bool isVictory)
+		{
+			this.IsVictory = isVictory;
+		}
+	}
 
 }
