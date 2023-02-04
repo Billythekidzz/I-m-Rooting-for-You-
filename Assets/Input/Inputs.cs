@@ -24,13 +24,22 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
     ""name"": ""Inputs"",
     ""maps"": [
         {
-            ""name"": ""GingerKale"",
+            ""name"": ""Input"",
             ""id"": ""9618bf74-a072-4b2c-8bfa-6ca6596d0356"",
             ""actions"": [
                 {
                     ""name"": ""fillGingerKale"",
                     ""type"": ""Button"",
                     ""id"": ""e2d994ab-157b-42ce-903e-ea307057ea78"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""nextDialogue"",
+                    ""type"": ""Button"",
+                    ""id"": ""c451a4bd-14b5-408e-92a1-aa3ae743c467"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -70,15 +79,60 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
                     ""action"": ""fillGingerKale"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1e0a8eb3-d197-42d5-9a39-4e25fb8e36b3"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""nextDialogue"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""979bcd3a-076c-44b3-b6fd-0827792e5fcc"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""nextDialogue"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d2c1a2a1-f20e-4f1c-8b8c-02620dbeaf8f"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""nextDialogue"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3b61895f-453f-4979-92b6-c9313fce7339"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""nextDialogue"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
     ],
     ""controlSchemes"": []
 }");
-        // GingerKale
-        m_GingerKale = asset.FindActionMap("GingerKale", throwIfNotFound: true);
-        m_GingerKale_fillGingerKale = m_GingerKale.FindAction("fillGingerKale", throwIfNotFound: true);
+        // Input
+        m_Input = asset.FindActionMap("Input", throwIfNotFound: true);
+        m_Input_fillGingerKale = m_Input.FindAction("fillGingerKale", throwIfNotFound: true);
+        m_Input_nextDialogue = m_Input.FindAction("nextDialogue", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -135,40 +189,49 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // GingerKale
-    private readonly InputActionMap m_GingerKale;
-    private IGingerKaleActions m_GingerKaleActionsCallbackInterface;
-    private readonly InputAction m_GingerKale_fillGingerKale;
-    public struct GingerKaleActions
+    // Input
+    private readonly InputActionMap m_Input;
+    private IInputActions m_InputActionsCallbackInterface;
+    private readonly InputAction m_Input_fillGingerKale;
+    private readonly InputAction m_Input_nextDialogue;
+    public struct InputActions
     {
         private @Inputs m_Wrapper;
-        public GingerKaleActions(@Inputs wrapper) { m_Wrapper = wrapper; }
-        public InputAction @fillGingerKale => m_Wrapper.m_GingerKale_fillGingerKale;
-        public InputActionMap Get() { return m_Wrapper.m_GingerKale; }
+        public InputActions(@Inputs wrapper) { m_Wrapper = wrapper; }
+        public InputAction @fillGingerKale => m_Wrapper.m_Input_fillGingerKale;
+        public InputAction @nextDialogue => m_Wrapper.m_Input_nextDialogue;
+        public InputActionMap Get() { return m_Wrapper.m_Input; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(GingerKaleActions set) { return set.Get(); }
-        public void SetCallbacks(IGingerKaleActions instance)
+        public static implicit operator InputActionMap(InputActions set) { return set.Get(); }
+        public void SetCallbacks(IInputActions instance)
         {
-            if (m_Wrapper.m_GingerKaleActionsCallbackInterface != null)
+            if (m_Wrapper.m_InputActionsCallbackInterface != null)
             {
-                @fillGingerKale.started -= m_Wrapper.m_GingerKaleActionsCallbackInterface.OnFillGingerKale;
-                @fillGingerKale.performed -= m_Wrapper.m_GingerKaleActionsCallbackInterface.OnFillGingerKale;
-                @fillGingerKale.canceled -= m_Wrapper.m_GingerKaleActionsCallbackInterface.OnFillGingerKale;
+                @fillGingerKale.started -= m_Wrapper.m_InputActionsCallbackInterface.OnFillGingerKale;
+                @fillGingerKale.performed -= m_Wrapper.m_InputActionsCallbackInterface.OnFillGingerKale;
+                @fillGingerKale.canceled -= m_Wrapper.m_InputActionsCallbackInterface.OnFillGingerKale;
+                @nextDialogue.started -= m_Wrapper.m_InputActionsCallbackInterface.OnNextDialogue;
+                @nextDialogue.performed -= m_Wrapper.m_InputActionsCallbackInterface.OnNextDialogue;
+                @nextDialogue.canceled -= m_Wrapper.m_InputActionsCallbackInterface.OnNextDialogue;
             }
-            m_Wrapper.m_GingerKaleActionsCallbackInterface = instance;
+            m_Wrapper.m_InputActionsCallbackInterface = instance;
             if (instance != null)
             {
                 @fillGingerKale.started += instance.OnFillGingerKale;
                 @fillGingerKale.performed += instance.OnFillGingerKale;
                 @fillGingerKale.canceled += instance.OnFillGingerKale;
+                @nextDialogue.started += instance.OnNextDialogue;
+                @nextDialogue.performed += instance.OnNextDialogue;
+                @nextDialogue.canceled += instance.OnNextDialogue;
             }
         }
     }
-    public GingerKaleActions @GingerKale => new GingerKaleActions(this);
-    public interface IGingerKaleActions
+    public InputActions @Input => new InputActions(this);
+    public interface IInputActions
     {
         void OnFillGingerKale(InputAction.CallbackContext context);
+        void OnNextDialogue(InputAction.CallbackContext context);
     }
 }

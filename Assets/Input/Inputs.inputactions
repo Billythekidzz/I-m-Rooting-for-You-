@@ -2,13 +2,22 @@
     "name": "Inputs",
     "maps": [
         {
-            "name": "GingerKale",
+            "name": "Input",
             "id": "9618bf74-a072-4b2c-8bfa-6ca6596d0356",
             "actions": [
                 {
                     "name": "fillGingerKale",
                     "type": "Button",
                     "id": "e2d994ab-157b-42ce-903e-ea307057ea78",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "nextDialogue",
+                    "type": "Button",
+                    "id": "c451a4bd-14b5-408e-92a1-aa3ae743c467",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -46,6 +55,50 @@
                     "processors": "",
                     "groups": "",
                     "action": "fillGingerKale",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1e0a8eb3-d197-42d5-9a39-4e25fb8e36b3",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "nextDialogue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "979bcd3a-076c-44b3-b6fd-0827792e5fcc",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "nextDialogue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d2c1a2a1-f20e-4f1c-8b8c-02620dbeaf8f",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "nextDialogue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3b61895f-453f-4979-92b6-c9313fce7339",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "nextDialogue",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

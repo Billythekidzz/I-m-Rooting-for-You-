@@ -6,6 +6,7 @@ using Ink.Runtime;
 using System;
 using TMPro;
 using Animatext;
+using UnityEngine.InputSystem;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -75,33 +76,39 @@ public class DialogueManager : MonoBehaviour
         TryDialogue();
     }
 
-    private void Update()
-    {
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.F) || Input.GetMouseButtonDown(0)) && textBox.activeSelf)
-        {
-            if (messageAnimaTextTMPro.effects[0].state == EffectState.End 
-                || messageAnimaTextTMPro.effects[0].state == EffectState.Stop 
+    public void OnNextAction(InputAction.CallbackContext context)
+	{
+
+        if (!textBox.activeSelf || context.phase != InputActionPhase.Started)
+		{
+            return;
+		}
+
+        if (messageAnimaTextTMPro.effects[0].state == EffectState.End
+                || messageAnimaTextTMPro.effects[0].state == EffectState.Stop
                 || sentenceBeingTypedOut == "")
+        {
+            if (!_isSelectingChoice)
             {
-                if (!_isSelectingChoice)
-                {
-                    TryDialogue();
-                }
-            }
-            else
-            {
-                if (GameStateManager.Instance.isDialogueSkippable)
-                {
-                    if (typeSentenceCoroutine != null)
-                    {
-                        StopCoroutine(typeSentenceCoroutine);
-                    }
-                    messageAnimaTextTMPro.StopEffect(0);
-                    sentenceBeingTypedOut = message.text;
-                }
+                TryDialogue();
             }
         }
+        else
+        {
+            if (GameStateManager.Instance.isDialogueSkippable)
+            {
+                if (typeSentenceCoroutine != null)
+                {
+                    StopCoroutine(typeSentenceCoroutine);
+                }
+                messageAnimaTextTMPro.StopEffect(0);
+                sentenceBeingTypedOut = message.text;
+            }
+        }
+    }
 
+    private void Update()
+    {
         if(isTalking && (messageAnimaTextTMPro.effects[0].state == EffectState.End
                 || messageAnimaTextTMPro.effects[0].state == EffectState.Stop))
         {
@@ -111,7 +118,7 @@ public class DialogueManager : MonoBehaviour
                 StopCoroutine(typeSentenceCoroutine);
             }
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D)) // debug so i'll leave it 
         {
             Debug.Log(messageAnimaTextTMPro.effects[0].state);
         }
@@ -187,7 +194,7 @@ public class DialogueManager : MonoBehaviour
     }
 
     // Tells the story which branch to go to
-    public static void SetDecision(object element)
+    public static void SetDecision(object element) // why the fuck is this object
     {
         choiceSelected = (Choice)element;
         story.ChooseChoiceIndex(choiceSelected.index);
