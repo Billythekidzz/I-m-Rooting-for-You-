@@ -33,11 +33,8 @@ public class GingerKaleMinigame : Minigame
 
 	private void OnDisable()
 	{
-        if (IsGameActive)
-		{
-            EndGame(false);
-        }
-	}
+        EndGame(false);
+    }
 
 	// Update is called once per frame
 	void Update()
