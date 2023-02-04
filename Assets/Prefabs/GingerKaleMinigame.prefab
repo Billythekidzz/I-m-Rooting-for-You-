@@ -47,9 +47,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sliderPrefab: {fileID: 290803306051112652, guid: 0bbe4dcd14b3fbc44870d3480d79b9ac, type: 3}
   targetPrefab: {fileID: 4982195070641905103, guid: af2a433ef2531e44fa28a6be92449ad0, type: 3}
-  targetStartPos: {x: 0, y: 0}
+  targetStartPos: {x: 0, y: 2.5}
   sliderPushForce: {x: 0, y: 50}
+  height: 5
   targetStayTime: 1000
+  targetInstance: {fileID: 0}
 --- !u!114 &8288212918193287152
 MonoBehaviour:
   m_ObjectHideFlags: 0

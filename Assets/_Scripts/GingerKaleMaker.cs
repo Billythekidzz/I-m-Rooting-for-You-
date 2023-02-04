@@ -18,6 +18,8 @@ public class GingerKaleMaker : MonoBehaviour
 	[SerializeField]
 	Vector2 sliderPushForce;
 
+	public float height = 5f;
+
 	public float targetStayTime;
 
 	public bool IsMiniGameActive { get; private set; }
@@ -25,14 +27,6 @@ public class GingerKaleMaker : MonoBehaviour
 #nullable enable
 	private Rigidbody2D? sliderRb;
 	public GingerKaleTarget? targetInstance;
-
-	private void OnTriggerEnter2D(Collider2D collision)
-	{
-		if (targetInstance != null && collision.gameObject.tag == "GingerKaleTarget")
-		{
-			targetInstance.StopMovement();
-		}
-	}
 
 	public void StartGame()
 	{

@@ -15,11 +15,7 @@ public class GingerKaleTarget : MonoBehaviour
 
     private float timeSinceMovementUpdate;
     private Vector2 movement;
-
-    public void StopMovement()
-	{
-        movement = Vector2.zero;
-	}
+    private bool flippedMovement;
 
 	private void Start()
 	{
@@ -43,8 +39,20 @@ public class GingerKaleTarget : MonoBehaviour
             UpdateMovement();
 		}
 
+        float y = this.transform.localPosition.y + this.transform.localRotation.y / 2;
+
+        if (!flippedMovement && (y <= 0f || y >= Owner.height))
+		{
+            movement *= -1;
+            flippedMovement = true;
+        }
+        else
+		{
+            flippedMovement = false;
+		}
+
         this.transform.Translate(movement * Time.deltaTime);
-	}
+    }
 
     void UpdateMovement()
 	{
