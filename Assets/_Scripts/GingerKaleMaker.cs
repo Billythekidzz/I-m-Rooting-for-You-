@@ -12,10 +12,8 @@ public class GingerKaleMaker : MonoBehaviour
     [SerializeField]
     Vector2 sliderPushForce;
 
-	private void Start()
-	{
-        StartGame();
-	}
+    [SerializeField]
+    Canvas gameCanvas;
 
 #nullable enable
 	private GameObject? sliderInstance;
@@ -29,13 +27,22 @@ public class GingerKaleMaker : MonoBehaviour
 
         sliderInstance = Instantiate(sliderPrefab);
         sliderInstance.transform.SetParent(this.transform);
+
+        // setting canvas to screenspace: camera makes mini game draw on top of canvas
 	}
+
+    public void EndGame()
+	{
+        if (sliderInstance != null)
+        {
+            Destroy(sliderInstance);
+        }
+    }
 
 #nullable disable
 
     public void PushSliderUp()
 	{
         sliderInstance.GetComponent<Rigidbody2D>().AddForce(sliderPushForce);
-        Debug.Log("push up");
     }
 }
