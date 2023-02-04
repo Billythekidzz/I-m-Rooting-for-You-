@@ -6,7 +6,7 @@
             "id": "9618bf74-a072-4b2c-8bfa-6ca6596d0356",
             "actions": [
                 {
-                    "name": "move",
+                    "name": "fillGingerKale",
                     "type": "Button",
                     "id": "e2d994ab-157b-42ce-903e-ea307057ea78",
                     "expectedControlType": "Button",
@@ -23,7 +23,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "move",
+                    "action": "fillGingerKale",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -34,7 +34,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "move",
+                    "action": "fillGingerKale",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -45,7 +45,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "move",
+                    "action": "fillGingerKale",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

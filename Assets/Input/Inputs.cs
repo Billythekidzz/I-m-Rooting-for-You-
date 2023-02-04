@@ -28,7 +28,7 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
             ""id"": ""9618bf74-a072-4b2c-8bfa-6ca6596d0356"",
             ""actions"": [
                 {
-                    ""name"": ""move"",
+                    ""name"": ""fillGingerKale"",
                     ""type"": ""Button"",
                     ""id"": ""e2d994ab-157b-42ce-903e-ea307057ea78"",
                     ""expectedControlType"": ""Button"",
@@ -45,7 +45,7 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""move"",
+                    ""action"": ""fillGingerKale"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -56,7 +56,7 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""move"",
+                    ""action"": ""fillGingerKale"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -67,7 +67,7 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""move"",
+                    ""action"": ""fillGingerKale"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -78,7 +78,7 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
 }");
         // GingerKale
         m_GingerKale = asset.FindActionMap("GingerKale", throwIfNotFound: true);
-        m_GingerKale_move = m_GingerKale.FindAction("move", throwIfNotFound: true);
+        m_GingerKale_fillGingerKale = m_GingerKale.FindAction("fillGingerKale", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -138,12 +138,12 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
     // GingerKale
     private readonly InputActionMap m_GingerKale;
     private IGingerKaleActions m_GingerKaleActionsCallbackInterface;
-    private readonly InputAction m_GingerKale_move;
+    private readonly InputAction m_GingerKale_fillGingerKale;
     public struct GingerKaleActions
     {
         private @Inputs m_Wrapper;
         public GingerKaleActions(@Inputs wrapper) { m_Wrapper = wrapper; }
-        public InputAction @move => m_Wrapper.m_GingerKale_move;
+        public InputAction @fillGingerKale => m_Wrapper.m_GingerKale_fillGingerKale;
         public InputActionMap Get() { return m_Wrapper.m_GingerKale; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -153,22 +153,22 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_GingerKaleActionsCallbackInterface != null)
             {
-                @move.started -= m_Wrapper.m_GingerKaleActionsCallbackInterface.OnMove;
-                @move.performed -= m_Wrapper.m_GingerKaleActionsCallbackInterface.OnMove;
-                @move.canceled -= m_Wrapper.m_GingerKaleActionsCallbackInterface.OnMove;
+                @fillGingerKale.started -= m_Wrapper.m_GingerKaleActionsCallbackInterface.OnFillGingerKale;
+                @fillGingerKale.performed -= m_Wrapper.m_GingerKaleActionsCallbackInterface.OnFillGingerKale;
+                @fillGingerKale.canceled -= m_Wrapper.m_GingerKaleActionsCallbackInterface.OnFillGingerKale;
             }
             m_Wrapper.m_GingerKaleActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @move.started += instance.OnMove;
-                @move.performed += instance.OnMove;
-                @move.canceled += instance.OnMove;
+                @fillGingerKale.started += instance.OnFillGingerKale;
+                @fillGingerKale.performed += instance.OnFillGingerKale;
+                @fillGingerKale.canceled += instance.OnFillGingerKale;
             }
         }
     }
     public GingerKaleActions @GingerKale => new GingerKaleActions(this);
     public interface IGingerKaleActions
     {
-        void OnMove(InputAction.CallbackContext context);
+        void OnFillGingerKale(InputAction.CallbackContext context);
     }
 }
