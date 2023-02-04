@@ -84,6 +84,7 @@ public class DialogueManager : MonoBehaviour
         {
             SetCharacter(story.TagsForContentAtPath(path)[0]);
         }
+        GameStateManager.Instance.currentPath = path;
         TryDialogue();
     }
 

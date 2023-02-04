@@ -216,12 +216,13 @@ Then after that I think we’ll end the day by heading to Ginger’s VegeTavern 
 Sound good partner? Righto then, let’s go check out Alonion’s Jewelry Store!
 
 
-- -> vegetown_tavern
+- -> jewellery_store
 
 === vegetown_tavern ===
 # Background TAVERN
 # audio DOOR_OPEN_2
 # music TAVERN_1
+# Character BEEFROOT
 This here partner is Ginger, she runs the tavern. She sells the best ginger kale in all the land. 
 # emote neutral2
 I’d suggest being very...
@@ -234,7 +235,7 @@ I’d suggest being very...
 Hey there cutie, this is the first time I’ve seen a human around here, lookin’ for anything? ;)
 # Character MC_THOUGHTS
 Holy <i>REDACTED</i>…
-...
+......
 ...
 Oh god, why am I attracted to a vegetable?
 I never thought ginger could look so… 
@@ -300,7 +301,15 @@ Rabbit got your stem?
     #emote sad
     I guess it was never meant to be… I guess I will just have to settle for Sheriff Beefroot.
 - -> END
-		
+
+=== jewellery_store ===
+# Background JEWELLERY_STORE
+# audio DOOR_OPEN_1
+# music JEWELLERY_1
+# Character BEEFROOT
+This here is Alonion. Be careful talking to her. She is, how do I say this… Very easy to startle. 
+- -> vegetown_tavern
+
 === sheriff_beefroot ===
 # Sheriff Beefroot
 # Background VEGE_FOREST

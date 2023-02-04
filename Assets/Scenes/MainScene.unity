@@ -1501,7 +1501,7 @@ PrefabInstance:
       objectReference: {fileID: 7208729224398683248, guid: efe7784ab2b697149ad3d2a9788db340, type: 3}
     - target: {fileID: 5885689506753852345, guid: 735299e6bc477394ea679dd35b7c2b5e, type: 3}
       propertyPath: startingPath
-      value: vegetown_tavern
+      value: Preamble
       objectReference: {fileID: 0}
     - target: {fileID: 5885689506753852345, guid: 735299e6bc477394ea679dd35b7c2b5e, type: 3}
       propertyPath: nameTagObject
@@ -2070,6 +2070,7 @@ MonoBehaviour:
     - TAVERN_1
     - DOOR_OPEN_2
     - GINGER
+    - JEWELLERY_1
     m_values:
     - data:
       - audioClip: {fileID: 8300000, guid: 32a78675f452061459c979d77e746f05, type: 3}
@@ -2077,13 +2078,13 @@ MonoBehaviour:
         delay: 0.5
     - data:
       - audioClip: {fileID: 8300000, guid: b9acb5d6287bd3d4c81d7e39b5422633, type: 3}
-        volume: 0.6
+        volume: 0.3
         delay: 0.1
       - audioClip: {fileID: 8300000, guid: 6b1c99dc70693154da9705c69ad11d32, type: 3}
-        volume: 0.6
+        volume: 0.3
         delay: 0.1
       - audioClip: {fileID: 8300000, guid: 86f059fe9aca14e4bbd3b8f794d0e075, type: 3}
-        volume: 0.6
+        volume: 0.3
         delay: 0.1
     - data:
       - audioClip: {fileID: 8300000, guid: be441c8d62c3f1c439b5aafacd427147, type: 3}
@@ -2150,7 +2151,7 @@ MonoBehaviour:
         delay: 0
     - data:
       - audioClip: {fileID: 8300000, guid: 8e71b6fffca968344a0a19c109798d4c, type: 3}
-        volume: 1
+        volume: 1.5
         delay: 0
     - data:
       - audioClip: {fileID: 8300000, guid: e8f744039df3ad8469bb6d435da8c46e, type: 3}
@@ -2179,6 +2180,10 @@ MonoBehaviour:
       - audioClip: {fileID: 8300000, guid: ea155c51ee4192c45b01403643e8beb7, type: 3}
         volume: 1
         delay: 0.25
+    - data:
+      - audioClip: {fileID: 8300000, guid: c0498bf91e802c54eb3383bf8ba5424f, type: 3}
+        volume: 0.05
+        delay: 0
   sfxVolume: 0.2
   musicVolume: 0.5
   masterVolume: 0.5
@@ -3739,6 +3744,7 @@ MonoBehaviour:
     - VEGE_TOWN_DAY
     - TAVERN
     - VEGE_TOWN_NIGHT
+    - JEWELLERY_STORE
     m_values:
     - sprites:
       - {fileID: 21300000, guid: 6babb3a9e4013874c9c34ce3ed9ec746, type: 3}
@@ -3760,6 +3766,8 @@ MonoBehaviour:
       - {fileID: 21300000, guid: 4908efd4030959b4a88bfcf6fa2b5e81, type: 3}
     - sprites:
       - {fileID: 21300000, guid: a5e2d1956e7d8d54f98e4f100392ba9c, type: 3}
+    - sprites:
+      - {fileID: 21300000, guid: 789ae375d9c11944a9a5b45adf32360c, type: 3}
   stringCharacterImageElementDictionary:
     m_keys:
     - MC_THOUGHTS

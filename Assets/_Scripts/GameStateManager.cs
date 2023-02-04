@@ -10,6 +10,9 @@ public class GameStateManager : MonoBehaviour
     public string lastSavedCharacterKey = "";
 
     [HideInInspector]
+    public string currentPath = "";
+
+    [HideInInspector]
     public bool isDialogueSkippable = true;
 
     public bool wasLastSpeakerMC = true;
@@ -19,6 +22,8 @@ public class GameStateManager : MonoBehaviour
     public UnityEvent characterChangedEvent = new UnityEvent();
 
     public Dictionary<string, int> characterAffections = new Dictionary<string, int>();
+
+    public List<SaveState> saveStates;
 
     [SerializeField]
     GameObject optionsPanel;
@@ -33,13 +38,19 @@ public class GameStateManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(this);
-
+            var es3File = new ES3File("SaveStates.es3");
+            saveStates = es3File.Load<List<SaveState>>("saveStates", new List<SaveState>() 
+            {
+                new SaveState(),
+                new SaveState(),
+                new SaveState()
+            });
         }
     }
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             ToggleOptionsPanel();
         }
@@ -77,7 +88,7 @@ public class GameStateManager : MonoBehaviour
         string floatIntString = param.Split('|')[1];
         if (int.TryParse(floatIntString, out int value))
         {
-            if(characterAffections.TryGetValue(characterKey, out int currentAffection))
+            if (characterAffections.TryGetValue(characterKey, out int currentAffection))
             {
                 characterAffections[characterKey] = currentAffection + value;
             }
@@ -89,13 +100,39 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
-    public void SaveGameState()
+    public void SaveGameState(int index)
     {
         //tbd, for saving to local file with easysave
+        SaveState saveState = new SaveState()
+        {
+            lastSavedPath = currentPath,
+            lastSavedCharacterKey = lastSavedCharacterKey,
+            isDialogueSkippable = isDialogueSkippable,
+            wasLastSpeakerMC = wasLastSpeakerMC,
+            characterAffections = characterAffections
+        };
+
+        saveStates[index] = saveState;
+        var es3File = new ES3File("SaveStates.es3");
+        es3File.Save<List<SaveState>>("saveStates", saveStates);
+        es3File.Sync();
     }
 
     public bool IsOptionsOpen()
     {
         return optionsPanel.activeSelf;
+    }
+
+    public class SaveState
+    {
+        public string lastSavedPath = Globals.INVALID_STRING;
+
+        public string lastSavedCharacterKey = "";
+
+        public bool isDialogueSkippable = true;
+
+        public bool wasLastSpeakerMC = true;
+
+        public Dictionary<string, int> characterAffections = new Dictionary<string, int>();
     }
 }

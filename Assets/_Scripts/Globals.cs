@@ -18,4 +18,6 @@ public class Globals {
     public static string ONION_KEY = "onion";
     public static string GINGER_KEY = "ginger";
     public static string CARROT_KEY = "carrot";
+
+    public static string INVALID_STRING = "invalidStringYee";
 }
