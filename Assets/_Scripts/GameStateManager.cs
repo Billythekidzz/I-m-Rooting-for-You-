@@ -18,6 +18,8 @@ public class GameStateManager : MonoBehaviour
 
     public UnityEvent characterChangedEvent = new UnityEvent();
 
+    public Dictionary<string, int> characterAffections = new Dictionary<string, int>();
+
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -51,5 +53,28 @@ public class GameStateManager : MonoBehaviour
                 wasLastSpeakerMC = false;
             }
         }
+    }
+
+    public void AddAffinity(string param)
+    {
+        string characterKey = param.Split('|')[0].ToLower();
+        string floatIntString = param.Split('|')[1];
+        if (int.TryParse(floatIntString, out int value))
+        {
+            if(characterAffections.TryGetValue(characterKey, out int currentAffection))
+            {
+                characterAffections[characterKey] = currentAffection + value;
+            }
+            else
+            {
+                characterAffections.Add(characterKey, value);
+            }
+            Debug.Log("Added " + value + " to " + characterKey);
+        }
+    }
+
+    public void SaveGameState()
+    {
+        //tbd, for saving to local file with easysave
     }
 }

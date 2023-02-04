@@ -187,11 +187,13 @@ I looked at the beetroot, while still clearly looking like a vegetable, they had
 I must admit that I had never seen such a bulky vegetable before - this beefy being had clearly been working out.
     * [H-holy smokes, it is just a vegetable but… That well-defined shape! That succulent stem… mmmmmfgffsdgff]
     # Character MC
+    # add_affinity beefroot|2
     H-hey~
     * [Hello creature of my imagination]
     # Character MC
     Hello creature of my imagination
     * [What the hell is this! A walking talking vegetable? This is an affront to nature!]
+    # add_affinity beefroot|-2
     # Character MC
     What the hell is this! A walking talking vegetable? This is an affront to nature!
     # Character BEEFROOT

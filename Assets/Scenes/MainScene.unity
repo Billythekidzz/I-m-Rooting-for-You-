@@ -916,7 +916,7 @@ MonoBehaviour:
         delay: 0
     - data:
       - audioClip: {fileID: 8300000, guid: 42a9d0aa85d7f224b8464d519af4dd9e, type: 3}
-        volume: 0.3
+        volume: 0.2
         delay: 0
     - data:
       - audioClip: {fileID: 8300000, guid: c7a670d21e2665d43818bc500f7a1c4b, type: 3}

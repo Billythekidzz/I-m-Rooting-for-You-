@@ -13,4 +13,9 @@ public class Globals {
     public static int EMOTE_BLUSH_INDEX = 3;
     public static int EMOTE_CRY_INDEX = 4;
     public static int EMOTE_NEUTRAL2_INDEX = 5;
+
+    public static string BEEFROOT_KEY = "beefroot";
+    public static string ONION_KEY = "onion";
+    public static string GINGER_KEY = "ginger";
+    public static string CARROT_KEY = "carrot";
 }

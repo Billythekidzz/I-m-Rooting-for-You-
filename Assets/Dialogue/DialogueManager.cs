@@ -288,7 +288,7 @@ public class DialogueManager : MonoBehaviour
 
     private void AddAffinity(string param)
     {
-        throw new NotImplementedException();
+        GameStateManager.Instance.AddAffinity(param);
     }
 
     private void SetMinigame(string param)
