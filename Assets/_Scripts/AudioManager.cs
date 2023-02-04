@@ -11,6 +11,9 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     AudioSource sfxSource;
 
+    [SerializeField]
+    AudioSource musicSource;
+
     public static AudioManager Instance;
 
     [SerializeField]
@@ -35,6 +38,25 @@ public class AudioManager : MonoBehaviour
         {
             int indexToUse = UnityEngine.Random.Range(0, value.Count);
             sfxSource.PlayOneShot(value[indexToUse].audioClip, value[indexToUse].volume);
+            return value[indexToUse];
+        }
+        return null;
+    }
+
+    public AudioElement PlayMusic(string audioKey)
+    {
+        if(audioKey == Globals.MUSIC_STOP_KEY)
+        {
+            musicSource.Stop();
+            return null;
+        }
+        if (stringAudioClipDictionary.TryGetValue(audioKey, out List<AudioElement> value))
+        {
+            int indexToUse = UnityEngine.Random.Range(0, value.Count);
+            musicSource.clip = value[indexToUse].audioClip;
+            musicSource.volume = value[indexToUse].volume;
+            musicSource.Play();
+            //musicSource.PlayOneShot(value[indexToUse].audioClip, value[indexToUse].volume);
             return value[indexToUse];
         }
         return null;

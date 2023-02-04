@@ -6,7 +6,11 @@ using UnityEngine.Events;
 public class GameStateManager : MonoBehaviour
 {
 
+    [HideInInspector]
     public string lastSavedCharacterKey = "";
+
+    [HideInInspector]
+    public bool isDialogueSkippable = true;
 
     public static GameStateManager Instance;
 
@@ -28,10 +32,15 @@ public class GameStateManager : MonoBehaviour
 
     public void SetCharacter(string characterKeyToSet)
     {
-        if(lastSavedCharacterKey != characterKeyToSet)
+        if (lastSavedCharacterKey != characterKeyToSet && characterKeyToSet != Globals.MC_KEY)
         {
             lastSavedCharacterKey = characterKeyToSet;
             characterChangedEvent.Invoke();
+        }
+        else
+        {
+            //TBD FIX
+            lastSavedCharacterKey = characterKeyToSet;
         }
     }
 }
