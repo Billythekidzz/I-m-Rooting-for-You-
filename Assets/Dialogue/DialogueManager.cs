@@ -34,8 +34,6 @@ public class DialogueManager : MonoBehaviour
 
     Coroutine typeSentenceCoroutine;
 
-    string lastSavedCharacterKey = "";
-
     [SerializeField]
     float speakAudioWaitDelay = 0.5f;
 
@@ -146,7 +144,7 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator TypeSentence()
     {
-        AudioElement audioElement = AudioManager.Instance.PlaySound(lastSavedCharacterKey);
+        AudioElement audioElement = AudioManager.Instance.PlaySound(GameStateManager.Instance.lastSavedCharacterKey);
         yield return new WaitForSeconds(audioElement == null ? speakAudioWaitDelay : audioElement.delay);
         isTalking = true;
         typeSentenceCoroutine = StartCoroutine(TypeSentence());
@@ -245,14 +243,13 @@ public class DialogueManager : MonoBehaviour
 
     void ChangeBackground(string param)
     {
-        BackgroundImageManager.Instance.ChangeBackground(param);
+        StoryboardManager.Instance.ChangeBackground(param);
     }
 
     void SetCharacter(string _character)
     {
-        lastSavedCharacterKey = _character;
+        GameStateManager.Instance.lastSavedCharacterKey = _character;
         nametag.text = _character;
-        //Maybe set talking audio as well?
     }
 
     void SetAnimation(string _name)

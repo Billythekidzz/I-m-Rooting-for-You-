@@ -3,8 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
+public class ImageElement
+{
+    public Sprite[] sprites;
+}
 
 [Serializable]
-public class StringTexture2DDictionary : SerializableDictionary<string,
-Texture2D>
+public class StringImageElementListDictionary : SerializableDictionary<string,
+ImageElement>
 { }
