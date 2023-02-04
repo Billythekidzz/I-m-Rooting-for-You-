@@ -274,6 +274,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8141066398591643109, guid: 18cabfce10608704498edc8818cf716c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8141066398732153865, guid: 18cabfce10608704498edc8818cf716c, type: 3}
       propertyPath: m_Name
       value: PictureFrame
