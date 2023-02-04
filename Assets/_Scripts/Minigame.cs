@@ -7,8 +7,7 @@ public class Minigame : MonoBehaviour
 {
 	public bool IsGameActive { get; private set; }
 
-	[SerializeField]
-	UnityEvent<GameOverContext> onGameOver;
+	public UnityEvent<GameOverContext> onGameOver;
 
 	public virtual void StartGame()
 	{
@@ -17,11 +16,14 @@ public class Minigame : MonoBehaviour
 
 	public virtual void EndGame(bool isVictory)
 	{
+		if (IsGameActive)
+		{
+			GameOverContext context = new GameOverContext(isVictory);
+
+			onGameOver.Invoke(context);
+		}
+
 		IsGameActive = false;
-
-		GameOverContext context = new GameOverContext(isVictory);
-
-		onGameOver.Invoke(context);
 	}
 
 

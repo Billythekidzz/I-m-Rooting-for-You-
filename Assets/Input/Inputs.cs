@@ -44,6 +44,15 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""moveOnionRing"",
+                    ""type"": ""Value"",
+                    ""id"": ""ba279734-c253-4a21-adb7-9c03c99b7605"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -123,6 +132,171 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
                     ""action"": ""nextDialogue"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""09c15688-b36a-4ac2-a9f1-9b66716d7e8c"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""moveOnionRing"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""230c01d8-1c22-4c02-a979-85ff84772430"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""moveOnionRing"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""7ccac39d-95a7-4f05-9b06-5b30a8982a09"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""moveOnionRing"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""b8e91110-43e0-4d4a-a32c-341a331caca8"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""moveOnionRing"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""d144ac70-724e-44aa-a327-3586b5765da9"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""moveOnionRing"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Arrow Keys"",
+                    ""id"": ""819d1da0-703d-4738-b3e7-47bfc27f7312"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""moveOnionRing"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""a09da1c3-a3e6-46b9-bd83-39171b66d732"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""moveOnionRing"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""c41143e9-b1ac-4bb7-9c61-e8e83587b7b0"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""moveOnionRing"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""c45624e3-08cf-4e45-8fc7-237862a71544"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""moveOnionRing"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""3273e7b3-0a08-45e6-b754-287b6c51c6f2"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""moveOnionRing"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Controller"",
+                    ""id"": ""793e53f6-488c-4ed5-9490-ef97cbb308bd"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""moveOnionRing"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""34f097b0-a809-45c4-9f77-7c16009042c6"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""moveOnionRing"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""dd2e7ab7-0d69-49cd-a946-2daca4197f56"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""moveOnionRing"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""bb2ea58a-1a6c-49fb-8fff-a0c8309e67be"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""moveOnionRing"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""f9b2f9f8-094b-41ba-bc07-e00c061a7a32"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""moveOnionRing"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -133,6 +307,7 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
         m_Input = asset.FindActionMap("Input", throwIfNotFound: true);
         m_Input_fillGingerKale = m_Input.FindAction("fillGingerKale", throwIfNotFound: true);
         m_Input_nextDialogue = m_Input.FindAction("nextDialogue", throwIfNotFound: true);
+        m_Input_moveOnionRing = m_Input.FindAction("moveOnionRing", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -194,12 +369,14 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
     private IInputActions m_InputActionsCallbackInterface;
     private readonly InputAction m_Input_fillGingerKale;
     private readonly InputAction m_Input_nextDialogue;
+    private readonly InputAction m_Input_moveOnionRing;
     public struct InputActions
     {
         private @Inputs m_Wrapper;
         public InputActions(@Inputs wrapper) { m_Wrapper = wrapper; }
         public InputAction @fillGingerKale => m_Wrapper.m_Input_fillGingerKale;
         public InputAction @nextDialogue => m_Wrapper.m_Input_nextDialogue;
+        public InputAction @moveOnionRing => m_Wrapper.m_Input_moveOnionRing;
         public InputActionMap Get() { return m_Wrapper.m_Input; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -215,6 +392,9 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
                 @nextDialogue.started -= m_Wrapper.m_InputActionsCallbackInterface.OnNextDialogue;
                 @nextDialogue.performed -= m_Wrapper.m_InputActionsCallbackInterface.OnNextDialogue;
                 @nextDialogue.canceled -= m_Wrapper.m_InputActionsCallbackInterface.OnNextDialogue;
+                @moveOnionRing.started -= m_Wrapper.m_InputActionsCallbackInterface.OnMoveOnionRing;
+                @moveOnionRing.performed -= m_Wrapper.m_InputActionsCallbackInterface.OnMoveOnionRing;
+                @moveOnionRing.canceled -= m_Wrapper.m_InputActionsCallbackInterface.OnMoveOnionRing;
             }
             m_Wrapper.m_InputActionsCallbackInterface = instance;
             if (instance != null)
@@ -225,6 +405,9 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
                 @nextDialogue.started += instance.OnNextDialogue;
                 @nextDialogue.performed += instance.OnNextDialogue;
                 @nextDialogue.canceled += instance.OnNextDialogue;
+                @moveOnionRing.started += instance.OnMoveOnionRing;
+                @moveOnionRing.performed += instance.OnMoveOnionRing;
+                @moveOnionRing.canceled += instance.OnMoveOnionRing;
             }
         }
     }
@@ -233,5 +416,6 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
     {
         void OnFillGingerKale(InputAction.CallbackContext context);
         void OnNextDialogue(InputAction.CallbackContext context);
+        void OnMoveOnionRing(InputAction.CallbackContext context);
     }
 }
