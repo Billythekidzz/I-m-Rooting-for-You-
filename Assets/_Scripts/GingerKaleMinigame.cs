@@ -19,6 +19,13 @@ public class GingerKaleMinigame : Minigame
 
     private bool isFilling = false;
 
+	public override void StartGame()
+	{
+		base.StartGame();
+
+        slider.value = 0f;
+	}
+
 	private void OnEnable()
 	{
         StartGame();
@@ -58,7 +65,6 @@ public class GingerKaleMinigame : Minigame
             isFilling = false;
             StopFilling();
         }
-
     }
 
     private void StopFilling()

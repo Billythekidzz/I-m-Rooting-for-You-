@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class Minigame : MonoBehaviour
 {
-    public bool IsGameActive { get; protected set; }
+    public bool IsGameActive { get; private set; }
 
 	[SerializeField]
 	UnityEvent<bool> onGameOver;
