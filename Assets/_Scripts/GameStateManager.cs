@@ -177,6 +177,11 @@ public class GameStateManager : MonoBehaviour
         ToggleOptionsPanel();
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
     public class SaveState
     {
         public string lastSavedPath = Globals.INVALID_STRING;

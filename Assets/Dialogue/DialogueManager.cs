@@ -18,6 +18,9 @@ public class DialogueManager : MonoBehaviour
     public bool isTalking = false;
     bool _isSelectingChoice;
 
+    [SerializeField]
+    GameObject gameOverScreen;
+
     static Story story;
     //[Inject]
     //Story story;
@@ -98,6 +101,7 @@ public class DialogueManager : MonoBehaviour
 
     public void RestartAndLoadPath(string path)
     {
+        gameOverScreen.SetActive(false);
         story = new Story(inkFile.text);
         messageAnimaTextTMPro.SetEffectSpeed(0, defaultTextSpeed);
         messageAnimaTextTMPro.SetEffectSpeed(1, defaultTextSpeed);
@@ -193,6 +197,9 @@ public class DialogueManager : MonoBehaviour
     private void FinishDialogue()
     {
         Debug.Log("End of Dialogue!");
+        GameStateManager.Instance.ToggleOptionsPanel();
+        AudioManager.Instance.PlaySound("objection");
+        gameOverScreen.SetActive(true);
         textBox.SetActive(false);
     }
 

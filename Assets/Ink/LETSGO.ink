@@ -509,23 +509,24 @@ I’m afraid so Sheriff. Not sure what happened to it but after this cutiepie le
 I have no idea what could’ve caused it, so if you could do some investigating I would really appreciate it darlings.
 
 # Character BEEFROOT
-# emote happy
 Can do missy - shouldn’t be a mo!
 
 # Character MC
-# emote neutral
 <i>Beefroot hops over the counter and opens up the machine with great power, but also a certain gentleness.</i>
 
 # Character MC_THOUGHTS
-Beefroot really does care for the community, and they’re actually quite… handsome.
+<i>Beefroot really does care for the community, and they’re actually quite… handsome.</i>
 
-# text_speed 0.1
+# text_speed 0.2
 # music WESTERN_WHISTLE
 # expand_textbox 1
-<OHOHOHO>Those rippling muscles, the strong back…</OHOHOHO>
+# set_skippable_dialogue false
+<OHOHOHO><b><i>Those rippling muscles, the strong back…</b></i></OHOHOHO>
 
+# text_speed 1.0
 # music TAVERN_1
 # Character BEEFROOT
+# set_skippable_dialogue true
 You alright there partner? You looked as tossed as a caesar salad for a second there.
 
 # Character MC
@@ -542,12 +543,363 @@ Righto lets take a peek around here and…
 
 Huh, thats interesting, it seems like there’s been a pretty decent spill of Ginger Kale…
 
+# emote neutral2
 Oh, now ain’t that weird, seems like the pipe that feeds Ginger Kale to the tavern has been been split in half.
 
 # Character MC_THOUGHTS
+# music MUSIC_STOP
 Hmm, that doesn’t look like it has been split, it looks like it has been <OHOHOHO>cut…</OHOHOHO>
 
-Also, what’s with that weird orange tint on one end of the pipe, it almost looks like it scraped against something.
+Also, what’s with that weird orange tint on one end of the pipe, it almost looks like it <OHOHOHO>scraped against something.</OHOHOHO>
 
+# Character BEEFROOT
+# music DANGER_THEME
+# emote neutral2
+Well ain’t this mighty suspicious.
+
+And what’s this? There’s a note on the wall…
+
+# Character MC
+Beefroot grabs the note off the wall and reads it to themself. Slowly their expression gets darker and darker. Beefroot passes the note to me.
+
+# Character BEEFROOT
+Ye better read this, partner.
+
+# Character MC
+I grabbed the note from their hand, and starting reading.
+
+# Character ???
+# set_skippable_dialogue false
+# music MUSIC_STOP
+# text_speed 0.7
+<OHOHOHO>“i am siCK OF EverY VeGe thInkInG tHat Tomato is suCH a GoOd ANd natUraL leAdEr, bEcaUse They aRe Not. anD To pRoVE it, maYor TOMaTO Won’T Be IN theiR PosITIOn FOr mUCH LONGER - WE will Get pERmAneNTLy riD oF TheM AND VegETOWn WIlL rEJoIcE oNCE ThEY’RE SplatteD eHeheHEhEHehEheheheHEHehEhEhE”</OHOHOHO>
+
+# set_skippable_dialogue true
+# Character MC
+# music DANGER_THEME
+# text_speed 1.0
+After finishing the note, you pass it back to Beefroot, who takes a deep breath.
+
+# Character BEEFROOT
+Well this ain’t how the day was supposed to go, wasn’t it partner…
+
+# emote neutral2
+I think we might have to part ways here partner, I’ve never encountered something as serious as this and to be completely gosh darn honest I’m a wee bit worried.
+
+This could be dangerous, and it’s and its not yer responsibility to take care of this ‘ere town - its mine. I’m worried that ye could be hurt, and that ain’t make me feel good on the inside you hear?
+
+What I’m tryin’ to say is, I appreciate the help today, but for your own safety I think it’s best that you stay out of this.
+
+# character MC
+But what about you? Won’t you be in danger?
+
+# Character BEEFROOT
+Danger is what I signed up for, partner.
+
+# Character MC_THOUGHTS
+God, they flexed while saying that, are they trying to tempt me?
+
+# Character MC
+A-ah sure Sheriff
+
+# Character BEEFROOT
+Just call me Beefroot partner, I think we’re close enough for that aren’t we? Now, go on, and ‘ead off, I’ve got this partner.
+
+# Character MC_THOUGHTS
+So I head off back into my home.
+
+# audio DOOR_OPEN_1
+# Background INDOORS_DAY
+# music MUSIC_STOP
+I try to get work done but…
+
+#Background INDOORS_NIGHT
+#Character MC_THOUGHTS
+I can’t stop thinking about Beefroot and how in danger they could be…
+
+But it’s too late to sort anything out, and they specifically asked me not to interfere, so maybe it's best if I just head off to bed.
+
+#Character MC
+So I do, and head off to bed, thoughts racing about how Beefroot is and if they are safe.
+
+- -> sheriff_beefroot_date_2
+
+=== sheriff_beefroot_date_2 ===
+# savepoint day_3_beefroot
+# text_speed 0.2
+# set_skippable_dialogue false
+# character MC_THOUGHTS
+# Background BLACK
+DAY 3
+
+# set_skippable_dialogue true
+# character MC
+I wake up early, with a slight sweat.
+
+# character MC_THOUGHTS
+
+I slept awfully, too busy thinking about Beefroot probably.
+
+But I think I decided that I’m going to help them.
+
+They’re too precious to me, and I can’t imagine living a life without them.
+
+I have to go see them!
+
+# Background VEGE_TOWN_DAY
+# audio DOOR_OPEN_2
+# music VEGE_TOWN_OUTDOORS_SHORT_1
+# Character MC_THOUGHTS
+I rush through vegetown, down different streets and through buildings until I spot him.
+
+And there he is, looking handsome as always.
+
+# Character MC
+Beefroot!
+
+# Character BEEFROOT
+Oh howdy partner - how are ye?
+
+# Character MC
+I don’t care about me, I care about you! How are you? I was so worried about you all night!
+
+# Character BEEFROOT
+# emote blush
+A-ah well that's mighty kind of you partner, I’m doin alright.
+
+Ye were worried about me all night? Well aren’t you as sweet as a Kumara.
+
+# emote neutral
+
+I’ve just been doin’ some investigatin’ and well, I think I’ve narrowed down the suspects to three candidates that could have cut the Ginger Kale line at that time o’ the night.
+
+Firstly, Alonion, the sweet darlin’ of us vege folk, but they ain’t really hang around with any vege much so nobody had an alibi for their whereabouts at the time the line was cut.
+
+Secondly is Ginger, the Vegetavern owner, she had the best access to the line, she could have easily sabotaged it herself and is trying to use the sabotage as an alibi to throw us off her scent.
+
+Lastly is Carrot, now you ain’t never met Carrot but they’re a well known toy owner ‘round town, they are the only other vege who ain’t got an alibi. In the most recent Mayor election, it was the current Mayor Tomato who was facin’ off with Carrot, Mayor Tomato won by a landslide vote, almost ninety percent to ten, so it ain’t be surprisin’ if Carrot has some bad juice between themself and our good mayor.
+
+We’ll need to question them all, then tomorrow we can bring our main suspect in for interrogation to get more details.
+
+Ginger’s tavern is the closest to here, so I think we should head ther’ first and ask them some questions.
+
+# text_speed 1.0
+# music TAVERN_1
+# audio DOOR_OPEN_1
+# Character GINGER
+# set_skippable_dialogue true
+Good morning Sheriff and cutie~ How are you two doing?
+
+# Character BEEFROOT
+Doin’ well Ginger, me and my partner here just had some… questions to ask if ye have a moment to spare.
+
+# Character GINGER
+Of course, anything for my favorite cuties!
+
+# Character BEEFROOT
+Very well, first off I’ll ask: what were you doing at the time the pipe was cut?
+
+# Character GINGER
+Well, honey, I was cleaning up after you and the cutie came around to visit, and in preparation for Mayor Tomato’s nightly visit to the tavern.
+
+# Character BEEFROOT
+Alright, and I have to ask, do you have a knife or any other kind of tool that could cut a pipe like what happened outside?
+# Character GINGER
+Hmm… I’m not sure I do officer.
+
+Oh, actually, I do have a knife that I use for shaving ice for the drinks!
+
+Speaking of, did you two cuties want some Ginger Kale? The line is broken, but I just have to go outside to get some if you want.
+
+# Character BEEFROOT
+No thank ye, I think we’ll be staying sober for the time bein’.
+
+Finally, what are your thoughts on Mayor Tomato, feel free to say whatever ye want, this is a no judgement zone.
+
+# Character GINGER
+Well, he’s a lovely client and tends to bring in a lot of revenue for the tavern.
+
+Except, well, uh…
+
+# Character BEEFROOT
+Yes?
+
+# Character GINGER
+He can be a bit of a hassle sometimes, especially after he’s had a few drinks. I can’t count the number of times I’ve had to clean tomato juice off the… 
+
+Ugh, I really don’t want to talk about it.
+
+Sometimes I do wish he kept better control of himself - he’s supposed to be the mayor of our town, but how would the public react if they knew he got super drunk every night of the week.
+
+# Character BEEFROOT
+That’s alright Ginger, thank you for letting us know.
+
+Well then partner, I think that was quite informative, don’t ye think?
+
+Let’s head to Alonion’s store next and ask them some questions.
+
+# Background JEWELLERY_STORE
+# audio DOOR_OPEN_1
+# music JEWELLERY_1
+# Character BEEFROOT
+Mornin’ Alonion!
+
+# Character ONION
+A-ahhhhhhh! （>﹏<）
+
+I uh-uhhhh definitely wasn’t doing a-anything suspicious at all!!!
+
+# Character MC
+Alonion places something down behind the counter, making a light clicking noise on the ground. They try to make sure that Beefroot and I can’t see it, then they stand up.
+
+# Character ONION
+H-how can I help you two?
+
+# Character BEEFROOT
+Nothing serious today, just want to ask ye a few questions about recent events.
+
+# Character ONION
+O-oh like the annual ring event?
+
+I can’t tell you anything about it or else you’ll steal my technique and tell everyone >_<
+
+WAAAAAAAAAAAAA! 
+
+# Character BEEFROOT
+N-no don’t worry ‘bout that now, this is just about the event that happened the other day at the Vegetavern.
+
+# Character ONION
+I DON’T KNOW WHAT YOU’RE TALKING ABOUT IT WASN’T ME I’M INNOCENT.
+
+WAAAAAAAAAAAAAAAAA!
+
+# Character MC
+Alonion runs off into the back of the shop, I start to chase after them but Beefroot puts their strong hand on my shoulder and stops me.
+
+# Character BEEFROOT
+Let ‘em go partner, they’re a wee bit shy and overwhelmed at the moment so I think it's best to leave ‘em be. 
+
+We can always grab ‘em in for questioning tomorrow.
+
+Righto then partner, last one for the day is Carrot, so why do we head around to their store before they close and-
+
+# Character MC
+Suddenly, the door to the jewelry store opens, and an orange vegetable walks through.
+
+# Character CARROT
+Evening Alonion, I was looking to-
+
+Oh, hello officer, is this a new friend? He looks similar to the old one that kicked the bucket huh!
+
+# Character BEEFROOT
+Well well Carrot, if it isn’t the fellow that I wanted to see!
+
+We have a few questions we’d like to ask, the first being: what are you doing here at this hour, aren’t ye supposed to still be working now?
+
+# Character CARROT
+Ah well, that would be the case officer but it turns out that my old gloves that I use for the toy store are damaged and I’m in needing of a new pair. 
+
+I was going to ask Alonion here as they tend to have very nice gloves to use for jewelry, I could probably use them for my toys as well.
+
+# Character BEEFROOT
+Good, good. Now how about the other night, what were ye doin’ round then.
+
+# Character CARROT
+I don’t know what to say, officer, I was at my shop all night cleaning up, it was a pretty quiet night, moreso than usual, but I was busy cleaning, yes.
+
+# Character BEEFROOT
+Okay, now what are your thoughts about our good Mayor Tomato.
+
+# Character CARROT
+He’s a very kind vegetable, officer. I know that us two have a bit of… history, but that doesn’t stop two vegetables from getting along now does it?
+
+# Character BEEFROOT
+That is fair.
+
+Well, I’ll let you get on with your business, let me know if you see anythin’ suspicious not won’t you?
+
+# Character CARROT
+Will do officer.
+
+# Character BEEFROOT
+Good, I’ll let you know if I need anything tomorrow. By the by, where should I expect you to be if I need you tomorrow.
+
+# Character CARROT
+I’ll be at my store as always officer.
+
+# Character BEEFROOT
+Very well, have a safe evening.
+
+# Background VEGE_TOWN_NIGHT
+# Character BEEFROOT
+Well, I feel like we did make some good ground on this here case, however I also feel like we’ve gotten nowhere at all.
+
+You did well today partner, and thank you for the assistance, and the uhh…
+
+(Blushes) encouragement you gave earlier. I really do be appreciatin’ it.
+
+Anyways, I think it’s best we be heading off to bed. Let us rest and think over this problem tomorrow. Whaddaya say partner?
+
+# Character MC
+Sounds good, Beefroot.
+
+# Character BEEFROOT
+Well then, g’night partner.
+
+- -> sheriff_beefroot_date_3
+
+=== sheriff_beefroot_date_3 ===
+#background INDOORS_NIGHT
+#Character MC_THOUGHTS
+# savepoint day_4_beefroot
+…
+
+#background INDOORS_NIGHT
+…
+
+#background BLACK
+…
+
+#background INDOORS_DAY
+…
+
+DAY 4
+
+#background VEGE_TOWN_DAY
+I slept poorly again, worried about Beefroot.
+
+I know that they’re a strong and capable individual its just…
+
+I care for them deeply.
+
+But why do I care for them deeply?
+
+Could I be…
+
+No, it couldn’t be.
+
+But maybe?
+
+#Character BEEFROOT
+Mornin’ partner!
+#Character MC
+Beefroot slaps his strong arm on my back, giving me a bit of a surprise
+
+#Character MC
+M-morning Sheriff Beefroot
+
+#Character BEEFROOT
+Remember partner, it's just Beefroot, no sheriff in it yea?
+
+#Character MC
+Ah, sorry.
+
+#Character BEEFROOT
+No worries about it partner.
+
+Anyways, I can’t narrow down who we should bring in for questioning today, so I thought I would leave it up to you.
+
+Who do you think is most likely to be the culprit?
+* [I’ve never seen such a… delectable ginger before…]
 
 - -> END
