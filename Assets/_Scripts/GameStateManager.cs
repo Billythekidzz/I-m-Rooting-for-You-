@@ -153,12 +153,17 @@ public class GameStateManager : MonoBehaviour
 
     public void LoadGameState(int saveIndex)
     {
-        isDialogueSkippable = true;
-        lastSavedCharacterKey = "";
+        ResetGameState();
         SaveState saveStateToLoad = saveStates[saveIndex];
         characterAffections = new Dictionary<string, int>(saveStateToLoad.characterAffections);
         DialogueManager.Instance.RestartAndLoadPath(saveStateToLoad.lastSavedPath);
         ToggleOptionsPanel();
+    }
+
+    public void ResetGameState()
+    {
+        isDialogueSkippable = true;
+        lastSavedCharacterKey = "";
     }
 
     public bool IsOptionsOpen()

@@ -21,6 +21,8 @@ public class StoryboardManager : MonoBehaviour
     [SerializeField]
     Image characterImage;
 
+    Sequence sequence;
+
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -65,7 +67,8 @@ public class StoryboardManager : MonoBehaviour
     {
         if (stringCharacterImageElementDictionary.TryGetValue(characterImageKey, out ImageElement value))
         {
-            Sequence sequence = DOTween.Sequence();
+            sequence?.Kill();
+            sequence = DOTween.Sequence();
             if (lastChangedCharacterKey == Globals.MC_THOUGHTS_KEY)
             {
                 Color color = characterImage.color;

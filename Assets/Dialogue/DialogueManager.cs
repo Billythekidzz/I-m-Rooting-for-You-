@@ -56,6 +56,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     string startingPath = "Preamble";
 
+    [SerializeField]
+    Image mouseIcon;
 
     public static DialogueManager Instance;
 
@@ -80,7 +82,6 @@ public class DialogueManager : MonoBehaviour
         nametag = textBox.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         message = textBox.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
         messageAnimaTextTMPro = textBox.transform.GetChild(1).GetComponent<AnimatextTMPro>();
-        messageAnimaTextTMPro = textBox.transform.GetChild(1).GetComponent<AnimatextTMPro>();
         messageAnimaTextTMPro.SetEffectSpeed(0, defaultTextSpeed);
         messageAnimaTextTMPro.SetEffectSpeed(1, defaultTextSpeed);
         tags = new List<string>();
@@ -91,7 +92,8 @@ public class DialogueManager : MonoBehaviour
 
     public void StartNewGame()
     {
-        SetThenTryDialogue(startingPath);
+        GameStateManager.Instance.ResetGameState();
+        RestartAndLoadPath(startingPath);
     }
 
     public void RestartAndLoadPath(string path)
@@ -164,6 +166,7 @@ public class DialogueManager : MonoBehaviour
             {
                 StopCoroutine(typeSentenceCoroutine);
             }
+            mouseIcon.DOFade(1.0f, 0.1f);
         }
         if (Input.GetKey(KeyCode.D)) // debug so i'll leave it 
         {
@@ -200,6 +203,7 @@ public class DialogueManager : MonoBehaviour
         ParseTags();
         StopAllCoroutines();
         sentenceBeingTypedOut = currentSentence;
+        mouseIcon.DOFade(0f, 0.05f);
         typeSentenceCoroutine = StartCoroutine(TypeSentence());
         message.text = currentSentence;
         if (story.currentChoices.Count != 0)
