@@ -326,7 +326,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 71911320676693849}
   ringSpawnDelay: 5
   percentNeededForVictory: 0.9
-  pushPower: {x: 50, y: 300}
+  pushPower: {x: 50, y: 100}
 --- !u!1 &8950210452715199207
 GameObject:
   m_ObjectHideFlags: 0

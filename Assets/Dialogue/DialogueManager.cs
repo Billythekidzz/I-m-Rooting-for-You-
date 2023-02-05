@@ -172,10 +172,6 @@ public class DialogueManager : MonoBehaviour
             }
             mouseIcon.DOFade(1.0f, 0.1f);
         }
-        if (Input.GetKey(KeyCode.D)) // debug so i'll leave it 
-        {
-            Debug.Log(messageAnimaTextTMPro.effects[0].state);
-        }
     }
 
     void TryDialogue()

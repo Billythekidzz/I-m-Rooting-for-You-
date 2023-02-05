@@ -482,7 +482,9 @@ I could go out with any of them today, but I wouldn’t have enough time to go o
 Who should I go out with?
 
 * [Help Sheriff Beefroot out with his work]
-- -> sheriff_beefroot_date
+-> sheriff_beefroot_date
+* [Assist Alonion in preparation for the Annual Ring Competition]
+-> alonion_date
 
 - -> END
 
@@ -685,6 +687,7 @@ Ginger’s tavern is the closest to here, so I think we should head ther’ firs
 
 # text_speed 1.0
 # music TAVERN_1
+# Background TAVERN
 # audio DOOR_OPEN_1
 # Character GINGER
 # set_skippable_dialogue true
@@ -745,7 +748,7 @@ Let’s head to Alonion’s store next and ask them some questions.
 Mornin’ Alonion!
 
 # Character ONION
-A-ahhhhhhh! （>﹏<）
+A-ahhhhhhh! (>_<)
 
 I uh-uhhhh definitely wasn’t doing a-anything suspicious at all!!!
 
@@ -831,6 +834,7 @@ I’ll be at my store as always officer.
 Very well, have a safe evening.
 
 # Background VEGE_TOWN_NIGHT
+# music MUSIC_STOP
 # Character BEEFROOT
 Well, I feel like we did make some good ground on this here case, however I also feel like we’ve gotten nowhere at all.
 
@@ -846,12 +850,12 @@ Sounds good, Beefroot.
 # Character BEEFROOT
 Well then, g’night partner.
 
-- -> sheriff_beefroot_date_3
+- -> sheriff_beefroot_date_day_4
 
-=== sheriff_beefroot_date_3 ===
+=== sheriff_beefroot_date_day_4 ===
 #background INDOORS_NIGHT
 #Character MC_THOUGHTS
-# savepoint day_4_beefroot
+# savepoint sheriff_beefroot_date_day_4
 …
 
 #background INDOORS_NIGHT
@@ -866,6 +870,7 @@ Well then, g’night partner.
 DAY 4
 
 #background VEGE_TOWN_DAY
+# music VEGE_TOWN_OUTDOORS_SHORT_1
 I slept poorly again, worried about Beefroot.
 
 I know that they’re a strong and capable individual its just…
@@ -900,6 +905,331 @@ No worries about it partner.
 Anyways, I can’t narrow down who we should bring in for questioning today, so I thought I would leave it up to you.
 
 Who do you think is most likely to be the culprit?
-* [I’ve never seen such a… delectable ginger before…]
+* [Alonion]
+#Character BEEFROOT
+Yer on the right guess I think
+
+They did seem super suspicious the other day
+
+And what did they hide behind the counter?
+
+Let’s go grab them and ask them some questions.
+
+#Character MC
+Beefroot and I go to Alonion’s store and let them know that they are being taken in for custody. They comply and are taken in. You ask them question after question but aren’t getting anywhere.
+-> sheriff_beefroot_bad_ending
+
+* [Carrot]
+-> sheriff_beefroot_good_ending
+* [Ginger]
+#Character BEEFROOT
+Yer on the right guess I think
+
+They did seem super suspicious the other day
+
+Who else had the time to get out and cut the pipe?
+
+They were also the only one with the weapon to do so.
+
+Also - they seemed very against Mayor Tomato given their experiences with them - maybe it pushed them over the edge?
+
+Let’s go grab them and ask them some questions.
+
+#Character MC
+You and Beefroot go to Ginger’s tavern and let them know that they are being taken in for custody. They comply and are taken in. You ask them question after question but aren’t getting anywhere.
+-> sheriff_beefroot_bad_ending
+
+- -> END
+
+=== sheriff_beefroot_bad_ending ===
+# music MUSIC_STOP
+At least until you and Beefroot receive notice that Mayor Tomato has…
+# music DANGER_THEME
+Been murdered!
+#Character MC
+You and Beefroot rush to Mayor Tomato’s office, hoping to see them still alive but…
+
+#Background MAYOR_OFFICE_DEATH
+The damage has been done.
+
+Tomato is splashed all over the walls.
+
+Mayor Tomato has been brutally murdered, components of their body are splayed all over the place, the picture frames on the walls have been broken and the chair in the front was knocked over.
+
+There is clear sign of a struggle, but it is also clear that this struggle wasn’t enough.
+
+#Character BEEFROOT
+N-no… how could this have happened!
+
+I… I failed…
+
+I failed Vegetown…
+
+#Character MC
+I-its alright Beefroot, its not your-
+
+#Character BEEFROOT
+IT IS…
+
+I-i’m sorry partner I… I just need a moment…
+
+Give me a day or two… I
+
+I just need to process this.
+
+#background INDOORS_NIGHT
+#Character MC_THOUGHTS
+# music MUSIC_STOP
+…
+
+#background BLACK
+#Character MC
+They said we would talk again, but it took a while.
+
+A few months after this incident I was able to meet Beefroot.
+
+They were looking depressed, and no longer was the Sheriff’s badge on their chest.
+
+When I talked to them, it sounded like they had no motivation at all, this wasn’t the Beefroot I knew.
+
+I tried to encourage them but to no avail.
+
+My future relationship with the vegetables was thin after this.
+
+While I helped in providing them with resources, I was unable to protect their mayor, I was an easy target for criticism on why vegetables shouldn’t interact with humans.
+
+And that's where my story with the vegetables ends. A few months later I moved out of my Grandpa’s old house, and onto my new life.
+
+Leaving the vegetables, and more importantly Beefroot behind forever.
+- -> END
+
+=== sheriff_beefroot_good_ending ===
+#Character BEEFROOT
+Yer on the right guess I think
+
+They did seem super suspicious the other day
+
+Why would they need gloves right at the end of the night? And also such particular gloves, why Alonion’s?
+
+There was also that orange stain you spotted where the pipe appeared to have cut some vegetable flesh - it was orange, the same color as Carrot.
+
+Also - they have the motivation. After losing in a landslide loss to Mayor Tomato, it's no surprise that they would have their target on Tomato.
+
+Let’s go grab them and ask them some questions.
+
+#Character MC
+You and Beefroot rush over to Carrot’s Toy Store, but to your surprise, Carrot isn’t there even though they said they were.
+
+#Character MC
+W-where is Carrot, maybe they’re out the back?
+
+#Character BEEFROOT
+#music MUSIC_STOP
+I think I know where they’ll be - quickly, follow me!
+
+#Character MC
+Beefroot grabs your hand, holding tightly and pulls you along, rushing to where they expect Carrot to be.
+
+#Background MAYOR_OFFICE_DAY
+#Character CARROT
+# music DANGER_THEME
+WHY WON’T YOU JUST DIE OLD VEGE!
+
+#Character TOMATO
+Nngh argh! Get off of me fool!
+
+#Character MC
+Suddenly, Beefroot and I burst through the door.
+
+#Character BEEFROOT
+Get off Tomato Carrot! 
+#Character CARROT
+Ngh- Never! DO YOU KNOW HOW MUCH I’VE SACRIFICED FOR THIS DAY!
+
+#Character MC
+Beefroot rushes over to the struggling duo, charges up a powerful punch and…
+
+SMACK!
+
+Punches Carrot all the way across the room.
+
+#music MUSIC_STOP
+Carrot slams into the wall, hitting their head on the wall hard. And faints.
+
+Beefroot walks over to Carrot, grabbing out handcuffs and cuffing Carrot’s hands.
+
+# music VEGE_TOWN_OUTDOORS_SHORT_1
+#Character BEEFROOT
+Well, it looks like we got ‘ere at just the right time, are you injured Mayor Tomato?
+
+#Character TOMATO
+N-no I’m fine. Thanks to you at least.
+
+If you got here any later I would’ve been pureed!
+
+#Character BEEFROOT
+It’s no worry Mayor. Just doing my job after all!
+
+And the one you should really be thankin’ is my partner! They were the one that figured out it was Carrot all along!
+
+#Character TOMATO
+Well, thank you then, kind friend!
+
+#Character BEEFROOT
+I think we’ll go deal with our little “pal” here now. They’re going to be locked up for a long time!
+
+#background BLACK
+#Character MC_THOUGHTS
+Beefroot and I take care of Carrot, chucking them in a cell so that they can go through the legal system when they wake up from that nasty punch Beefroot gave them.
+
+With that case closed, Vegetown goes back to being as calm and serene as usual.
+
+Beefroot and I continue working together for months. Then after a while we get a bit closer and…
+
+We hook up! 
+
+I started dating Beefroot, then after a few months, we got married.
+
+Together, as the power-couple duo keeping the streets of Vegetown safe, there was nothing that could stop us. And we felt on top of the world. Together!
+- -> END
+
+=== alonion_date
+#Character MC
+I decided to spend the day with Alonion - ring throwing does sound kind of fun!
+
+My hand-eye coordination isn’t the greatest, but I’ll try my best for Alonion!
+
+#Background JEWELLERY_STORE
+#Character ONION
+O-oh.. hi! >w<
+
+You startled me! I didn’t hear you come in <.<
+
+Thank you again for agreeing to join me to practise ring throwing uwu. It’s a sport that I’m *deeply* passionate in! 
+
+((ZOOM TEXT, then skip to next line)) L-like, the amount of pure skill and precision required to accurately and perfectly throw a circular band of metal to perfectly land around an upright stickjuttingupfromthegroundandlikeitreally-
+
+O-oh, I got a bit carried away there… I’m sorry about that, I really love ring throwing ^^;
+
+* [It’s really cool to see how passionate you are about it!]
+#Character ONION
+O-oh! You don’t think it’s weird? >~<
+#Character MC
+No, not at all! I’d love to listen to you talk about it more… though maybe a bit slower ^^;
+#Character ONION
+>////< I-I’ve never met someone who’d be willing to hear me talk about ring throwing before…
+
+
+* [W-whoa… I didn’t quite catch… well, any of that.]
+#Character ONION
+… Ah… Yeah… I’m sorry ;-; I promise I’m not weird. I just, get quite passionate about things.
+
+I don’t really ever get to talk about my passions, with anybody… So, I just got a little excited there.
+
+* [Weirdo much?]
+#Character ONION
+;~~~~; WAAAAAAaaAAaaaAAaaaAAAA
+
+*sniff* *sniff*
+
+W-well, I guess you’re just like all the others…
+
+- #Character ONION
+- … L-lets head to town and get some ring practice in. 
+
+#background VEGE_TOWN_DAY
+#Character MC
+We headed over to a relatively more empty part of the town. However, there appeared to be other vegetables practising ring throwing.
+
+Alonion appears to be setting up an area for our ring throwing practice session.
+
+
+
+* [Oh wow, ring throwing must be really popular around these parts!]
+#Character ONION
+Haha yeah.. The ring throwing competition tomorrow is an annual event! ^u^
+
+I’ve been practising a lot because I’ll be participating in it uwu
+
+* * [Oh, that’s really cool! I’m sure you’ll do well!]
+#Character ONION
+T-thanks!! I’ll try my best ^-^
+* * [Really…? Yeah, good luck with that]
+#Character ONION
+…… *sniff* …. i… uh… ok… ;-;
+
+* [Do you need a hand there?]
+#Character ONION
+O-oh! H-how kind of you! >///<
+
+Y-yeah, if you could just grab the rings here and get them ready over there.
+
+#Character MC
+Alonion gestures a little ways away from where she was setting up the target sticks.
+
+I headed over and began unpacking the satchels containing the rings.
+
+#Character MC_THOUGHTS
+Huh… Wait, are these… onion-sized rings… or are they human-sized rings….
+
+….How does this work?
+
+Well, I *am* on a date with an onion after all. I guess it just does.
+
+* [These guys must be our competition.]
+#Character ONION
+Y-yeah! There are quite a few competitors… I-I hope we’ll be able to beat them all >.>
+
+It is the biggest event that’s held in VegeTown… I-it makes me quite anxious thinking about it…
+
+
+- #Character MC
+- Alonion finished setting up and began to head towards me.
+
+#Character ONION
+The prize for coming first place in the ring throwing competition is an extremely valuable ring that would be perfect to be displayed in my store.
+
+I-it is really important to me that I get this ring… Because, i-if I don’t…
+
+… ;-;
+
+I…. I don’t even want to think about it. 
+
+#Character MC_THOUGHTS
+Wow, this ring must be super important to Alonion. I wonder why?
+
+#Character ONION
+L-let’s get some practice in - I can show you h-how it works.
+
+#Character MC_THOUGHTS
+You watched as Alonion gingerly picked up a ring from her bag of rings, and gracefully tossed it towards the target stick.
+
+The ring had *just* the perfect amount of spin, with the *absolutely* perfect arc, as it headed towards the target.
+
+It was just… perfect.
+
+She… *She was perfect*.
+
+The ring impeccably caught the target stick and swung around delicately down, before settling.
+
+#Character ONION
+Ah.. T-that, wasn’t too bad I guess…
+
+* [What?? That was the most *flawless* ring throw I have ever witnessed in my life!]
+#Character ONION
+>//////< Oh… You really think so? T-thank you.
+* […]
+#Character ONION
+… Uhm… >.>
+* [Nah, actually that was pretty bad.]
+#Character ONION
+*sniff* Y-yeah… ;-;
+
+- #Character ONION
+- O-ok, it’s your turn now!
+
+# minigame onion_ring
+
+- test
 
 - -> END

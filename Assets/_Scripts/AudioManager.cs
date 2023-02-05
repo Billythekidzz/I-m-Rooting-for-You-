@@ -90,7 +90,7 @@ public class AudioManager : MonoBehaviour
             int indexToUse = UnityEngine.Random.Range(0, value.Count);
             currentMusicClipVolume = value[indexToUse].volume;
             musicSource.clip = value[indexToUse].audioClip;
-            musicSource.volume = value[indexToUse].volume;
+            musicSource.volume = value[indexToUse].volume * musicVolume * (masterVolume * 2);
             musicSource.Play();
             //musicSource.PlayOneShot(value[indexToUse].audioClip, value[indexToUse].volume);
             return value[indexToUse];
