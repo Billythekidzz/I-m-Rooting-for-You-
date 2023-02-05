@@ -9,9 +9,9 @@ public class Minigames : MonoBehaviour
 	[SerializeField]
 	MinigameEntry entries;
 
-	public Minigame this[string name]
+	public bool TryGetMinigame(string name, out Minigame value)
 	{
-		get => entries[name];
+		return entries.TryGetValue(name, out value);
 	}
 
 	[Serializable]

@@ -351,9 +351,17 @@ public class DialogueManager : MonoBehaviour
 
     private void SetMinigame(string param)
 	{
-        currentlyPlaying = minigameRegistry[param];
-        currentlyPlaying.gameObject.SetActive(true);
-        currentlyPlaying.onGameOver.AddListener(OnMinigameComplete);
+        Minigame game;
+        if (minigameRegistry.TryGetMinigame(param, out game))
+		{
+            currentlyPlaying = game;
+            currentlyPlaying.gameObject.SetActive(true);
+            currentlyPlaying.onGameOver.AddListener(OnMinigameComplete);
+        }
+		else
+		{
+            Debug.LogError($"Unkown minigame: {param}");
+        }
     }
 
     private void OnMinigameComplete(Minigame.GameOverContext context)
