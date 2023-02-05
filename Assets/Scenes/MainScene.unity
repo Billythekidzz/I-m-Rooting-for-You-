@@ -8900,14 +8900,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -6222293026371583802, guid: f6021aca190299e40ad6bfc1cef0d737, type: 3}
-      propertyPath: character
-      value: alonion
-      objectReference: {fileID: 0}
-    - target: {fileID: -6222293026371583802, guid: f6021aca190299e40ad6bfc1cef0d737, type: 3}
-      propertyPath: affinityDelta
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 225530606581000576, guid: f6021aca190299e40ad6bfc1cef0d737, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -9263,18 +9255,6 @@ PrefabInstance:
       value: 160.69
       objectReference: {fileID: 0}
     - target: {fileID: 6858765303618720941, guid: 7b88344cb03e66442903968b4ab6ff2f, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.2698412
-      objectReference: {fileID: 0}
-    - target: {fileID: 6858765303618720941, guid: 7b88344cb03e66442903968b4ab6ff2f, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.2698412
-      objectReference: {fileID: 0}
-    - target: {fileID: 6858765303618720941, guid: 7b88344cb03e66442903968b4ab6ff2f, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.2698412
-      objectReference: {fileID: 0}
-    - target: {fileID: 6858765303618720941, guid: 7b88344cb03e66442903968b4ab6ff2f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -9309,26 +9289,6 @@ PrefabInstance:
     - target: {fileID: 6858765303618720941, guid: 7b88344cb03e66442903968b4ab6ff2f, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.000011444
-      objectReference: {fileID: 0}
-    - target: {fileID: 6858765303618720941, guid: 7b88344cb03e66442903968b4ab6ff2f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6858765303618720941, guid: 7b88344cb03e66442903968b4ab6ff2f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6858765303618720941, guid: 7b88344cb03e66442903968b4ab6ff2f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6858765303618720947, guid: 7b88344cb03e66442903968b4ab6ff2f, type: 3}
-      propertyPath: character
-      value: ginger
-      objectReference: {fileID: 0}
-    - target: {fileID: 6858765303618720947, guid: 7b88344cb03e66442903968b4ab6ff2f, type: 3}
-      propertyPath: affinityDelta
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b88344cb03e66442903968b4ab6ff2f, type: 3}

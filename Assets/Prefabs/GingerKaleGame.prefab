@@ -102,7 +102,7 @@ RectTransform:
   m_GameObject: {fileID: 6858765303618720940}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2698412, y: 1.2698412, z: 1.2698412}
   m_Children:
   - {fileID: 6858765304205515706}
   - {fileID: 6858765302362211554}
@@ -126,14 +126,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b66298703f46bf84db599be889139367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: ginger
+  affinityDelta: 2
   onGameOver:
     m_PersistentCalls:
       m_Calls: []
   slider: {fileID: 6858765303618720946}
   fillSpeed: 1
-  targetRange:
-    min: 0.5
-    max: 0.75
+  minFill: 0.97
 --- !u!114 &6858765303618720946
 MonoBehaviour:
   m_ObjectHideFlags: 0
