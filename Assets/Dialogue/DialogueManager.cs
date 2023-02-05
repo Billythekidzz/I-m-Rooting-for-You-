@@ -360,7 +360,7 @@ public class DialogueManager : MonoBehaviour
         }
 		else
 		{
-            Debug.LogError($"Unkown minigame: {param}");
+            Debug.LogError($"Unknown minigame: {param}");
         }
     }
 
