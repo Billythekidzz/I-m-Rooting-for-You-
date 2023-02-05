@@ -1043,10 +1043,54 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8141066398987115549, guid: 18cabfce10608704498edc8818cf716c, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1400
+      objectReference: {fileID: 0}
+    - target: {fileID: 8141066398987115549, guid: 18cabfce10608704498edc8818cf716c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 8141066398987115549, guid: 18cabfce10608704498edc8818cf716c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8141066398987115549, guid: 18cabfce10608704498edc8818cf716c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8141066398987115549, guid: 18cabfce10608704498edc8818cf716c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8141066398987115549, guid: 18cabfce10608704498edc8818cf716c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 263
+      objectReference: {fileID: 0}
     - target: {fileID: 8141066398987115550, guid: 18cabfce10608704498edc8818cf716c, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e24b4ba11555d9a47b05d9deb3ad5ed6, type: 3}
+      objectReference: {fileID: 21300000, guid: e0b13463c61ef3043984cb8128de8b95, type: 3}
+    - target: {fileID: 8141066398987115550, guid: 18cabfce10608704498edc8818cf716c, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8141066399692162364, guid: 18cabfce10608704498edc8818cf716c, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1207.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 8141066399692162364, guid: 18cabfce10608704498edc8818cf716c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 278.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8141066399692162364, guid: 18cabfce10608704498edc8818cf716c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 706.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 8141066399692162364, guid: 18cabfce10608704498edc8818cf716c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -296.79
+      objectReference: {fileID: 0}
     - target: {fileID: 8141066399692162365, guid: 18cabfce10608704498edc8818cf716c, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
@@ -1073,11 +1117,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8141066400165182822, guid: 18cabfce10608704498edc8818cf716c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 300
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 8141066400165182822, guid: 18cabfce10608704498edc8818cf716c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 371
+      value: 237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8141066400165182822, guid: 18cabfce10608704498edc8818cf716c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 8141066400165182823, guid: 18cabfce10608704498edc8818cf716c, type: 3}
       propertyPath: m_FontData.m_Font
@@ -1099,6 +1147,130 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8141066398987115548, guid: 18cabfce10608704498edc8818cf716c, type: 3}
   m_PrefabInstance: {fileID: 197629666}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &197629669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197629668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0390bd8b8ffd640b34fe25065ff1df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  updateType: 0
+  isSpeedBased: 0
+  hasOnStart: 0
+  hasOnPlay: 0
+  hasOnUpdate: 0
+  hasOnStepComplete: 0
+  hasOnComplete: 0
+  hasOnTweenCreated: 0
+  hasOnRewind: 0
+  onStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  onStepComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  onTweenCreated:
+    m_PersistentCalls:
+      m_Calls: []
+  onRewind:
+    m_PersistentCalls:
+      m_Calls: []
+  targetIsSelf: 1
+  targetGO: {fileID: 0}
+  tweenTargetIsTargetGO: 1
+  delay: 0
+  duration: 0.4
+  easeType: 6
+  easeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  loopType: 0
+  loops: 1
+  id: 
+  isRelative: 0
+  isFrom: 0
+  isIndependentUpdate: 0
+  autoKill: 1
+  autoGenerate: 1
+  isActive: 1
+  isValid: 1
+  target: {fileID: 197629673}
+  animationType: 11
+  targetType: 11
+  forcedTargetType: 0
+  autoPlay: 1
+  useTargetAsV3: 0
+  endValueFloat: 0
+  endValueV3: {x: 0.2, y: 0.2, z: 0}
+  endValueV2: {x: 0, y: 0}
+  endValueColor: {r: 1, g: 1, b: 1, a: 1}
+  endValueString: 
+  endValueRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
+  endValueTransform: {fileID: 0}
+  optionalBool0: 0
+  optionalBool1: 1
+  optionalFloat0: 1
+  optionalInt0: 10
+  optionalRotationMode: 0
+  optionalScrambleMode: 0
+  optionalShakeRandomnessMode: 0
+  optionalString: 
+--- !u!224 &197629673 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8141066398987115549, guid: 18cabfce10608704498edc8818cf716c, type: 3}
+  m_PrefabInstance: {fileID: 197629666}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &197629674 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8141066398987115550, guid: 18cabfce10608704498edc8818cf716c, type: 3}
+  m_PrefabInstance: {fileID: 197629666}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197629668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &261910124
 GameObject:
   m_ObjectHideFlags: 0
@@ -2189,6 +2361,10 @@ PrefabInstance:
       value: Preamble
       objectReference: {fileID: 0}
     - target: {fileID: 5885689506753852345, guid: 735299e6bc477394ea679dd35b7c2b5e, type: 3}
+      propertyPath: textBoxImage
+      value: 
+      objectReference: {fileID: 197629674}
+    - target: {fileID: 5885689506753852345, guid: 735299e6bc477394ea679dd35b7c2b5e, type: 3}
       propertyPath: nameTagObject
       value: 
       objectReference: {fileID: 627280688}
@@ -2200,6 +2376,14 @@ PrefabInstance:
       propertyPath: minigameRegistry
       value: 
       objectReference: {fileID: 1821068432}
+    - target: {fileID: 5885689506753852345, guid: 735299e6bc477394ea679dd35b7c2b5e, type: 3}
+      propertyPath: textBoxNoNameTag
+      value: 
+      objectReference: {fileID: 21300000, guid: 77738799f4d0ff9469d47559faf9e8e1, type: 3}
+    - target: {fileID: 5885689506753852345, guid: 735299e6bc477394ea679dd35b7c2b5e, type: 3}
+      propertyPath: textBoxWithNameTag
+      value: 
+      objectReference: {fileID: 21300000, guid: e0b13463c61ef3043984cb8128de8b95, type: 3}
     - target: {fileID: 5885689506753852345, guid: 735299e6bc477394ea679dd35b7c2b5e, type: 3}
       propertyPath: speakAudioWaitDelay
       value: 0.1
@@ -3779,7 +3963,7 @@ MonoBehaviour:
         delay: 0.1
     - data:
       - audioClip: {fileID: 8300000, guid: be441c8d62c3f1c439b5aafacd427147, type: 3}
-        volume: 0.5
+        volume: 0.25
         delay: 0
     - data:
       - audioClip: {fileID: 8300000, guid: 3dfe03b83fec4384c9efea26e599a4f1, type: 3}
@@ -3846,7 +4030,7 @@ MonoBehaviour:
         delay: 0
     - data:
       - audioClip: {fileID: 8300000, guid: e8f744039df3ad8469bb6d435da8c46e, type: 3}
-        volume: 0.1
+        volume: 0.03
         delay: 0
     - data:
       - audioClip: {fileID: 8300000, guid: 35cc504b78fb48749a8f81e85bdffc35, type: 3}

@@ -57,6 +57,10 @@ namespace Animatext.Effects
                     words[i].Move(position * progress);
                 }
             }
+            if (GetCurrentProgress(SortUtility.Rank(characterCount - 1, characterCount, sortType)) == 1.0f)
+            {
+                effect.End();
+            }
         }
     }
 }

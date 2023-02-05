@@ -182,11 +182,10 @@ Now look what, there’s that damned <b>beetroot</b> walking up to me! What is m
 Good mornin’ sugar pie. Sleep well last night?
 
 # Character MC
-The. Beetroot. Talks.
+The. Beetroot. <OHOHOHO>Talks.</OHOHOHO>
 
 I looked at the beetroot, while still clearly looking like a vegetable, they had humanoid arms, legs, a mouth and what appeared to be eyes and ears. On their chest was a star that read sheriff, and covering their eyes were some radical sunglasses.
 
-# Character BEEFROOT
 I must admit that I had never seen such a bulky vegetable before - this beefy being had clearly been working out.
     * [H-holy smokes, it is just a vegetable but… That well-defined shape! That succulent stem… mmmmmfgffsdgff]
     # Character MC
@@ -214,7 +213,9 @@ U-uh yeah sure I guess?
 
 First, we’ll head to Alonion’s Jewelery Store - her rings make the sweetest gift this side of the Veggie River. Though they’re always pretty sad.
 
-Then after that I think we’ll end the day by heading to Ginger’s VegeTavern - word has it that they make the six-hundred and ninety-fourth best Ginger Kale in town, ain’t nothing better ‘round these parts than a fiiiiiiiiiiiiiiiiiiine bottle o’ Ginger Kale!
+Then after that I think we’ll end the day by heading to Ginger’s VegeTavern - word has it that they make the six-hundred and ninety-fourth best Ginger Kale in town.
+
+Ain’t nothing better ‘round these parts than a fi<OHOHOHO>iiiiiiiiiiiiiiiii</OHOHOHO>ine bottle o’ Ginger Kale!
 
 Sound good partner? Righto then, let’s go check out Alonion’s Jewelry Store!
 
@@ -243,8 +244,11 @@ Holy <i>REDACTED</i>…
 ...
 Oh god, why am I attracted to a vegetable?
 I never thought ginger could look so… 
+#audio SURPRISE_1
+#text_speed 0.5
 <OHOHOHO><b>JUICY</b></OHOHOHO>
 # Character GINGER
+#text_speed 1.0
 Rabbit got your stem?
 * [I’ve never seen such a… delectable ginger before…]
     # Character MC

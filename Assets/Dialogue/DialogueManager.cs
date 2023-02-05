@@ -7,6 +7,7 @@ using System;
 using TMPro;
 using Animatext;
 using UnityEngine.InputSystem;
+using DG.Tweening;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -22,7 +23,13 @@ public class DialogueManager : MonoBehaviour
     //Story story;
 
     [SerializeField]
-    GameObject nameTagObject;
+    Image textBoxImage;
+
+    [SerializeField]
+    Sprite textBoxNoNameTag;
+
+    [SerializeField]
+    Sprite textBoxWithNameTag;
 
     TextMeshProUGUI nametag;
     TextMeshProUGUI message;
@@ -309,6 +316,9 @@ public class DialogueManager : MonoBehaviour
                 case "savepoint":
                     SetSavePoint(param);
                     break;
+                case "expand_textbox":
+                    PlayTextboxSurpriseAnim(param);
+                    break;
             }
         }
     }
@@ -371,13 +381,20 @@ public class DialogueManager : MonoBehaviour
         GameStateManager.Instance.SetCharacter(_character);
         if (_character == Globals.MC_KEY || _character == Globals.MC_THOUGHTS_KEY)
         {
-            nameTagObject.SetActive(false);
+
+            textBoxImage.sprite = textBoxNoNameTag;
+            nametag.text = "";
         }
         else
         {
-            nameTagObject.SetActive(true);
+            textBoxImage.sprite = textBoxWithNameTag;
             nametag.text = _character;
         }
+    }
+
+    void PlayTextboxSurpriseAnim(string param)
+    {
+        textBoxImage.rectTransform.DOPunchScale(new Vector3(0.4f, 0.2f, 0), 0.3f, 10, 1);
     }
 
     void SetAnimation(string _name)

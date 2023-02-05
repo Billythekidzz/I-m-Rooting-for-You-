@@ -28,6 +28,8 @@ public class AudioManager : MonoBehaviour
     [HideInInspector]
     public float masterVolume = 0.5f;
 
+    float currentMusicClipVolume = 1.0f;
+
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -62,7 +64,7 @@ public class AudioManager : MonoBehaviour
     public void RefreshAudioVolume()
     {
         sfxSource.volume = sfxVolume * (masterVolume * 2);
-        musicSource.volume = musicVolume * (masterVolume * 2);
+        musicSource.volume = currentMusicClipVolume * musicVolume * (masterVolume * 2);
     }
 
     public AudioElement PlaySound(string audioKey)
@@ -86,6 +88,7 @@ public class AudioManager : MonoBehaviour
         if (stringAudioClipDictionary.TryGetValue(audioKey, out List<AudioElement> value))
         {
             int indexToUse = UnityEngine.Random.Range(0, value.Count);
+            currentMusicClipVolume = value[indexToUse].volume;
             musicSource.clip = value[indexToUse].audioClip;
             musicSource.volume = value[indexToUse].volume;
             musicSource.Play();
