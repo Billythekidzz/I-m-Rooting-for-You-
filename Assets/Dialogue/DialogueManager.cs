@@ -239,12 +239,19 @@ public class DialogueManager : MonoBehaviour
         optionPanel.SetActive(true);
 
         yield return new WaitUntil(() => {
-            return choiceSelected != null || (currentlyPlaying != null && !currentlyPlaying.IsGameActive); 
+
+            if (currentlyPlaying != null)
+			{
+                return !currentlyPlaying.IsGameActive;
+            }
+
+            return choiceSelected != null; 
         });
         _isSelectingChoice = false;
 
         if (currentlyPlaying && currentlyPlaying.gameObject)
         {
+            currentlyPlaying.onGameOver.RemoveListener(OnMinigameComplete);
             currentlyPlaying.gameObject.SetActive(false);
         }
         currentlyPlaying = null;
@@ -346,7 +353,16 @@ public class DialogueManager : MonoBehaviour
 	{
         currentlyPlaying = minigameRegistry[param];
         currentlyPlaying.gameObject.SetActive(true);
-        currentlyPlaying.StartGame();
+        currentlyPlaying.onGameOver.AddListener(OnMinigameComplete);
+    }
+
+    private void OnMinigameComplete(Minigame.GameOverContext context)
+	{
+        int affinity = context.AffinityDelta * (context.IsVictory ? 1 : -1);
+
+        string param = $"{context.Character}|{affinity}";
+
+        GameStateManager.Instance.AddAffinity(param);
     }
 
     private void SetTextSpeed(string param)

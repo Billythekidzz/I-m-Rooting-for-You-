@@ -5,6 +5,13 @@ using UnityEngine.Events;
 
 public class Minigame : MonoBehaviour
 {
+
+	[SerializeField]
+	string character;
+
+	[SerializeField]
+	int affinityDelta;
+
 	public bool IsGameActive { get; private set; }
 
 	public UnityEvent<GameOverContext> onGameOver;
@@ -18,7 +25,7 @@ public class Minigame : MonoBehaviour
 	{
 		if (IsGameActive)
 		{
-			GameOverContext context = new GameOverContext(isVictory);
+			GameOverContext context = new GameOverContext(isVictory, character, affinityDelta);
 
 			onGameOver.Invoke(context);
 		}
@@ -31,9 +38,15 @@ public class Minigame : MonoBehaviour
 	{
 		public bool IsVictory { get; }
 
-		public GameOverContext(bool isVictory)
+		public string Character { get; }
+
+		public int AffinityDelta { get; }
+
+		public GameOverContext(bool isVictory, string character, int affinityDelta)
 		{
 			this.IsVictory = isVictory;
+			this.Character = character;
+			this.AffinityDelta = affinityDelta;
 		}
 	}
 
