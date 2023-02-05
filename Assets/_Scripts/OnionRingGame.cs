@@ -95,8 +95,6 @@ public class OnionRingGame : Minigame
 		var input = context.ReadValue<Vector2>();
 		var force = new Vector2(input.x, 1f) * pushPower;
 		lastRingSpawnedRb.AddForce(force);
-
-		Debug.Log($"force = {force}");
 	}
 
 	public void OnRingDestroyed(bool hitTarget)

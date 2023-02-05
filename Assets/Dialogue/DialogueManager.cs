@@ -246,12 +246,19 @@ public class DialogueManager : MonoBehaviour
         optionPanel.SetActive(true);
 
         yield return new WaitUntil(() => {
-            return choiceSelected != null || (currentlyPlaying != null && !currentlyPlaying.IsGameActive); 
+
+            if (currentlyPlaying != null)
+			{
+                return !currentlyPlaying.IsGameActive;
+            }
+
+            return choiceSelected != null; 
         });
         _isSelectingChoice = false;
 
         if (currentlyPlaying && currentlyPlaying.gameObject)
         {
+            currentlyPlaying.onGameOver.RemoveListener(OnMinigameComplete);
             currentlyPlaying.gameObject.SetActive(false);
         }
         currentlyPlaying = null;
@@ -351,9 +358,26 @@ public class DialogueManager : MonoBehaviour
 
     private void SetMinigame(string param)
 	{
-        currentlyPlaying = minigameRegistry[param];
-        currentlyPlaying.gameObject.SetActive(true);
-        currentlyPlaying.StartGame();
+        Minigame game;
+        if (minigameRegistry.TryGetMinigame(param, out game))
+		{
+            currentlyPlaying = game;
+            currentlyPlaying.gameObject.SetActive(true);
+            currentlyPlaying.onGameOver.AddListener(OnMinigameComplete);
+        }
+		else
+		{
+            Debug.LogError($"Unknown minigame: {param}");
+        }
+    }
+
+    private void OnMinigameComplete(Minigame.GameOverContext context)
+	{
+        int affinity = context.AffinityDelta * (context.IsVictory ? 1 : -1);
+
+        string param = $"{context.Character}|{affinity}";
+
+        GameStateManager.Instance.AddAffinity(param);
     }
 
     private void SetTextSpeed(string param)
