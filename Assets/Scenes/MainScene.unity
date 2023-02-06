@@ -2588,6 +2588,7 @@ MonoBehaviour:
   isAutoSkipDialogue: 0
   wasLastSpeakerMC: 1
   isMinigameActive: 0
+  isChooseDate: 0
   characterChangedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -5800,6 +5801,11 @@ MonoBehaviour:
     - DANGER_THEME
     - ???
     - MINIGAME_ONION
+    - DRUM_ROLL_2
+    - ANNOUNCER
+    - NPC
+    - TOMATO
+    - OOOO
     m_values:
     - data:
       - audioClip: {fileID: 8300000, guid: 32a78675f452061459c979d77e746f05, type: 3}
@@ -6012,6 +6018,53 @@ MonoBehaviour:
     - data:
       - audioClip: {fileID: 8300000, guid: a6cca9862ceb06d4298d71c5752ae6dc, type: 3}
         volume: 0.1
+        delay: 0
+    - data:
+      - audioClip: {fileID: 8300000, guid: 9a5805a341172794fa7c94e068f2d5f8, type: 3}
+        volume: 1
+        delay: 0
+    - data:
+      - audioClip: {fileID: 8300000, guid: b359c3c39658a1a4e8a642660266fa5c, type: 3}
+        volume: 1.25
+        delay: 0.2
+      - audioClip: {fileID: 8300000, guid: c13c093fbb1a8b14fb5c2f133478da56, type: 3}
+        volume: 1.25
+        delay: 0.2
+      - audioClip: {fileID: 8300000, guid: 7de2717c6a98352448f08885c92dd558, type: 3}
+        volume: 1.25
+        delay: 0.2
+      - audioClip: {fileID: 8300000, guid: b359c3c39658a1a4e8a642660266fa5c, type: 3}
+        volume: 1.25
+        delay: 0.2
+    - data:
+      - audioClip: {fileID: 8300000, guid: c894141fc99b5624fa303d9d7e4cf6f6, type: 3}
+        volume: 1.25
+        delay: 0.2
+      - audioClip: {fileID: 8300000, guid: be1408aed92a25e4cb455f1ba956b26e, type: 3}
+        volume: 1.25
+        delay: 0.2
+      - audioClip: {fileID: 8300000, guid: c894141fc99b5624fa303d9d7e4cf6f6, type: 3}
+        volume: 1.25
+        delay: 0.2
+      - audioClip: {fileID: 8300000, guid: da08e4e26b885f146b5c3ce881e05df2, type: 3}
+        volume: 1.25
+        delay: 0.2
+    - data:
+      - audioClip: {fileID: 8300000, guid: 8aac9dd66439c384e9c598c913423ed8, type: 3}
+        volume: 1.25
+        delay: 0.2
+      - audioClip: {fileID: 8300000, guid: 04af6a29e5365f349af8df257c6085fd, type: 3}
+        volume: 1.25
+        delay: 0.2
+      - audioClip: {fileID: 8300000, guid: 8aac9dd66439c384e9c598c913423ed8, type: 3}
+        volume: 1.25
+        delay: 0.2
+      - audioClip: {fileID: 8300000, guid: 10a07f11be739454dbee98e0adc462a7, type: 3}
+        volume: 1.25
+        delay: 0.2
+    - data:
+      - audioClip: {fileID: 8300000, guid: e245fccb1c9cf544ea3e00b18604accd, type: 3}
+        volume: 1
         delay: 0
   sfxVolume: 0.2
   musicVolume: 0.5
@@ -11172,6 +11225,7 @@ MonoBehaviour:
     - CAR_DAY
     - MAYOR_OFFICE_DAY
     - MAYOR_OFFICE_DEATH
+    - REAL_BAD_ENDING
     m_values:
     - sprites:
       - {fileID: 21300000, guid: 6babb3a9e4013874c9c34ce3ed9ec746, type: 3}
@@ -11201,6 +11255,8 @@ MonoBehaviour:
       - {fileID: 21300000, guid: a349b8fc4350dfc45950d22f16ef53cc, type: 3}
     - sprites:
       - {fileID: 21300000, guid: 02ff0887e9b72fe40a9974f764beed10, type: 3}
+    - sprites:
+      - {fileID: 21300000, guid: b859305cc442c3b4c8f508d8520ecfb1, type: 3}
   stringCharacterImageElementDictionary:
     m_keys:
     - MC_THOUGHTS
@@ -11211,6 +11267,7 @@ MonoBehaviour:
     - ???
     - TOMATO
     - NPC
+    - ANNOUNCER
     m_values:
     - sprites:
       - {fileID: 21300000, guid: 1190562ebd6305942accd06369b76c0b, type: 3}
@@ -11244,6 +11301,8 @@ MonoBehaviour:
       - {fileID: 21300000, guid: ffa977e1a3b79754c97095d3f1967ff7, type: 3}
     - sprites:
       - {fileID: 21300000, guid: 1190562ebd6305942accd06369b76c0b, type: 3}
+    - sprites:
+      - {fileID: 21300000, guid: 5f53d53979f1f654ab8e0f5fc51955b3, type: 3}
     - sprites:
       - {fileID: 21300000, guid: 5f53d53979f1f654ab8e0f5fc51955b3, type: 3}
     - sprites:

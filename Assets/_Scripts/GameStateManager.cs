@@ -23,6 +23,9 @@ public class GameStateManager : MonoBehaviour
 
     public bool isMinigameActive = false;
 
+    //Only used once for when choosing date is active
+    public bool isChooseDate = false;
+
     public static GameStateManager Instance;
 
     public UnityEvent characterChangedEvent = new UnityEvent();
@@ -192,6 +195,7 @@ public class GameStateManager : MonoBehaviour
     {
         isAutoSkipDialogue = false;
         isDialogueSkippable = true;
+        isChooseDate = false;
         lastSavedCharacterKey = "";
     }
 

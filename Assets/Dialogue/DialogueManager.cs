@@ -258,17 +258,61 @@ public class DialogueManager : MonoBehaviour
         _isSelectingChoice = true;
         //Debug.Log("There are choices need to be made here!");
         List<Choice> _choices = story.currentChoices;
-
+        int numDateChoicesAdded = 0;
         for (int i = 0; i < _choices.Count; i++)
         {
-            GameObject temp = Instantiate(customButton, optionPanel.transform);
-            temp.transform.GetChild(0).GetComponent<Text>().text = _choices[i].text;
-            temp.AddComponent<Selectable>();
-            temp.GetComponent<Selectable>().element = _choices[i];
-            temp.GetComponent<Button>().onClick.AddListener(() => { temp.GetComponent<Selectable>().Decide(); });
+            if (GameStateManager.Instance.isChooseDate)
+            {
+                if(i == 3)
+                {
+                    break;
+                }
+                string key = Globals.BEEFROOT_KEY;
+                if(i == 1)
+                {
+                    key = Globals.ONION_KEY;
+                }
+                if(i == 2)
+                {
+                    key = Globals.GINGER_KEY;
+                }
+                int charAffection = 0;
+                GameStateManager.Instance.characterAffections.TryGetValue(key, out charAffection);
+                if(charAffection > -4)
+                {
+                    numDateChoicesAdded += 1;
+                    GameObject temp = Instantiate(customButton, optionPanel.transform);
+                    temp.transform.GetChild(0).GetComponent<Text>().text = _choices[i].text;
+                    temp.AddComponent<Selectable>();
+                    temp.GetComponent<Selectable>().element = _choices[i];
+                    temp.GetComponent<Button>().onClick.AddListener(() => { temp.GetComponent<Selectable>().Decide(); });
+                }
+            }
+            else
+            {
+                GameObject temp = Instantiate(customButton, optionPanel.transform);
+                temp.transform.GetChild(0).GetComponent<Text>().text = _choices[i].text;
+                temp.AddComponent<Selectable>();
+                temp.GetComponent<Selectable>().element = _choices[i];
+                temp.GetComponent<Button>().onClick.AddListener(() => { temp.GetComponent<Selectable>().Decide(); });
+            }
         }
-
-        optionPanel.SetActive(true);
+        if (GameStateManager.Instance.isChooseDate && numDateChoicesAdded == 0)
+        {
+            GameStateManager.Instance.isChooseDate = false;
+            //Bad ending
+            Choice choice = new Choice();
+            choice.index = 3;
+            DialogueManager.SetDecision(choice);
+        }
+        else
+        {
+            if(GameStateManager.Instance.isChooseDate)
+            {
+                GameStateManager.Instance.isChooseDate = false;
+            }
+            optionPanel.SetActive(true);
+        }
 
         yield return new WaitUntil(() => {
 
@@ -365,7 +409,18 @@ public class DialogueManager : MonoBehaviour
                 case "expand_textbox":
                     PlayTextboxSurpriseAnim(param);
                     break;
+                case "on_choose_date":
+                    OnChooseDate(param);
+                    break;
             }
+        }
+    }
+
+    private void OnChooseDate(string param)
+    {
+        if (bool.TryParse(param, out bool value))
+        {
+            GameStateManager.Instance.isChooseDate = value;
         }
     }
 
@@ -459,7 +514,15 @@ public class DialogueManager : MonoBehaviour
         else
         {
             textBoxImage.sprite = textBoxWithNameTag;
-            nametag.text = _character;
+            //...oops
+            if (_character == "ONION")
+            {
+                nametag.text = "ALONION";
+            }
+            else
+            {
+                nametag.text = _character;
+            }
         }
     }
 
