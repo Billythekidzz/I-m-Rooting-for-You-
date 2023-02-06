@@ -21,6 +21,9 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     GameObject gameOverScreen;
 
+    [SerializeField]
+    //This should be here butt out of time so temp
+    GameObject newGameButton;
     static Story story;
     //[Inject]
     //Story story;
@@ -209,6 +212,10 @@ public class DialogueManager : MonoBehaviour
         GameStateManager.Instance.ToggleOptionsPanel();
         AudioManager.Instance.PlaySound("objection");
         gameOverScreen.SetActive(true);
+        if(!newGameButton.activeSelf)
+        {
+            newGameButton.SetActive(true);
+        }
         textBox.SetActive(false);
     }
 

@@ -1779,7 +1779,7 @@ Anyways, one mug of our six-hundred-and-ninety-seventh Ginger Kale comin’ righ
 
 
 - #Character MC
-- Ginger heads over to a barrel of their six-hundred-and-ninety-eighth Ginge Kale and began to pour it into a mug.
+- Ginger heads over to a barrel of their six-hundred-and-ninety-eighth Ginger Kale and began to pour it into a mug.
 
 But… It appears that the tap…
 
@@ -1799,7 +1799,7 @@ MINIGAME START
 
 #Character MC_THOUGHTS
 # music TAVERN_1
-I struggled with the tap - sometimes it felt like I tugged too hard, and sometimes not hard enough.
+I struggled with the tap. Man, was it stuck. Only a single drop of Ginger Kale dripped out.
 
 I gave it one final tug… Suddenly…
 
@@ -1824,6 +1824,7 @@ Um…
 …with Ginger Kale… >.>
 
 #Character MC_THOUGHTS
+# Background VEGE_TOWN_NIGHT
 Ginger pushed me out of the tavern and into to the cold night outside
 
 I’m sorry, Ginger! I didn’t mean t-
