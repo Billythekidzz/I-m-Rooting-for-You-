@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System;
+using DG.Tweening;
 
 public class OnionRingGame : Minigame
 {
+
+	[SerializeField]
+	GameObject tutorialTooltip;
 
 	[Serializable]
 	public class OnionRingSpawner
@@ -18,9 +22,9 @@ public class OnionRingGame : Minigame
 
 		public GameObject Spawn(Transform parent)
 		{
-			var ringObj = Instantiate(prefab);
+			var ringObj = Instantiate(prefab, parent);
 
-			ringObj.transform.SetParent(parent);
+			//ringObj.transform.SetParent(parent);
 
 			ringObj.transform.Translate(new Vector2(spawnOffset, 0));
 
@@ -71,9 +75,16 @@ public class OnionRingGame : Minigame
 		ringSpawnTimer = 0f;
 		lastRingSpawnedRb = null;
 		spawnNextRing = true;
+		tutorialTooltip.SetActive(true);
 	}
 
-	public void OnMoveRing(InputAction.CallbackContext context)
+    public override void EndGame(bool isVictory)
+    {
+        base.EndGame(isVictory);
+		tutorialTooltip.SetActive(false);
+	}
+
+    public void OnMoveRing(InputAction.CallbackContext context)
 	{
 		// todo: move ring side to side
 
@@ -95,6 +106,9 @@ public class OnionRingGame : Minigame
 		var input = context.ReadValue<Vector2>();
 		var force = new Vector2(input.x, 1f) * pushPower;
 		lastRingSpawnedRb.AddForce(force);
+		//this should be done in onion ring script not here technically (:
+		lastRingSpawnedRb.transform.DOPunchScale(new Vector3(0.05f, 0.1f, 0), 0.25f);
+		AudioManager.Instance.PlaySound("OPTIONS_PANEL");
 	}
 
 	public void OnRingDestroyed(bool hitTarget)
@@ -102,6 +116,11 @@ public class OnionRingGame : Minigame
 		if (hitTarget)
 		{
 			ringsHit++;
+			StoryboardManager.Instance.SetEmotion("happy");
+		}
+		else
+        {
+			StoryboardManager.Instance.SetEmotion("sad");
 		}
 		spawnNextRing = true;
 	}

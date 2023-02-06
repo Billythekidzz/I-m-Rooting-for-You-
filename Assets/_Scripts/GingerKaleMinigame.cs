@@ -7,6 +7,8 @@ using System;
 
 public class GingerKaleMinigame : Minigame
 {
+    [SerializeField]
+    GameObject tutorialTooltip;
 
     [SerializeField]
     Slider slider;
@@ -15,7 +17,7 @@ public class GingerKaleMinigame : Minigame
     float fillSpeed = 1.0f;
 
     [SerializeField]
-    float minFill = 0.97f;
+    float minFill = 0.5f;
 
     private bool isFilling = false;
 
@@ -24,7 +26,8 @@ public class GingerKaleMinigame : Minigame
 		base.StartGame();
 
         slider.value = 0f;
-	}
+        tutorialTooltip.SetActive(true);
+    }
 
 	private void OnEnable()
 	{
@@ -36,8 +39,14 @@ public class GingerKaleMinigame : Minigame
         EndGame(false);
     }
 
-	// Update is called once per frame
-	void Update()
+    public override void EndGame(bool isVictory)
+    {
+        base.EndGame(isVictory);
+        tutorialTooltip.SetActive(false);
+    }
+
+    // Update is called once per frame
+    void Update()
     {
         if (isFilling)
 		{

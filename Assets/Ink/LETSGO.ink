@@ -196,9 +196,15 @@ I must admit that I had never seen such a bulky vegetable before - this beefy be
     # Character MC
     # add_affinity beefroot|2
     H-hey~
+    # Character BEEFROOT
+    # emote blush
+    Now, now, settle down there, partner. I must admit… You’re a fine-lookin’ being yourself!
     * [Hello creature of my imagination]
     # Character MC
     Hello creature of my imagination
+    # Character BEEFROOT
+    # emote happy
+    Easy now partner, it may be hard to imagine a root vegetable as masculine as I, but I can assure you that I am 100% organically grown. 
     * [What the hell is this! A walking talking vegetable? This is an affront to nature!]
     # add_affinity beefroot|-2
     # Character MC
@@ -249,11 +255,16 @@ D-do you like my r-ring? ;_;
     # emote blush
     # expand_textbox 1
     T-thanks!! >w<
-    There’s a <b>ring throwing competition</b> tomorrow if you want to come…
+    There’s a ring throwing competition in a couple of days… And, it needs a team of two to participate.
+
+    This competition is *really* important to me… and I was wondering if you’d like to be my partner for it?
+
+    Uhh >/\/\/< I d-don’t mean to put any pressure on you! I-it’s OK if you don’t want to…
+
     * * [Yeah, I’d love to <3]
     # Character MC
     # add_affinity onion|2
-    Yeah, I’d love to <3
+    Yeah, I’d love to <3 Let’s win this together!
     # Character ONION
     #emote happy
     # expand_textbox 1
@@ -264,16 +275,20 @@ D-do you like my r-ring? ;_;
     I’ll have to check my schedule
     # Character ONION
     #emote neutral2
-    T-that’s okay. I g-guess…
+    O-oh… T-that’s okay. I g-guess… I guess I can ask someone else…
     # expand_textbox 1
     <OHOHOHO>WAAAAAAAAAAAAAAAAAAAAAAAAA!!  (>o<)</OHOHOHO>
     * * [Uh, I’ll pass :/]
     # Character MC
     Uh, I’ll pass :/
     # Character ONION
+    #emote neutral2
+    # expand_textbox 1
+    O-oh…
     #emote sad
     # expand_textbox 1
     <OHOHOHO>WAAAAAAAAAAAAAAAAAAAAAAAAA!! (>o<)</OHOHOHO>
+    
     * [Uhhh, yeah I guess?]
     # Character MC
     #text_speed 0.5
@@ -282,20 +297,22 @@ D-do you like my r-ring? ;_;
     #text_speed 1.0
     # set_skippable_dialogue false
     #emote happy
-    AAAAAAAAAAA…
+    Oh…..
     #text_speed 0.3
     #emote neutral
-    MMMMM…
+    MMmmmMMMmmmmff ;-;
     #text_speed 0.1
     #emote neutral2
-    AAA…
+    Well… I…
     # set_skippable_dialogue true
     # text_speed 1.0
     # emote blush
     #audio SURPRISE_1
     # expand_textbox 1
-    <OHOHOHO>DO YOU WANT TO COME AND WATCH ME PLAY IN A RING THROWING COMPETITION TOMORROW?!?!</OHOHOHO>
-    * * [Uhhh, hmmm. Sure!]
+    I was wondering if you wanted to be my <OHOHOHO>ring throwing partner</OHOHOHO> for the competition in two days….? >.<
+    
+    The competition is *really* important to me… and you can only join it in teams of two.
+    * * [I’d love to be your partner!]
     # Character MC
     # add_affinity onion|2
     Uhhh, hmmm. Sure!
@@ -304,7 +321,7 @@ D-do you like my r-ring? ;_;
     WAAAAAAAAAAAAAAA
     YAAAAAAAAYYYY!!!! <3 <3 <3
     
-    * * [Uhmmm, maybe?]
+    * * [Uhmmm, I’ll see...]
     # Character MC
     Uhmmm, maybe?
     # Character ONION
@@ -485,6 +502,8 @@ Who should I go out with?
 -> sheriff_beefroot_date
 * [Assist Alonion in preparation for the Annual Ring Competition]
 -> alonion_date
+* [Go out on a date with Ginger]
+-> ginger_date
 
 - -> END
 
@@ -840,6 +859,7 @@ Well, I feel like we did make some good ground on this here case, however I also
 
 You did well today partner, and thank you for the assistance, and the uhh…
 
+#emote blush
 (Blushes) encouragement you gave earlier. I really do be appreciatin’ it.
 
 Anyways, I think it’s best we be heading off to bed. Let us rest and think over this problem tomorrow. Whaddaya say partner?
@@ -908,7 +928,7 @@ Who do you think is most likely to be the culprit?
 * [Alonion]
 #Character BEEFROOT
 Yer on the right guess I think
-
+#emote neutral2
 They did seem super suspicious the other day
 
 And what did they hide behind the counter?
@@ -924,7 +944,7 @@ Beefroot and I go to Alonion’s store and let them know that they are being tak
 * [Ginger]
 #Character BEEFROOT
 Yer on the right guess I think
-
+#emote neutral2
 They did seem super suspicious the other day
 
 Who else had the time to get out and cut the pipe?
@@ -959,6 +979,7 @@ Mayor Tomato has been brutally murdered, components of their body are splayed al
 There is clear sign of a struggle, but it is also clear that this struggle wasn’t enough.
 
 #Character BEEFROOT
+#emote sad
 N-no… how could this have happened!
 
 I… I failed…
@@ -1006,7 +1027,7 @@ Leaving the vegetables, and more importantly Beefroot behind forever.
 === sheriff_beefroot_good_ending ===
 #Character BEEFROOT
 Yer on the right guess I think
-
+#emote neutral2
 They did seem super suspicious the other day
 
 Why would they need gloves right at the end of the night? And also such particular gloves, why Alonion’s?
@@ -1070,6 +1091,7 @@ If you got here any later I would’ve been pureed!
 #Character BEEFROOT
 It’s no worry Mayor. Just doing my job after all!
 
+#emote happy
 And the one you should really be thankin’ is my partner! They were the one that figured out it was Carrot all along!
 
 #Character TOMATO
@@ -1099,7 +1121,9 @@ I decided to spend the day with Alonion - ring throwing does sound kind of fun!
 
 My hand-eye coordination isn’t the greatest, but I’ll try my best for Alonion!
 
-#Background JEWELLERY_STORE
+# Background JEWELLERY_STORE
+# audio DOOR_OPEN_1
+# music JEWELLERY_1
 #Character ONION
 O-oh.. hi! >w<
 
@@ -1107,8 +1131,14 @@ You startled me! I didn’t hear you come in <.<
 
 Thank you again for agreeing to join me to practise ring throwing uwu. It’s a sport that I’m *deeply* passionate in! 
 
-((ZOOM TEXT, then skip to next line)) L-like, the amount of pure skill and precision required to accurately and perfectly throw a circular band of metal to perfectly land around an upright stickjuttingupfromthegroundandlikeitreally-
+#text_speed 3.0
+# set_skippable_dialogue false
+# set_autoskip_dialogue true
+L-like, the amount of pure skill and precision required to accurately and perfectly throw a circular band of metal to perfectly land around an upright stickjuttingupfromthegroundandlikeitreally-
 
+#text_speed 1.0
+# set_autoskip_dialogue false
+# set_skippable_dialogue true
 O-oh, I got a bit carried away there… I’m sorry about that, I really love ring throwing ^^;
 
 * [It’s really cool to see how passionate you are about it!]
@@ -1117,7 +1147,7 @@ O-oh! You don’t think it’s weird? >~<
 #Character MC
 No, not at all! I’d love to listen to you talk about it more… though maybe a bit slower ^^;
 #Character ONION
->////< I-I’ve never met someone who’d be willing to hear me talk about ring throwing before…
+>\/\/\/\/< I-I’ve never met someone who’d be willing to hear me talk about ring throwing before…
 
 
 * [W-whoa… I didn’t quite catch… well, any of that.]
@@ -1130,7 +1160,7 @@ I don’t really ever get to talk about my passions, with anybody… So, I just 
 #Character ONION
 ;~~~~; WAAAAAAaaAAaaaAAaaaAAAA
 
-*sniff* *sniff*
+\*sniff\* \*sniff\*
 
 W-well, I guess you’re just like all the others…
 
@@ -1138,6 +1168,7 @@ W-well, I guess you’re just like all the others…
 - … L-lets head to town and get some ring practice in. 
 
 #background VEGE_TOWN_DAY
+# music VEGE_TOWN_OUTDOORS_SHORT_1
 #Character MC
 We headed over to a relatively more empty part of the town. However, there appeared to be other vegetables practising ring throwing.
 
@@ -1160,7 +1191,7 @@ T-thanks!! I’ll try my best ^-^
 
 * [Do you need a hand there?]
 #Character ONION
-O-oh! H-how kind of you! >///<
+O-oh! H-how kind of you! >\/\/\/<
 
 Y-yeah, if you could just grab the rings here and get them ready over there.
 
@@ -1174,7 +1205,7 @@ Huh… Wait, are these… onion-sized rings… or are they human-sized rings….
 
 ….How does this work?
 
-Well, I *am* on a date with an onion after all. I guess it just does.
+Well, I \*am\* on a date with an onion after all. I guess it just does.
 
 * [These guys must be our competition.]
 #Character ONION
@@ -1204,11 +1235,11 @@ L-let’s get some practice in - I can show you h-how it works.
 #Character MC_THOUGHTS
 You watched as Alonion gingerly picked up a ring from her bag of rings, and gracefully tossed it towards the target stick.
 
-The ring had *just* the perfect amount of spin, with the *absolutely* perfect arc, as it headed towards the target.
+The ring had \*just\* the perfect amount of spin, with the \*absolutely\* perfect arc, as it headed towards the target.
 
 It was just… perfect.
 
-She… *She was perfect*.
+She… \*She was perfect\*.
 
 The ring impeccably caught the target stick and swung around delicately down, before settling.
 
@@ -1217,19 +1248,837 @@ Ah.. T-that, wasn’t too bad I guess…
 
 * [What?? That was the most *flawless* ring throw I have ever witnessed in my life!]
 #Character ONION
->//////< Oh… You really think so? T-thank you.
+>\/\/\/\/\/\/< Oh… You really think so? T-thank you.
 * […]
 #Character ONION
 … Uhm… >.>
 * [Nah, actually that was pretty bad.]
 #Character ONION
-*sniff* Y-yeah… ;-;
+\*sniff* Y-yeah… ;-;
 
 - #Character ONION
 - O-ok, it’s your turn now!
 
 # minigame onion_ring
+# music MINIGAME_ONION
+#Character MC
+MINIGAME START
+* [good]
+#Character MC_THOUGHTS
+That wasn’t too bad at all. I think I got the hang of it pretty quickly.
 
-- test
+#Character ONION
+>\/\/< O-oh my… You’re a natural ring thrower.
+
+Th-that technique… The precision… The perfect toss angle…. I.. >.<
+
+You truly are the perfect partner >\/\/<
+
+UH… I mean… *RING THROWING* PARTNER…. T-that’s what I meant….
+
+Though… you are very cute >\/\/\/\/\/\/\/\/<
+
+* [bad]
+#Character MC_THOUGHTS
+That was tougher than I expected. Hopefully I’ll do better tomorrow.
+
+#Character ONION
+O-oh… maybe it was just a bad day today… Everyone has those every now and then…
+
+It’s really important to me that we do well tomorrow… ;-;
+
+O-oh gosh, I’m feeling quite anxious about tomorrow’s competition.
+
+I hope after you get a good night’s rest you’ll do better! ^^;
+
+- #Character MC_THOUGHTS
+# music VEGE_TOWN_OUTDOORS_SHORT_1
+We continued to practise ring throwing several more times before Alonion suddenly stopped and looked at me.
+
+She walked up shyly… gosh, she is so damn *CUTE*.
+
+#Character ONION
+I-I wanted to just thank you again for agreeing to be my ring throwing partner.
+
+It really means a lot to me! I really want to emphasise that >.<
+
+I… I should tell you a bit about why I’m so invested in this competition, and the prize…
+
+That ring…
+
+It-it’s actually my great-great-great–great-great-grandfather’s ring.  
+
+It has been lost for centuries… but now it’s turned up… as a prize for this ring throwing competition!
+
+As soon as I found out about it, I’ve been practising every moment I can so I can win it! It’s also made me very passionate about ring throwing.
+
+A-and… If this ring got into the hands of another vegetable… 
+
+I… 
+
+I really don’t know what I would do ;-; 
+
+I don’t even want to think about it ;~~~;
+
+* [There there, Alonion. We’ll smash the other vegetables tomorrow and get this ring!]
+#Character ONION
+Y-yeah! I’m excited to do some ring throwing with you… partner!
+
+* [Well, I guess we can only do our best.]
+#Character ONION
+\*sniff* Y-yeah… I guess… Well, let’s do our best then.
+* [I don’t get why it’s so important.]
+#Character ONION
+WAAAAAAAAAAAAAAAA *sniff* *sniff*  (>O<) 
+
+;-; *sniff*
+
+- #background BLACK
+- #Character MC
+…
+
+#background VEGE_TOWN_NIGHT
+#Character ONION
+…O-oh, when it did get so dark so quickly?
+
+You.. should get some rest uwu
+
+T-thank you for joining me today… I-it really means a lot to me! ^u^
+
+I hope you sleep well, partner! ^\/\/\/^
+
+
+#background INDOORS_NIGHT
+#Character MC_THOUGHTS
+Wow.
+
+I am… *incredibly* tired… and for some reason a bit teary.
+
+I didn’t realise just how tiring ring throwing could be.
+
+I mean- I honestly don’t even understand how it all works.
+
+But you know what? I just went on a date with an onion. I really don’t think anything needs to make sense.
+
+I guess it’s time for bed now…
+
+-> alonion_date_day_3
+
+=== alonion_date_day_3
+# savepoint alonion_date_day_3
+# background INDOORS_DAY
+# music DAY_START
+#Character MC_THOUGHTS
+...
+DAY 3
+\*Yawn\*...
+
+It’s the big day today! The ring throwing competition.
+
+I guess I should get ready to meet Alonion before the competition… I hope she’s doing OK.
+
+# Background JEWELLERY_STORE
+# audio DOOR_OPEN_1
+# music JEWELLERY_1
+#Character MC
+I arrived at Alonion’s store and saw Alonion cleaning a necklace that she had in her hands.
+
+She looked up and noticed me standing by the door.
+
+#Character ONION
+O-oh! You’re here! ^u^
+
+I’ve been looking forward to seeing you- I-I mean, so we can get to this ring throwing competition of course…
+
+* [I’ve been looking forward to seeing you too, Alonion.]
+
+#Character ONION
+>\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/<
+
+I-I.. U-uhmf-uhh-asdf—---
+
+You’re very sweet, you make me quite emotional.
+
+#Character MC
+Well, you’re so cute, you could make me cry.
+
+#Character ONION
+aaaaAAA >\/\/\/\/\/<
+
+
+* [Yeah, let’s head to the competition.]
+#Character ONION
+Y-yeah…
+* [*Sigh* Let’s just get this over and done with.]
+#Character ONION
+Y-yeah… *sniff* ;-;
+
+
+- #Character ONION
+- L-let’s go to the competition.
+
+
+#background VEGE_TOWN_DAY
+# music VEGE_TOWN_OUTDOORS_SHORT_1
+#Character MC
+The town was bustling with activity. It was clear the annual ring throwing competition was a HUGE deal around these parts.
+
+We headed towards the competition area for participants.
+
+The area for ring throwing had already been set up for each participating team.
+
+The participants and crowd around the competition area were buzzing with anticipation.
+
+It feels like the competition will be starting soon.
+
+#Character ONION
+I-I’m getting quite anxious about all this… There’s just… 
+
+So. Much. Pressure. T^T
+
+#Character MC
+Before you could reassure Alonion, a loud voice rang from the other side of the competition space.
+
+#Character ANNOUNCER
+GOOOOOOOOOOOOOOOD MORNING VEGE FOLKS!
+
+IT IS TIME, FOR THE ANNUAL RING THROWING COMPETITION OF VEGETOWN!!!!
+
+#Character MC
+The vege crowd cheers loudly. It doesn’t seem to be helping Alonion’s anxiety levels.
+
+#Character NPC
+AS YOU MIGHT HAVE HEARD, THE PRIZE FOR THIS YEAR’S RING THROWING COMPETITION IS UNLIKE ANY WE’VE HAD BEFORE.
+
+THE EXTREEeeEeEeEeEEEEMELY RARE - <OHOHOHO>ANCIENT ONION RING</OHOHOHO>.
+
+#Character MC
+The crowd around you Ooo’s in sync. It’s almost creepy how synchronized everyone is.
+
+#Character NPC
+THE WINNING PAIR OF THIS YEAR’S COMPETITION WILL CLAIM THIS ONCE-IN-A-LIFETIME ARTIFACT!
+
+NOW, WITHOUT FURTHER ADOOOOOOOO…..
+
+LET’S.
+
+GET.
+
+TOSSINGGGGGGGGGGGGG!!!!!!11!!
+
+#Character ONION
+G-good luck partner! Let’s do this together!! >u<
+
+# minigame onion_ring
+# music MINIGAME_ONION
+#Character MC
+MINIGAME START
+* [good]
+-> alonion_date_good_ending
+
+* [bad]
+-> alonion_date_bad_ending
+
+- -> END //should never reach here
+
+=== alonion_date_good_ending ===
+#Character NPC
+# music MUSIC_STOP
+AAAAANNNND WE….. HAVE…. A…. WINNER!!!!
+
+THIS BRILLIANT ONION AND HUMAN POWER COUPLE ARE THE WINNERS OF THIS YEAR’S RING THROWING COMPETITION!!
+
+#Character ONION
+# music VEGE_TOWN_OUTDOORS_SHORT_1
+W-We did it! I can’t believe we did it! 
+
+#emote happy
+I-I… I’m just so overjoyed…
+
+#Character MC
+Before I could react, Alonion bounced over and gave me a kiss.
+
+#emote neutral2
+…
+
+#emote sad
+…
+#emote blush
+O-oh….
+
+>\/\/\/\/\/\/<
+
+I-I’m so sorry!!! I-I didn’t mean t– It was– I….
+* [I love you Alonion.]
+#Character ONION
+O-oh… I-I…
+#emote neutral2
+I…
+#emote blush
+I love you too… >\/\/\/\/\/\/\/\/\/\/<
+
+
+* [We did it Alonion! ]
+#Character ONION
+Y-yeah!! We did!!!
+
+I can’t believe it! You did amazingly, partner!!! ^w^
+
+
+* [You did amazing!]
+#Character ONION
+T-thank you partner!!! >\/\/\/<
+
+Y-you did amazing too!!
+
+
+-# Background JEWELLERY_STORE
+-# audio DOOR_OPEN_1
+-# music JEWELLERY_1
+-# Character MC
+- We headed off to Alonion’s Jewelry Store after the competition celebrations were over. 
+
+I watched as Alonion carefully cleared out a display case for the <OHOHOHO>ANCIENT ONION RING</OHOHOHO> that we had won together.
+
+#Character ONION
+T-this is it. My family heirloom. Finally here.
+
+#Character MC
+Alonion turned slowly towards me and shyly approached me. 
+
+In the blink of an eye, Alonion had embraced me and I could feel their tears trickling down my back.
+
+#Character ONION
+T-thank… y-you… *sniff* (>o<)
+
+Y-you don’t realize how much this means to me… *sniff*
+
+#Character MC
+I’m very happy I was able to help you, Alonion.
+
+
+#background BLACK
+#Character MC_THOUGHTS
+# music VEGE_TOWN_OUTDOORS_SHORT_1
+The rest of the day went by in a flash, well maybe more like a couple of minutes depending on how quickly you were clicking.
+
+Anyways, Alonion was passionately telling me about the perfect ring throwing technique as we headed back to mine.
+
+Over the next few days, Vegetown settled down from the ring throwing competition excitement.
+
+Over the next few months, I started helping out Alonion in her jewelry store. 
+
+Everytime either Alonion or I catch a glimpse of the <OHOHOHO>ANCIENT ONION RING</OHOHOHO>, we would smile warmly at each other and remember how we came together.
+
+That competition announcer was right, we truly were, and still are, a power couple.
+
+- -> END
+
+=== alonion_date_bad_ending ===
+#Character NPC
+AAAAANNNND WE….. HAVE…. A…. WINNER!!!!
+
+THIS BRILLIANT POTATO AND CARROT PAIR ARE THE WINNERS OF THIS YEAR’S RING THROWING COMPETITION!!
+
+#Character ONION
+O-Oh… I-I thought…  
+
+#music MUSIC_STOP
+#emote neutral2
+W-we… didn’t… win…? 
+#emote sad
+WAAAAAAAAAAAAAAAAAAAAAA (>o<)
+
+#Character MC_THOUGHTS
+Damn. Alonion performed so well… I wasn’t able to keep up. 
+
+#Character MC
+Alonion and I watched as the competition announcer hands the <OHOHOHO>ANCIENT ONION RING</OHOHOHO> prize over to Potato and Carrot.
+
+#Character ONION
+#emote sad
+I-I… I can’t handle this… >~~~~<
+
+T-This is too much T-T
+
+#Character MC
+Before I could say a single word, Alonion ran through the crowd and out of my sight.
+
+#Character MC
+Alonion! ALONION!!!
+
+#Character MC
+I chased after Alonion but the crowd seemed to be working against me. And, no matter how loudly I yelled out, it seemed that the cheers of the crowd drowned out any sound I made.
+
+#Character MC_THOUGHTS
+Damn, I hope Alonion is OK.
+
+I need to find her.
+
+# Background JEWELLERY_STORE
+# audio DOOR_OPEN_1
+#music MUSIC_STOP
+#Character MC_THOUGHTS
+Surely, she’s in her store?
+
+#Character MC
+I searched through the store - looked around every corner and every possible space an onion could fit…. 
+
+But alas…
+
+Alonion was nowhere to be found.
+
+#Character MC_THOUGHTS
+Where could she be…?
+
+#Background TAVERN
+#music TAVERN_1
+#Character MC_THOUGHTS
+# audio DOOR_OPEN_2
+Maybe Alonion is in the tavern? 
+
+Ah- that’s Ginger the owner of the tavern. Maybe Ginger has seen Alonion?
+
+#Character MC
+Ah- have you seen Alonion around at all?
+
+They disappeared after the ring throwing competition and I haven’t been able to find them anywhere.
+
+#Character GINGER
+Ah I’m sorry, honey, I haven’t seen that sweet onion around at all today.
+
+Have you tried asking dadd- Uh, I mean Sheriff Beefroot?
+
+#Character MC
+Umm..
+
+No, I haven’t yet - thanks Ginger!
+
+#Character GINGER
+No problem hun. I hope you find Alonion soon!
+
+I know how much that competition meant to them. Poor thing.
+
+#background VEGE_TOWN_NIGHT
+# music VEGE_TOWN_OUTDOORS_SHORT_1
+#Character MC_THOUGHTS
+Damn, it’s getting late…
+
+Ah! There’s Sheriff Beefroot!
+
+#Character MC
+Sheriff! Sheriff! 
+
+\*Huff puff\* H-have you seen Alonion anywhere? They disappeared without a trace after the ring throwing competition today.
+
+#Character BEEFROOT
+I’m sad to say I havn’t, partner. I’ll keep a close eye out for Alonion.
+
+It’s very odd of Alonion to just disappear like that… It must be serious.
+
+Ya should head off home, it’s late. Leave it to me, partner.
+
+#Character MC_THOUGHTS
+It was getting very dark, very quickly. 
+
+I guess I should heed the Sheriff’s advice and head off home… 
+
+#music MUSIC_STOP
+…
+
+I hope Alonion is OK.
+
+#background BLACK
+It had been months since the ring throwing competition. 
+
+And yet, no one had seen Alonion since then.
+
+Alonion’s jewelry store had to be closed down as it was essentially abandoned.
+
+It was revealed a week after the end of the competition that the winning pair Potato and Carrot had cheated some how… 
+
+And so, the prize was given to the second place winners…
+
+Which were Alonion and I.
+
+With the <OHOHOHO>ANCIENT ONION RING</OHOHOHO> in my hands, all I could think about was how wrong it was for me to be holding it.
+
+Especially, without Alonion by my side.
+
+…
+
+And that’s where my story with these vegetables ends. A few months later I moved out of my Grandpa’s old house, and onto my new life.
+
+Leaving the vegetables behind forever… with an empty hole in my heart that constantly wonders where Alonion is.
+
+- -> END
+
+
+=== ginger_date ===
+#Character MC_THOUGHTS
+I decided to see Ginger today, I quite like her…
+
+# Background TAVERN
+# audio DOOR_OPEN_2
+# music TAVERN_1
+# Character GINGER
+Hey honey, can’t say I’m surprised to see you back ;)
+I guess you’re eager to take me out somewhere then?
+
+* [I could be ;)]
+#Character MC
+I could be ;)
+
+#Character GINGER
+I like em eager ;)
+
+Let’s go to the vege town restaurant tomorrow night. You’re paying though. ;P
+
+* [uhhhhhhhhhhhhhhhhhhhhhhhhhh]
+#Character MC
+uhhhhhhhhhhhhhhhhhhhhhhhhhh
+#Character GINGER
+Too hot to speak now honey? That’s alright, you can take me to the vege town restaurant tomorrow.
+
+You’d better be fun ;)
+
+* [\[hot panting\]]
+That’s the eagerness I live for <3
+
+Let’s go to the vege town restaurant tomorrow night and have some fun ;)
+
+
+- #Character GINGER
+- While you’re in my tavern, how ‘bout a mug of some our specialty six-hundred-and-ninety-fifth best Ginger Kale in town?
+
+
+* [Only if you fetch it for me, sugar ;)]
+#Character MC
+Only if you fetch it for me, sugar ;)
+
+#Character GINGER
+Ooh~ of course I will, darling.
+
+One mug of our six-hundred-and-ninety-sixth Ginger Kale comin’ right up!
+
+
+* [That sounds good]
+#Character GINGER
+Ehehe~ I’m sure you’ll love it.
+
+One mug of our six-hundred-and-ninety-sixth Ginger Kale comin’ right up!
+
+
+* [Six-hundred-and-ninety-fifth? Sheriff Beefroot told me it was six-hundred-and-ninety-fourth best.]
+#Character GINGER
+Ah, did I say six-hundred-and-ninety-fourth?
+
+I meant… Six-hundred-and-ninety-sixth…
+
+Anyways, one mug of our six-hundred-and-ninety-seventh Ginger Kale comin’ right up for my darling!
+
+
+- #Character MC
+- Ginger heads over to a barrel of their six-hundred-and-ninety-eighth Ginge Kale and began to pour it into a mug.
+
+But… It appears that the tap…
+
+Is… *STUCK*!
+
+#Character GINGER
+Ah~ If only I had a *big*… *strong*… *hot*... human to help me to get this tap unstuck~
+
+# minigame ginger_kale
+# music MINIGAME_ONION
+#Character MC
+MINIGAME START
+* [good]
+-> ginger_date_2
+
+* [bad]
+
+#Character MC_THOUGHTS
+# music TAVERN_1
+I struggled with the tap - sometimes it felt like I tugged too hard, and sometimes not hard enough.
+
+I gave it one final tug… Suddenly…
+
+\*WHOOOOOOOOOOOOOSHHH*
+
+The tap ripped right off!!!
+
+#Character GINGER
+#emote sad
+AHHhHhHHH~~!!!
+
+Y-you got me all *WET*!
+
+#Character MC
+Um…
+
+…
+
+#Character Ginger
+…
+
+…with Ginger Kale… >.>
+
+#Character MC_THOUGHTS
+Ginger pushed me out of the tavern and into to the cold night outside
+
+I’m sorry, Ginger! I didn’t mean t-
+
+#music MUSIC_STOP
+\*SLAM\*
+
+Ginger had shut the door on me.
+
+I guess the date is off tomorrow…
+
+#Background BLACK
+#Character MC_THOUGHTS
+And so I went straight home, avoiding everyone as I went.
+
+There’s no way I could show my face around Ginger again… That was *embarrassing*!
+
+…
+
+Months passed since the tragic incident in the tavern. 
+
+I totally avoided going out into VegeTown out of sheer shame.
+
+I ended up moving away from my grandfather’s house once I had found a new job in town and a place close to it.
+
+\*Sigh\* … If only I could turn back time…
+
+- -> END
+
+=== ginger_date_2 ===
+#Character MC_THOUGHTS
+# music TAVERN_1
+Ah! I did it!
+
+The Ginger Kale poured out into the mug that Ginger held. The tap was no longer stuck!
+
+# Character GINGER
+# emote happy
+Ohhhh~~~ 
+
+Those strong muscles… and you have *sooo* much control over them too~
+# emote blush
+You just make me fall for you more and more ;)
+
+I just can’t help it… you’re  i r r e s i s t a b l e ~
+
+
+* [Not as irresistible as you, my queen.]
+#emote blush
+Oh honey, you are such a cutie~ You make me soo flustered >\/\/\/<
+
+* [You flatter me >\/\/<]
+#emote blush
+You are suuuuch a hottie after all ;3
+
+* [No u]
+…
+
+#emote sad
+. . .
+
+Anyways… -.-
+
+- #Character GINGER
+- I can’t wait for you to take me out tomorrow night <3
+
+
+
+#Background INDOORS_NIGHT
+#music MUSIC_STOP
+#Character MC_THOUGHTS
+I headed off home… 
+
+What a spicy one Ginger is… How can I find a vegetable so cute??
+
+And gosh, Ginger makes me hot under the collar everytime I’m with them…
+
+I guess it’s time for bed…
+
+…......
+
+#Background BLACK
+…....
+
+…
+
+I can’t stop thinking about Ginger…
+
+I can’t wait to see her tomorrow…
+
+- -> ginger_date_day_3
+
+=== ginger_date_day_3 ===
+# savepoint ginger_date_day_3
+DAY 3
+
+#background INDOORS_DAY
+# music DAY_START
+Hooo boy… my date is tonight.
+
+What do I even do between now and my date?
+
+…..
+
+#background BLACK
+#music MUSIC_STOP
+…
+
+#background INDOORS_NIGHT
+Ah, perfect, it’s night time! I guess it’s time to head out.
+
+#Background VEGE_TOWN_NIGHT
+# music VEGE_TOWN_OUTDOORS_SHORT_1
+… I’m so nervous…
+
+…
+
+What if… she doesn’t like me?
+
+
+# Background TAVERN
+# audio DOOR_OPEN_2
+# music TAVERN_1
+…
+
+I can’t believe I’m about to go on a date with a vegetable
+
+W-what if she wants to… I don’t know… leave the garden with me?
+
+Oh god… Why do I like the idea of that!?!!
+
+#Character GINGER
+Hey honey, good to see you have come <3
+
+I’m glad you like to make us girls not have to wait too long.
+
+
+* [Only for you my queen <3]
+* [Settle down cutie]
+* [I’m STARVINGG! What is there to eat anyway?]
+
+- #Character GINGER
+- Hehe…
+
+Waiter!!
+
+#Character NPC
+Hello again, Ginger…
+
+Another one I see…
+
+Aaaand he’s human, fantastic.
+
+Due to a dirt shortage, we only have uh water and uh
+
+…
+
+soylent green
+
+#Character GINGER
+That would be fantastic Garlic!
+
+So anyways baby, what brings you to VegeTown?
+
+
+* [Well, I walked into my backyard one day and there were talking vegetables, so.]
+* [I’m not sure, although I know the reason I stay ;)]
+
+- Wow!! You’re so funny!! 
+#emote blush
+You’re so cute MC-chan :3
+
+#Character NPC
+Here are your orders.
+
+…
+Why am I even working here, they don’t even pay me…
+
+Why do I even exist…
+
+What's that growing on the side of me??
+
+#Character GINGER 
+#emote sad
+Ignore Garlic, they are just upset they didn’t get the job at the tavern.
+
+#Character MC_THOUGHTS
+(They eat, idk how to show this)
+
+Oh god!!!
+
+Ah…
+
+…
+
+What’s in this soylent???
+
+#Character GINGER
+#emote happy
+Haha you’re soooooooooooooooooo funny.
+
+You know MC-chan, I really do like you…
+
+I’ve never met someone as handsome, and *sexy*, and amazing as you…
+#emote blush
+How about we get out of here? ;)
+
+* [Oh my, I thought this day would never come]
+-> ginger_date_day_4
+* [uhhhhhhhhhhh]
+Oh, don’t be shy MC-chan! Let’s go!
+-> ginger_date_day_4
+* [I… I don’t know… ]
+
+- #Background BLACK
+- #Character MC_THOUGHTS
+- #music MUSIC_STOP
+- We ended up heading back to my place…
+
+And, well…
+
+Why did I do this…
+
+I could have just spent my time working at Gray Matter, why did I get coerced into this…
+
+BY A VEGETABLE…
+
+Oh well, I guess it could be worse…
+
+\*\*RING RING**
+
+Oh, what’s this?
+
+A phone call?
+
+Who’s…
+
+Jesse Pinkman?
+-> END
+
+
+=== ginger_date_day_4 ===
+#Background BLACK
+#Character MC_THOUGHTS
+#music MUSIC_STOP
+We ended up heading back to my place…
+And, well…
+Life has progressed nicely. 
+
+Ginger and I got married, with a small gingerling on the way…
+
+I would have never guessed I would have gone from a normal guy, to living the rest of my life in vege town with a wife that is a ginger from my garden…
+
+Hey but what can you say?
+
+I would have never had it any other way…
 
 - -> END

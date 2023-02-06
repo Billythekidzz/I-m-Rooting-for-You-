@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using DG.Tweening;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class OnionRing : MonoBehaviour
@@ -13,6 +14,7 @@ public class OnionRing : MonoBehaviour
 		if (collision.gameObject.tag == "OnionRingBoundary")
 		{
 			Owner.OnRingDestroyed(false);
+			transform.DOKill();
 			Destroy(this.gameObject);
 		}
 	}
@@ -22,6 +24,7 @@ public class OnionRing : MonoBehaviour
 		if (collision.gameObject.tag == "OnionRingTarget")
 		{
 			Owner.OnRingDestroyed(true);
+			transform.DOKill();
 			Destroy(this.gameObject);
 		}
 	}

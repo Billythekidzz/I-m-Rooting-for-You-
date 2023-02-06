@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.Events;
 using DG.Tweening;
 using TMPro;
+using static Minigame;
+using Ink.Runtime;
 
 public class GameStateManager : MonoBehaviour
 {
@@ -15,7 +17,11 @@ public class GameStateManager : MonoBehaviour
     [HideInInspector]
     public bool isDialogueSkippable = true;
 
+    public bool isAutoSkipDialogue = false;
+
     public bool wasLastSpeakerMC = true;
+
+    public bool isMinigameActive = false;
 
     public static GameStateManager Instance;
 
@@ -115,6 +121,28 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
+    public void OnMiniGameStart()
+    {
+        isMinigameActive = true;
+    }
+
+    public void OnMinigameFinish(GameOverContext context)
+    {
+        isMinigameActive = false;
+        Choice choice = new Choice();
+        
+        if(context.IsVictory)
+        {
+            choice.index = 0;
+            DialogueManager.SetDecision(choice);
+        }
+        else
+        {
+            choice.index = 1;
+            DialogueManager.SetDecision(choice);
+        }
+    }
+
     public void AddAffinity(string param)
     {
         string characterKey = param.Split('|')[0].ToLower();
@@ -162,6 +190,7 @@ public class GameStateManager : MonoBehaviour
 
     public void ResetGameState()
     {
+        isAutoSkipDialogue = false;
         isDialogueSkippable = true;
         lastSavedCharacterKey = "";
     }

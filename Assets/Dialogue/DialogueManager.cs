@@ -105,7 +105,13 @@ public class DialogueManager : MonoBehaviour
         story = new Story(inkFile.text);
         messageAnimaTextTMPro.SetEffectSpeed(0, defaultTextSpeed);
         messageAnimaTextTMPro.SetEffectSpeed(1, defaultTextSpeed);
+        optionPanel.SetActive(false);
+        for (int i = 0; i < optionPanel.transform.childCount; i++)
+        {
+            Destroy(optionPanel.transform.GetChild(i).gameObject);
+        }
         choiceSelected = null;
+        _isSelectingChoice = false;
         if (typeSentenceCoroutine != null)
         {
             StopCoroutine(typeSentenceCoroutine);
@@ -170,7 +176,14 @@ public class DialogueManager : MonoBehaviour
             {
                 StopCoroutine(typeSentenceCoroutine);
             }
-            mouseIcon.DOFade(1.0f, 0.1f);
+            if (GameStateManager.Instance.isAutoSkipDialogue && !_isSelectingChoice)
+            {
+                TryDialogue();
+            }
+            else
+            {
+                mouseIcon.DOFade(1.0f, 0.1f);
+            }
         }
     }
 
@@ -212,6 +225,15 @@ public class DialogueManager : MonoBehaviour
         if (story.currentChoices.Count != 0)
         {
             StartCoroutine(ShowChoices());
+        }
+        if(GameStateManager.Instance.isMinigameActive)
+        {
+            optionPanel.SetActive(false);
+            textBox.SetActive(false);
+        }
+        else
+        {
+            textBox.SetActive(true);
         }
     }
 
@@ -321,6 +343,9 @@ public class DialogueManager : MonoBehaviour
                 case "set_skippable_dialogue":
                     SetDialogSkipping(param);
                     break;
+                case "set_autoskip_dialogue":
+                    SetAutoSkipDialog(param);
+                    break;
                 case "minigame":
                     SetMinigame(param);
                     break;
@@ -334,6 +359,14 @@ public class DialogueManager : MonoBehaviour
                     PlayTextboxSurpriseAnim(param);
                     break;
             }
+        }
+    }
+
+    private void SetAutoSkipDialog(string param)
+    {
+        if (bool.TryParse(param, out bool value))
+        {
+            GameStateManager.Instance.isAutoSkipDialogue = value;
         }
     }
 

@@ -19,6 +19,7 @@ public class Minigame : MonoBehaviour
 	public virtual void StartGame()
 	{
 		IsGameActive = true;
+		GameStateManager.Instance.OnMiniGameStart();
 	}
 
 	public virtual void EndGame(bool isVictory)
@@ -28,6 +29,7 @@ public class Minigame : MonoBehaviour
 			GameOverContext context = new GameOverContext(isVictory, character, affinityDelta);
 
 			onGameOver.Invoke(context);
+			GameStateManager.Instance.OnMinigameFinish(context);
 		}
 
 		IsGameActive = false;
